@@ -56,8 +56,14 @@
   scale: 1;
 }
 .slogan {
+
+  color: white;
+
+
+
   font-size: 85px;
   padding-top: 4em;
+
   padding-left: 1em;
   letter-spacing: 4px;
 }
