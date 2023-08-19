@@ -10,12 +10,29 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  //   TODO: add authorization middleware
+  //   TODO: add auth middleware
 });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const { url } = await startStandaloneServer(server, {
-  listen: { port: 4000 },
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+
+const startApolloServer = async () => {
+  await server.start();
+  server.applyMiddleware({ app });
+
+  db.once("open", () => {
+    app.listen(PORT),
+      () => {
+        console.log(`API server running on port ${PORT}`);
+        console.log(
+          `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+        );
+      };
+  });
+};
+
+startApolloServer();
