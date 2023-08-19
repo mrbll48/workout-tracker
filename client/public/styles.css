@@ -1,0 +1,8 @@
+.fullscreen-image {
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  object-fit: cover;
+}
