@@ -7,13 +7,19 @@ export default function LandingPage() {
       <img className="fullscreen-image" src={landing} alt="nice" />
       <div className="btn-div">
         <button className="button">Login</button>
-        <button className="button">Create Account</button>
+        {/* <button className="button">Create Account</button> */}
       </div>
       <div>
         <h1 className="slogan">
           Get Fit, Share Inspire: <br></br>Uniting Workouts, One Post at a Time
         </h1>
       </div>
+      {/* Not working property, if want to test delete/remove the style style={{ visibility: "hidden" }} */}
+      <div id="small-device-btn" style={{ visibility: "hidden" }}>
+        <button className="button">Login</button>
+      </div>
+      {/* Create account form */}
+      <div id="form-container" style={{ display: "none" }}></div>
     </div>
   );
 }

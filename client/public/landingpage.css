@@ -7,8 +7,8 @@
   object-fit: cover;
 }
 
-.btn-div {
-  padding: min(1em, 2em);
+.btn-div, #small-device-btn {
+  padding: min(2em, 3em);
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -56,10 +56,21 @@
   scale: 1;
 }
 .slogan {
-
   color: white;
-
+  font-size: clamp(2em, 4.5vw, 7.5em);
+  padding-top: min(4em, 70%);
   padding-left: 1em;
   letter-spacing: 4px;
 }
 
+@media screen and (max-width: 400px) {
+  .btn-div {
+    display: none;
+  }
+
+  #small-device-btn {
+    display: block;
+    justify-content: center;
+    visibility: visible;
+  }
+}
