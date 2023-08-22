@@ -11,12 +11,11 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-    user: User
+    user: User!
   }
 
   type Query {
-    users: [User]
-    user(username: String!): User
+    me: User
   }
 
   type Mutation {
