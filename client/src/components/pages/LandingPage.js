@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import landing from "../../images/landing.jpg";
 
 export default function LandingPage() {
+
+  const [form, setForm ] = useState(false)
+
   return (
     <div>
       <img className="fullscreen-image" src={landing} alt="nice" />
       <div className="btn-div">
-        <button className="button">Login</button>
+        <button className="button" onClick={() => setForm(true)}>
+          Login
+        </button>
         <button className="button">Create Account</button>
       </div>
       <div>
@@ -14,15 +19,16 @@ export default function LandingPage() {
           Get Fit, Share Inspire: <br></br>Uniting Workouts, One Post at a Time
         </h1>
       </div>
-      
+
       {/* Not working property, if want to test delete/remove the style style={{ visibility: "hidden" }} */}
-      <div id="small-device-btn" style={{ visibility: "hidden" }}>
+      <div id="small-device-btn" style={{ display: "none" }}>
         <button className="button">Login</button>
         <button className="button">Create Account</button>
       </div>
 
       {/* Create account form */}
-      <div id="form-container" style={{ display: "none" }}>
+      { form && (
+        <div id="form-container">
         <form className="form">
           <p>Login</p>
           <div className="group">
@@ -39,7 +45,8 @@ export default function LandingPage() {
           </div>
           <button className="submit">Submit</button>
         </form>
-      </div>
+        </div>
+      )}
     </div>
   );
 }
