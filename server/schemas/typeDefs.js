@@ -15,6 +15,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    users: [User]
     user(username: String!): User
   }
 
@@ -23,5 +24,5 @@ const typeDefs = gql`
     login(username: String!, password: String!): Auth
   }
 `;
-1;
+
 module.exports = typeDefs;

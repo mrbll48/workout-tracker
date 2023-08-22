@@ -15,10 +15,10 @@ const resolvers = {
       const user = await User.findOne({ username });
 
       if (!user) {
-        throw new AuthenticationError("Error logging in");
+        throw new AuthenticationError("No user found with this username");
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await user.isValidPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError("Incorrect credentials");
