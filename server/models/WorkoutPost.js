@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-// Workout post schema
+// Workout post schema bruh
 const workoutPostSchema = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
