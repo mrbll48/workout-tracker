@@ -11,11 +11,11 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-    user: User
+    user: User!
   }
 
   type Query {
-    user(username: String!): User
+    me: User
   }
 
   type Mutation {
@@ -23,5 +23,5 @@ const typeDefs = gql`
     login(username: String!, password: String!): Auth
   }
 `;
-1;
+
 module.exports = typeDefs;
