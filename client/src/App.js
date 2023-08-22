@@ -1,7 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
-import LandingPage from "./components/pages/LandingPage";
 
+import MainPage from "./components/pages/MainPage";
 function App() {
   return (
     // <div className="App">
@@ -20,7 +18,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <LandingPage />
+    <MainPage />
   );
 }
 
