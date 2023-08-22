@@ -9,6 +9,21 @@ const typeDefs = gql`
     friends: [User]
   }
 
+  type Workout {
+    userId: ID!
+    text: String!
+    date: String
+    likes: INT
+    comments: [Comment]
+  }
+
+  type Comment {
+    _id: ID
+    userId: String
+    text: String
+    date: String
+  }
+
   type Auth {
     token: ID!
     user: User!
@@ -21,6 +36,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
+    postWorkout(text: String!, )
   }
 `;
 
