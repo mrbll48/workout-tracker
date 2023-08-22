@@ -7,7 +7,8 @@
   object-fit: cover;
 }
 
-.btn-div, #small-device-btn {
+.btn-div,
+#small-device-btn {
   padding: min(2em, 3em);
   display: flex;
   flex-direction: row;
@@ -57,13 +58,13 @@
 }
 .slogan {
   color: white;
-  font-size: clamp(2em, 4.5vw, 7.5em);
-  padding-top: min(4em, 70%);
-  padding-left: 1em;
+  font-size: clamp(2em, 5vw, 7.5em);
+  padding-top: clamp(2em, 5vw, 6em);
+  padding-left: 0.5em;
   letter-spacing: 4px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
   .btn-div {
     display: none;
   }
@@ -74,7 +75,14 @@
     visibility: visible;
   }
 }
+
 /* TODO - Login form */
+
+#form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 .group {
   position: relative;
@@ -95,7 +103,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   border: 1px solid white;
-  padding: 120px 40px;
+  padding: 110px 40px;
   padding-top: 60px;
   padding-bottom: 90px;
   padding-right: 40px;
@@ -109,7 +117,7 @@
   padding-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   color: white;
 }
 
