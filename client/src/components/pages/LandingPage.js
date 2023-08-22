@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import landing from "../../images/landing.jpg";
 
 export default function LandingPage() {
-
-  const [form, setForm ] = useState(false)
+  const [loginForm, setLoginForm] = useState(false);
+  const [createFrom, setCreateForm] = useState(false);
 
   return (
     <div>
       <img className="fullscreen-image" src={landing} alt="nice" />
       <div className="btn-div">
-        <button className="button" onClick={() => setForm(true)}>
+        <button className="button" onClick={() => setLoginForm(true)}>
           Login
         </button>
-        <button className="button">Create Account</button>
+        <button className="button" onClick={() => setCreateForm(true)}>
+          Create Account
+        </button>
       </div>
       <div>
         <h1 className="slogan">
@@ -20,31 +22,53 @@ export default function LandingPage() {
         </h1>
       </div>
 
-      {/* Not working property, if want to test delete/remove the style style={{ visibility: "hidden" }} */}
-      <div id="small-device-btn" style={{ display: "none" }}>
-        <button className="button">Login</button>
-        <button className="button">Create Account</button>
-      </div>
-
       {/* Create account form */}
-      { form && (
+      {loginForm && (
         <div id="form-container">
-        <form className="form">
-          <p>Login</p>
-          <div className="group">
-            <input required className="main-input" type="text" />
-            <span className="highlight-span"></span>
-            <label className="lebal-email">Email</label>
-          </div>
-          <div className="container-1">
+          <form className="form">
+            <p>Login</p>
             <div className="group">
-              <input required className="main-input" type="password" />
+              <input required className="main-input" type="text" />
               <span className="highlight-span"></span>
-              <label className="lebal-email">Password</label>
+              <label className="lebal-email">Email</label>
             </div>
-          </div>
-          <button className="submit">Submit</button>
-        </form>
+            <div className="container-1">
+              <div className="group">
+                <input required className="main-input" type="password" />
+                <span className="highlight-span"></span>
+                <label className="lebal-email">Password</label>
+              </div>
+            </div>
+            <button className="submit">Submit</button>
+          </form>
+        </div>
+      )}
+      {createFrom && (
+        <div id="form-container">
+          <form className="form">
+            <p>Create Account</p>
+            <div className="group">
+              <input required className="main-input" type="text" />
+              <span className="highlight-span"></span>
+              <label className="lebal-email">Username</label>
+            </div>
+
+            <div className="container-1">
+              <div className="group">
+                <input required className="main-input" type="password" />
+                <span className="highlight-span"></span>
+                <label className="lebal-email">Email</label>
+              </div>
+            </div>
+            <div className="container-1">
+              <div className="group">
+                <input required className="main-input" type="password" />
+                <span className="highlight-span"></span>
+                <label className="lebal-email">Password</label>
+              </div>
+            </div>
+            <button className="submit">Submit</button>
+          </form>
         </div>
       )}
     </div>
