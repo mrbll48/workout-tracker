@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const secret = require("crypto").randomBytes(64).toString("hex");
+const secret = "supersecretsd;lkdj;ckbjcxc;kvjb;sdflkfgj;lkjsdfg";
 const expiration = "2h";
 
 module.exports = {

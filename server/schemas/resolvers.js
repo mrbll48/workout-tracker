@@ -8,10 +8,11 @@ const resolvers = {
     addUser: async (_, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
+      console.log(user);
       return { token, user };
     },
     login: async (_, { username, password }) => {
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ username });
 
       if (!user) {
         throw new AuthenticationError("Error logging in");

@@ -17,7 +17,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  friends: [userSchema],
+  // friends: [userSchema],
 });
 
 // TODO: hash password
