@@ -26,6 +26,7 @@ const userSchema = new Schema({
   },
   friends: [friendSchema],
 
+});
 // hash password
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
