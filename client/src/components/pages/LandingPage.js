@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import landing from "../../images/landing.jpg";
+import "../css/landingpage.css";
 
 export default function LandingPage() {
   const [loginForm, setLoginForm] = useState(false);
@@ -21,16 +22,14 @@ export default function LandingPage() {
           Get Fit, Share Inspire: <br></br>Uniting Workouts, One Post at a Time
         </h1>
       </div>
-
-      {/* Create account form */}
-      {loginForm && (
+      {loginForm &&  (
         <div id="form-container">
           <form className="form">
             <p>Login</p>
             <div className="group">
               <input required className="main-input" type="text" />
               <span className="highlight-span"></span>
-              <label className="lebal-email">Email</label>
+              <label className="lebal-email">Username</label>
             </div>
             <div className="container-1">
               <div className="group">

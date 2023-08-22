@@ -9,8 +9,18 @@ const typeDefs = gql`
     friends: [User]
   }
 
+  type Auth {
+    token: ID!
+    user: User!
+  }
+
   type Query {
-    use: User
+    me: User
+  }
+
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
   }
 `;
 
