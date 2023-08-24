@@ -11,7 +11,7 @@ const typeDefs = gql`
   }
 
   type Workout {
-    userId: ID!
+    _id: ID
     text: String!
     date: String
     likes: Int
@@ -45,12 +45,12 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    postWorkout(text: String!, date: String!): Workout
 
-  updateUser(username: String, email: String, password: String): User
-  deleteUser: User
-  updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout
-  deleteWorkout(workoutId: ID!): Workout
+    postWorkout(text: String!, date: String): Workout #TODO: test mutation
+    updateUser(username: String, email: String, password: String): User #TODO: test mutation
+    deleteUser: User #TODO: test mutation
+    updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout #TODO: test mutation
+    deleteWorkout(workoutId: ID!): Workout #TODO: test mutation
   }
 `;
 
