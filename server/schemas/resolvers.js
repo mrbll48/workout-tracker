@@ -57,6 +57,39 @@ const resolvers = {
       );
       return workout;
     },
+    // new operations: update user & workout, delete user & workout
+    updateUser: async(_, { username, email, password }, context) => {
+      if(!context.user) {
+        throw new AuthenticationError("You need to be logged in");
+      }
+      return await User.findByIdAndUpdate(
+        context.user._id,
+        { username, email, password },
+        { new: true }
+      );
+    },
+    deleteUser: async (_, args, context) => {
+      if(!context.user) {
+        throw new AuthenticationError("You need to be logged in");
+      }
+      return await User.findByIdAndDelete(context.user._id);
+    },
+    updateWorkout: async (_, { workoutId, workoutDetails }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('You need to be logged in!');
+      }
+      return await Workout.findByIdAndUpdate(
+        workoutId,
+        { ...workoutDetails },
+        { new: true }
+      );
+  },
+  deleteWorkout: async (_, { workoutId }, context) => {
+    if (!context.user) {
+      throw new AuthenticationError('You need to be logged in!');
+    }
+    return await Workout.findByIdAndDelete(workoutId);
+    },
   },
 };
 
