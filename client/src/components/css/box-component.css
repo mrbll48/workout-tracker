@@ -1,4 +1,17 @@
 img {
-  width: 300px;
+  width: 310px;
   height: 300px;
+  border-radius: 25px;
+  filter: blur(0.5px);
+  transition: all 0.2s ease-in-out;
+}
+img:hover {
+  transform: scale(1.1);
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+#img-card {
+  padding: 15px;
 }
