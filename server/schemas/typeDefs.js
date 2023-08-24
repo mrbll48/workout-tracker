@@ -31,6 +31,9 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    users: [User]
+    workout(workoutId: String): Workout #TODO: workoutId needs to match with the query parameter on client side   
+    workouts(username: String): [Workout] 
   }
 
   type Mutation {
