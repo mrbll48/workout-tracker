@@ -50,7 +50,7 @@ const typeDefs = gql`
     updateUser(username: String, email: String, password: String): User #TODO: test mutation
     deleteUser: User #TODO: test mutation
     updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout #TODO: test mutation
-    deleteWorkout(workoutId: ID!): Workout #TODO: test mutation
+    deleteWorkout(workoutId: ID!): Workout
   }
 `;
 
