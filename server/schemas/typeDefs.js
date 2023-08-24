@@ -7,13 +7,14 @@ const typeDefs = gql`
     email: String!
     password: String!
     friends: [User]
+    workouts: [Workout]
   }
 
   type Workout {
     userId: ID!
     text: String!
     date: String
-    likes: INT
+    likes: Int
     comments: [Comment]
   }
 
@@ -32,14 +33,14 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
-    workout(workoutId: String): Workout #TODO: workoutId needs to match with the query parameter on client side   
-    workouts(username: String): [Workout] 
+    workout(workoutId: String): Workout #TODO: workoutId needs to match with the query parameter on client side
+    workouts(username: String): [Workout]
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    postWorkout(text: String!, )
+    postWorkout(text: String!, date: String!): Workout
   }
 `;
 

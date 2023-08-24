@@ -46,6 +46,17 @@ const resolvers = {
 
       return { token, user };
     },
+    postWorkout: async (_, { text, date, userId }, context) => {
+      const workout = await Workout.create({ text, date });
+
+      await User.findOneAndUpdate(
+        {
+          username: userId, // TODO: check userId to see if it has a value and works
+        },
+        { $addToSet: { workouts: workout._id } }
+      );
+      return workout;
+    },
   },
 };
 
