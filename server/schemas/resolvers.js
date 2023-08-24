@@ -46,20 +46,24 @@ const resolvers = {
 
       return { token, user };
     },
-    postWorkout: async (_, { text, date, userId }, context) => {
-      const workout = await Workout.create({ text, date });
+    postWorkout: async (_, { text }, context) => {
+      console.log(text);
 
+      const workoutDate = Date.now;
+      const workout = await Workout.create({ text, workoutDate });
+
+      console.log(workout);
       await User.findOneAndUpdate(
         {
-          username: userId, // TODO: check userId to see if it has a value and works
+          username: context.user.username,
         },
         { $addToSet: { workouts: workout._id } }
       );
       return workout;
     },
     // new operations: update user & workout, delete user & workout
-    updateUser: async(_, { username, email, password }, context) => {
-      if(!context.user) {
+    updateUser: async (_, { username, email, password }, context) => {
+      if (!context.user) {
         throw new AuthenticationError("You need to be logged in");
       }
       return await User.findByIdAndUpdate(
@@ -69,26 +73,26 @@ const resolvers = {
       );
     },
     deleteUser: async (_, args, context) => {
-      if(!context.user) {
+      if (!context.user) {
         throw new AuthenticationError("You need to be logged in");
       }
       return await User.findByIdAndDelete(context.user._id);
     },
     updateWorkout: async (_, { workoutId, workoutDetails }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('You need to be logged in!');
+        throw new AuthenticationError("You need to be logged in!");
       }
       return await Workout.findByIdAndUpdate(
         workoutId,
         { ...workoutDetails },
         { new: true }
       );
-  },
-  deleteWorkout: async (_, { workoutId }, context) => {
-    if (!context.user) {
-      throw new AuthenticationError('You need to be logged in!');
-    }
-    return await Workout.findByIdAndDelete(workoutId);
+    },
+    deleteWorkout: async (_, { workoutId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("You need to be logged in!");
+      }
+      return await Workout.findByIdAndDelete(workoutId);
     },
   },
 };
