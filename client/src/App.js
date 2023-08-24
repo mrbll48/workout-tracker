@@ -1,9 +1,8 @@
-import MainPage from "./components/pages/MainPage";
+// import MainPage from "./components/pages/MainPage";
+import LandingPage from "./components/pages/LandingPage";
 
 function App() {
-  return (
-    <MainPage />
-  );
+  return <LandingPage />;
 }
 
 export default App;
