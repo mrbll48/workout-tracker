@@ -1,4 +1,30 @@
 img {
-  width: 300px;
+  width: 310px;
   height: 300px;
+  border-radius: 25px;
+  filter: blur(0.5px);
+  transition: all 0.2s ease-in-out;
+}
+img:hover {
+  transform: scale(1.1);
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#img-card {
+  padding: 15px;
+}
+.img-container {
+  text-align: center;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2px;
+  font-size: 26px;
+}
+.dropdown-container {
+  padding-top: 5px;
 }

@@ -8,9 +8,13 @@
   position: absolute;
   object-fit: cover;
 }
-.nav-icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 1.2em 1.5em 1em 1em;
+.nav-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1.2em 1.5em 1em 1em;
+}
+.box-component {
+  display: flex;
+  justify-content: center;
 }

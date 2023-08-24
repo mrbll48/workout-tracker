@@ -59,6 +59,7 @@ const SignupForm = () => {
 
     return (
       <div>
+
         <img className="fullscreen-image" src={landing} alt="nice" />
         <div className="btn-div">
           <button className="button" onClick={() => setLoginForm(true)}>
@@ -67,6 +68,7 @@ const SignupForm = () => {
           <button className="button" onClick={() => setCreateForm(true)}>
             Create Account
           </button>
+
         </div>
         <div>
           <h1 className="slogan">
