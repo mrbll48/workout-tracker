@@ -11,6 +11,7 @@ img:hover {
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 #img-card {
   padding: 15px;
@@ -23,4 +24,7 @@ h1 {
   padding: 0;
   letter-spacing: 2px;
   font-size: 26px;
+}
+.dropdown-container {
+  padding-top: 5px;
 }

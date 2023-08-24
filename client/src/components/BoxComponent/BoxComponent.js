@@ -1,29 +1,31 @@
 import React from "react";
 import "../css/box-component.css";
-import upper from "../../images/upper-picture.jpg";
-import lower from "../../images/lower-picture.jpg";
-import cardio from "../../images/cardio.jpg";
 
-function BoxComponent() {
+import Dropdown from "react-bootstrap/Dropdown";
+
+function BoxComponent({ image, dropdownText }) {
   return (
     <div className="container">
       <div className="img-container">
-        <a href="https://github.com/NekoNoka/Movies-Reviews" id="link">
-          <img id="img-card" src={upper} alt="" />
-        </a>
-        <h1 style={{ color: "white" }}>Upper Body</h1>
-      </div>
-      <div className="img-container">
-        <a href="https://github.com/NekoNoka/Movies-Reviews" id="link">
-          <img id="img-card" src={lower} alt="" />
-        </a>
-        <h1 style={{ color: "white" }}>Lower Body</h1>
-      </div>
-      <div className="img-container">
-        <a href="https://github.com/NekoNoka/Movies-Reviews" id="link">
-          <img id="img-card" src={cardio} alt="" />
-        </a>
-        <h1 style={{ color: "white" }}>Cardio</h1>
+        <img id="img-card" src={image} alt="" />
+        <div className="dropdown-container">
+          <Dropdown>
+            <Dropdown.Toggle
+              style={{
+                backgroundColor: "black",
+                // borderColor: "#c1a362"
+              }}
+              id="dropdown-basic"
+            >
+              {dropdownText}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item>Action</Dropdown.Item>
+              <Dropdown.Item>Another action</Dropdown.Item>
+              <Dropdown.Item>Something else</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
       </div>
     </div>
   );

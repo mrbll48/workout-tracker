@@ -6,6 +6,10 @@ import BoxComponent from "../BoxComponent";
 import { IconContext } from "react-icons";
 import { FaUserCircle } from "react-icons/fa";
 
+import strength from "../../images/upper-picture.jpg";
+import stretching from "../../images/lower-picture.jpg";
+import cardio from "../../images/cardio.jpg";
+
 export default function MainPage() {
   return (
     <div className="main-container">
@@ -18,7 +22,9 @@ export default function MainPage() {
         ;
       </div>
       <div className="box-component">
-        <BoxComponent title={"Cardio"} />
+        <BoxComponent image={strength} dropdownText={"Strength"} />
+        <BoxComponent image={stretching} dropdownText={"Stretching"} />
+        <BoxComponent image={cardio} dropdownText={"Cardio"} />
       </div>
     </div>
   );

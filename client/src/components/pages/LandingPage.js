@@ -22,7 +22,7 @@ export default function LandingPage() {
           Get Fit, Share Inspire: <br></br>Uniting Workouts, One Post at a Time
         </h1>
       </div>
-      {loginForm &&  (
+      {loginForm && (
         <div id="form-container">
           <form className="form">
             <p>Login</p>
