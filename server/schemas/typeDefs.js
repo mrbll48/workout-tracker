@@ -30,6 +30,11 @@ const typeDefs = gql`
     user: User!
   }
 
+  input WorkoutInput {
+    text: String!
+    date: String!
+  }
+
   type Query {
     me: User
     users: [User]
@@ -41,6 +46,11 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
     postWorkout(text: String!, date: String!): Workout
+
+  updateUser(username: String, email: String, password: String): User
+  deleteUser: User
+  updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout
+  deleteWorkout(workoutId: ID!): Workout
   }
 `;
 
