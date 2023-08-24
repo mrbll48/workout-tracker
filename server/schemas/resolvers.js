@@ -6,9 +6,10 @@ const { GraphQLError } = require("graphql");
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
-      console.log(context.user);
       if (context.user) {
-        return await User.findOne({ _id: context.user._id });
+        return await User.findOne({ _id: context.user._id }).populate(
+          "workouts"
+        );
       }
       throw new GraphQLError("You are not signed in");
     },
@@ -47,15 +48,16 @@ const resolvers = {
       return { token, user };
     },
     postWorkout: async (_, { text }, context) => {
-      console.log(text);
+      // console.log(text, context.user._id);
 
-      const workoutDate = Date.now;
-      const workout = await Workout.create({ text, workoutDate });
+      const user = context.user._id;
+      console.log(user);
+      const workout = await Workout.create({ text });
 
-      console.log(workout);
+      // console.log(workout);
       await User.findOneAndUpdate(
         {
-          username: context.user.username,
+          _id: user,
         },
         { $addToSet: { workouts: workout._id } }
       );
