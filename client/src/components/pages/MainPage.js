@@ -1,6 +1,8 @@
 import React from "react";
 import "../css/mainpage.css";
 
+import BoxComponent from "../BoxComponent";
+
 import { IconContext } from "react-icons";
 import { FaUserCircle } from "react-icons/fa";
 
@@ -14,6 +16,9 @@ export default function MainPage() {
           </div>
         </IconContext.Provider>
         ;
+      </div>
+      <div className="box-component">
+        <BoxComponent title={"Cardio"} />
       </div>
     </div>
   );
