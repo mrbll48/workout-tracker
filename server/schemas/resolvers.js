@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, Workout } = require("../models");
 const { signToken } = require("../utils/auth");
 const { GraphQLError } = require("graphql");
 
@@ -11,6 +11,15 @@ const resolvers = {
         return await User.findOne({ _id: context.user._id });
       }
       throw new GraphQLError("You are not signed in");
+    },
+    workout: async (parent, { workoutId }) => {
+      console.log(workoutId);
+      return Workout.findOne({ _id: workoutId });
+    },
+    workouts: async (parent, { username }) => {
+      console.log(username);
+      const params = username ? { username } : {};
+      return Workout.find({ params });
     },
   },
   Mutation: {
