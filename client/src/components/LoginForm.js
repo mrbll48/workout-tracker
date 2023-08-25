@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./css/landingpage.css";
+import {Button, Form} from "react-bootstrap";
+
 // import { ADD_USER } from "../../utils/mutations";
 // import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
@@ -75,7 +77,7 @@ const LoginForm = () => {
         </div> */}
         
           <div id="form-container">
-            <form className="form">
+          <form className="form">
               <p>Login</p>
               <div className="group">
                 <input required className="main-input" type="text" />

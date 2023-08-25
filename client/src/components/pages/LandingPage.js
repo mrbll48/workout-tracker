@@ -29,7 +29,13 @@ export default function LandingPage() {
           Create Account
         </button>
       </div>
-      {showLogin ? (
+
+      {
+        showLogin ? <LoginForm /> : showCreate ? <SignupForm/> :  <h1 className="slogan">
+          Get Fit, Share Inspire: <br></br>Uniting Workouts, One Post at a Time
+        </h1>
+      }
+      {/* {showLogin ? (
         <LoginForm />
       ) : (
         <h1 className="slogan">
@@ -40,7 +46,7 @@ export default function LandingPage() {
         <SignupForm />
       ) : (
        null
-      )}
+      )} */}
     </div>
   );
 }
