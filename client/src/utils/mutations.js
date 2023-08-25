@@ -36,7 +36,7 @@ export const POST_WORKOUT = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation updateUser($username: String!, $email: String!, $password: Sting!) {
+  mutation updateUser($username: String, $email: String, $password: Sting) {
     updateUser(username: $username, email: $email, password: $password) {
       token
       _id
