@@ -16,22 +16,25 @@ const workoutPostSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  likes: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  likes: {
+    type: Number,
+  },
   comments: [
     {
-      userId: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
+      commentText: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280,
       },
-      text: String,
-      date: {
+      commentAuthor: {
+        type: String,
+        required: true,
+      },
+      createdAt: {
         type: Date,
         default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
       },
     },
   ],

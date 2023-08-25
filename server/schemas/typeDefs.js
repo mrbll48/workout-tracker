@@ -20,9 +20,9 @@ const typeDefs = gql`
 
   type Comment {
     _id: ID
-    userId: String
-    text: String
-    date: String
+    commentText: String
+    commentAuthor: String
+    createdAt: String
   }
 
   type Auth {
@@ -32,7 +32,7 @@ const typeDefs = gql`
 
   input WorkoutInput {
     text: String!
-    date: String!
+    date: String
   }
 
   type Query {
@@ -43,14 +43,22 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    # tested functional mutations
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
+    postWorkout(text: String!, date: String): Workout
+    updateUser(username: String, email: String, password: String): User
+    deleteUser: User
+    updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout
+    deleteWorkout(workoutId: ID!): Workout
+    addComment(
+      workoutId: ID
+      commentText: String
+      commentAuthor: String
+    ): Workout
 
-    postWorkout(text: String!, date: String): Workout #TODO: test mutation
-    updateUser(username: String, email: String, password: String): User #TODO: test mutation
-    deleteUser: User #TODO: test mutation
-    updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout #TODO: test mutation
-    deleteWorkout(workoutId: ID!): Workout #TODO: test mutation
+    # untested mutations
+    # addLike(): Workout
   }
 `;
 
