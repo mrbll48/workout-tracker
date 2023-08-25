@@ -4,8 +4,7 @@ import LandingPage from "./components/pages/LandingPage";
 import BoxComponent from "./components/BoxComponent";
 
 function App() {
-  return <MainPage />;
-
+  return <LandingPage />;
 }
 
 export default App;

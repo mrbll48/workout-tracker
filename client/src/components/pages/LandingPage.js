@@ -9,42 +9,35 @@ import LoginForm from "../LoginForm";
 export default function LandingPage() {
   const [showLogin, setShowLogin] = useState(false);
   const [showCreate, setShowCreate] = useState(false);
-  const handleCloseLogin = () => setShowLogin(false);
+  // const handleCloseLogin = () => setShowLogin(false);
   const handleShowLogin = () => {
-    setShowLogin(true)
-    setShowCreate(false)
-  }
-  const handleCloseCreate = () => setShowCreate(false);
+    setShowLogin(true);
+    setShowCreate(false);
+  };
+  // const handleCloseCreate = () => setShowCreate(false);
   const handleShowCreate = () => {
-    setShowCreate(true)
-    setShowLogin(false)
-  }
+    setShowCreate(true);
+    setShowLogin(false);
+  };
   return (
     <div className="bg-img ">
-      {/* <img className="" src={landing} alt="nice" /> */}
       <div className="btn-div">
         <button className="button" onClick={handleShowLogin}>
           Login
-          </button>
+        </button>
         <button className="button" onClick={handleShowCreate}>
           Create Account
         </button>
-
       </div>
       {showLogin ? (
         <LoginForm />
+      ) : showCreate ? (
+        <SignupForm />
       ) : (
         <h1 className="slogan">
           Get Fit, Share Inspire: <br></br>Uniting Workouts, One Post at a Time
         </h1>
       )}
-      {showCreate ? (
-        <SignupForm />
-      ) : (
-       null
-      )}
     </div>
   );
 }
-
-
