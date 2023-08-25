@@ -12,6 +12,7 @@ const typeDefs = gql`
 
   type Workout {
     _id: ID
+    title: String!
     text: String!
     date: String
     likes: Int #TODO: figure out how to add likes to workouts
@@ -46,7 +47,7 @@ const typeDefs = gql`
     # tested functional mutations
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    postWorkout(text: String!, date: String): Workout
+    postWorkout(title: String!, text: String!, date: String): Workout
     updateUser(username: String, email: String, password: String): User
     deleteUser: User
     updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout
