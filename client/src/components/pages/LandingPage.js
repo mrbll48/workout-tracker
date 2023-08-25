@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/landingpage.css";
+
 import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignupForm from "../SignupForm";
@@ -28,6 +29,7 @@ export default function LandingPage() {
         <button className="button" onClick={handleShowCreate}>
           Create Account
         </button>
+
       </div>
 
       {

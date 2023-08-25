@@ -28,6 +28,12 @@ const userSchema = new Schema({
     required: true,
   },
   friends: [friendSchema],
+  workouts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "WorkoutPost",
+    },
+  ],
 });
 
 // hash password
