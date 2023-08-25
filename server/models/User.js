@@ -27,7 +27,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  friends: [friendSchema],
+  friends: [friendSchema], //TODO: add friends
   workouts: [
     {
       type: Schema.Types.ObjectId,
