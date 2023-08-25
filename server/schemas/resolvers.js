@@ -81,6 +81,7 @@ const resolvers = {
       return await User.findByIdAndDelete(context.user._id);
     },
     updateWorkout: async (_, { workoutId, workoutDetails }, context) => {
+      console.log(workoutDetails);
       if (!context.user) {
         throw new AuthenticationError("You need to be logged in!");
       }
@@ -96,6 +97,22 @@ const resolvers = {
       }
       return await Workout.findByIdAndDelete(workoutId);
     },
+    addComment: async (
+      _,
+      { workoutId, commentText, commentAuthor },
+      context
+    ) => {
+      if (context.user) {
+        return await Workout.findOneAndUpdate(
+          { _id: workoutId },
+          { $addToSet: { comments: { commentText, commentAuthor } } },
+          { new: true }
+        ).populate("comments");
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // addLike: async () => {},
   },
 };
 
