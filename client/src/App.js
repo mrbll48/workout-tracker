@@ -5,5 +5,4 @@ import BoxComponent from "./components/BoxComponent";
 function App() {
   return <LandingPage />;
 }
-
 export default App;

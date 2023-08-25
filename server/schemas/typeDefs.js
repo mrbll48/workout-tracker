@@ -14,15 +14,15 @@ const typeDefs = gql`
     _id: ID
     text: String!
     date: String
-    likes: Int
+    likes: Int #TODO: figure out how to add likes to workouts
     comments: [Comment]
   }
 
   type Comment {
     _id: ID
-    userId: String
-    text: String
-    date: String
+    commentText: String
+    commentAuthor: String
+    createdAt: String
   }
 
   type Auth {
@@ -32,25 +32,33 @@ const typeDefs = gql`
 
   input WorkoutInput {
     text: String!
-    date: String!
+    date: String
   }
 
   type Query {
     me: User
     users: [User]
-    workout(workoutId: String): Workout #TODO: workoutId needs to match with the query parameter on client side
-    workouts(username: String): [Workout]
+    workout(workoutId: String): Workout
+    workouts(userId: String): [Workout]
   }
 
   type Mutation {
+    # tested functional mutations
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
+    postWorkout(text: String!, date: String): Workout
+    updateUser(username: String, email: String, password: String): User
+    deleteUser: User
+    updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout
+    deleteWorkout(workoutId: ID!): Workout
+    addComment(
+      workoutId: ID
+      commentText: String
+      commentAuthor: String
+    ): Workout
 
-    postWorkout(text: String!, date: String): Workout #TODO: test mutation
-    updateUser(username: String, email: String, password: String): User #TODO: test mutation
-    deleteUser: User #TODO: test mutation
-    updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout #TODO: test mutation
-    deleteWorkout(workoutId: ID!): Workout #TODO: test mutation
+    # untested mutations
+    # addLike(): Workout
   }
 `;
 
