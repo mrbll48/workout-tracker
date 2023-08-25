@@ -14,7 +14,7 @@ const typeDefs = gql`
     _id: ID
     text: String!
     date: String
-    likes: Int
+    likes: Int #TODO: figure out how to add likes to workouts
     comments: [Comment]
   }
 
@@ -38,8 +38,8 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
-    workout(workoutId: String): Workout #TODO: workoutId needs to match with the query parameter on client side
-    workouts(username: String): [Workout]
+    workout(workoutId: String): Workout
+    workouts(userId: String): [Workout]
   }
 
   type Mutation {

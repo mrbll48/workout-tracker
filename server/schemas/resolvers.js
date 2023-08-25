@@ -14,13 +14,13 @@ const resolvers = {
       throw new GraphQLError("You are not signed in");
     },
     workout: async (parent, { workoutId }) => {
-      console.log(workoutId);
-      return Workout.findOne({ _id: workoutId });
+      const params = workoutId ? { workoutId } : {};
+      console.log(params);
+      return Workout.find(params);
     },
-    workouts: async (parent, { username }) => {
-      console.log(username);
-      const params = username ? { username } : {};
-      return Workout.find({ params });
+    workouts: async (parent, { userId }) => {
+      console.log(userId);
+      return Workout.find();
     },
   },
   Mutation: {
