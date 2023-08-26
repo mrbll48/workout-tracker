@@ -13,7 +13,7 @@ export const ADD_USER = gql`
 `;
 
 export const LOGIN_USER = gql`
-  mutation login($username: String!, $password: String!, $email: Sting!) {
+  mutation login($username: String!, $password: String!) {
     login(username: $username, password: $password) {
       token
       user {
@@ -25,7 +25,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const POST_WORKOUT = gql`
-  mutation postWorkout($text: String!, $date: Sting!) {
+  mutation postWorkout($text: String!, $date: String!) {
     postWorkout(text: $text, date: $date) {
       _id
       text
@@ -35,7 +35,7 @@ export const POST_WORKOUT = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation updateUser($username: String, $email: String, $password: Sting) {
+  mutation updateUser($username: String, $email: String, $password: String) {
     updateUser(username: $username, email: $email, password: $password) {
       token
       _id
