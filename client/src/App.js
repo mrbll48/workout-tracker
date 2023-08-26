@@ -1,5 +1,6 @@
 import MainPage from "./components/pages/MainPage";
 import LandingPage from "./components/pages/LandingPage";
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -39,5 +40,6 @@ function App() {
       <LandingPage />
     </ApolloProvider>
   );
+
 }
 export default App;

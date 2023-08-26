@@ -22,9 +22,18 @@ export default function MainPage() {
         ;
       </div>
       <div className="box-component">
-        <BoxComponent image={strength} dropdownText={"Strength"} />
-        <BoxComponent image={stretching} dropdownText={"Stretching"} />
-        <BoxComponent image={cardio} dropdownText={"Cardio"} />
+        <BoxComponent
+          image={strength}
+          workoutType={"Strength"}
+          workoutMuscle={"Chest"}
+          workoutDifficulty={"Beginner"}
+        />
+        <BoxComponent
+          image={stretching}
+          workoutType={"Stretching"}
+          workoutMuscle={"Calves"}
+        />
+        <BoxComponent image={cardio} workoutType={"Cardio"} />
       </div>
     </div>
   );
