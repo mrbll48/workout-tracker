@@ -1,5 +1,4 @@
 .main-container {
-  /* background-color: #fff; */
   background-color: #1c1c24;
   background-position: center;
   width: 100vw;
@@ -16,5 +15,5 @@
 }
 .box-component {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
