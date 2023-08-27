@@ -4,12 +4,7 @@ import "../css/workout-info-card.css";
 function WorkoutInfoComponent({ name, muscle, instructions }) {
   return (
     // ? I believe we will need to .map this whole container to display all 10.
-    // <div>
-    //   <h1>{name}</h1>
-    //   <h2>Muscle: {muscle}</h2>
-    //   <p>{instructions}</p>
-    // </div>
-
+    // * Should we display each of them on a single component?
     <div className="container">
       <div className="box">
         <span className="title">{name}Name</span>
@@ -19,6 +14,10 @@ function WorkoutInfoComponent({ name, muscle, instructions }) {
             actually.
           </p>
           <span>Muscle:{muscle}</span>
+          <br></br>
+          <button id="close-btn" onClick={() => console.log("Ok")}>
+            Close X
+          </button>
         </div>
       </div>
     </div>
