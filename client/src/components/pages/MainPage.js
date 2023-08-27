@@ -26,7 +26,6 @@ export default function MainPage() {
           image={strength}
           workoutType={"Strength"}
           workoutMuscle={"Chest"}
-          workoutDifficulty={"Beginner"}
         />
         <BoxComponent
           image={stretching}
