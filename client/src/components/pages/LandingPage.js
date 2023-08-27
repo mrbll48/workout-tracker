@@ -58,7 +58,6 @@ export default function LandingPage() {
           Create Account
 
         </button> */}
-
       </div>
       {showLogin ? (
         <LoginForm />
@@ -70,8 +69,7 @@ export default function LandingPage() {
         </h1>
       )}
 
-      {showCreate ? <SignupForm /> : null}
-
+      {/* {showCreate ? <SignupForm /> : null} */}
     </div>
   );
 }
