@@ -2,6 +2,7 @@ import React from "react";
 import "../css/mainpage.css";
 
 import BoxComponent from "../BoxComponent";
+import Dropdown from "../Dropdown";
 
 import { IconContext } from "react-icons";
 import { FaUserCircle } from "react-icons/fa";
@@ -27,12 +28,33 @@ export default function MainPage() {
           workoutType={"Strength"}
           workoutMuscle={"Chest"}
         />
+        <Dropdown
+          title={"Strength"}
+          opt1={"Muscle 1"}
+          opt2={"Muscle 2"}
+          opt3={"Muscle 3"}
+          onClick={() => console.log("Ok!")}
+        />
         <BoxComponent
           image={stretching}
           workoutType={"Stretching"}
           workoutMuscle={"Calves"}
         />
+        <Dropdown
+          title={"Stretching"}
+          opt1={"Muscle 1"}
+          opt2={"Muscle 2"}
+          opt3={"Muscle 3"}
+          onClick={() => console.log("Ok!")}
+        />
         <BoxComponent image={cardio} workoutType={"Cardio"} />
+        <Dropdown
+          title={"Cardio"}
+          opt1={"Muscle 1"}
+          opt2={"Muscle 2"}
+          opt3={"Muscle 3"}
+          onClick={() => console.log("Ok!")}
+        />
       </div>
     </div>
   );

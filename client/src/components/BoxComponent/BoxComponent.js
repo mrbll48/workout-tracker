@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/box-component.css";
 
-import Dropdown from "react-bootstrap/Dropdown";
+// import Dropdown from "react-bootstrap/Dropdown";
 const workoutAPIKey = "4Z7299Xd9HEZMOuF2j15sg==HS0gwsLVKjmqzWlK";
 
 function BoxComponent({ image, workoutType, muscleInput }) {
@@ -35,7 +35,7 @@ function BoxComponent({ image, workoutType, muscleInput }) {
       <div className="img-container">
         <img id="img-card" src={image} alt="" />
         <div className="dropdown-container">
-          <Dropdown>
+          {/* <Dropdown>
             <Dropdown.Toggle
               style={{
                 backgroundColor: "black",
@@ -50,7 +50,7 @@ function BoxComponent({ image, workoutType, muscleInput }) {
               <Dropdown.Item>Another action</Dropdown.Item>
               <Dropdown.Item>Something else</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+          </Dropdown> */}
         </div>
       </div>
     </div>
