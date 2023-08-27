@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../css/mainpage.css";
 
-import BoxComponent from "../BoxComponent";
+import ImgComponent from "../ImgComponent";
 import Dropdown from "../Dropdown";
 
 import { IconContext } from "react-icons";
@@ -13,7 +13,6 @@ import cardio from "../../images/cardio.jpg";
 import WorkoutInfoComponent from "../WorkoutInfoComponent/WorkoutInfoComponent";
 
 export default function MainPage() {
-  const [workoutDetails, setworkoutDetails] = useState();
   return (
     <div className="main-container">
       <div className="nav-icons">
@@ -25,7 +24,7 @@ export default function MainPage() {
         ;
       </div>
       <div className="box-component">
-        <BoxComponent
+        <ImgComponent
           image={strength}
           workoutType={"Strength"}
           workoutMuscle={"Chest"}
@@ -38,7 +37,7 @@ export default function MainPage() {
           // * Call API and display WorkoutInfoComponent
           onClick={() => console.log("Ok!")}
         />
-        <BoxComponent
+        <ImgComponent
           image={stretching}
           workoutType={"Stretching"}
           workoutMuscle={"Calves"}
@@ -51,7 +50,7 @@ export default function MainPage() {
           // * Call API and display WorkoutInfoComponent
           onClick={() => console.log("Ok!")}
         />
-        <BoxComponent image={cardio} workoutType={"Cardio"} />
+        <ImgComponent image={cardio} workoutType={"Cardio"} />
         <Dropdown
           title={"Cardio"}
           opt1={"Muscle 1"}

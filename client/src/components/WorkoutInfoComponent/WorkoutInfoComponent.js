@@ -16,7 +16,7 @@ function WorkoutInfoComponent({ name, muscle, instructions }) {
           <span>Muscle:{muscle}</span>
           <br></br>
           <button id="close-btn" onClick={() => console.log("Ok")}>
-            Close X
+            Close
           </button>
         </div>
       </div>
