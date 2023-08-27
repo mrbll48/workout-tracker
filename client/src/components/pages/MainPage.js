@@ -10,6 +10,7 @@ import { FaUserCircle } from "react-icons/fa";
 import strength from "../../images/upper-picture.jpg";
 import stretching from "../../images/lower-picture.jpg";
 import cardio from "../../images/cardio.jpg";
+import WorkoutInfoComponent from "../WorkoutInfoComponent/WorkoutInfoComponent";
 
 export default function MainPage() {
   return (
@@ -56,6 +57,7 @@ export default function MainPage() {
           onClick={() => console.log("Ok!")}
         />
       </div>
+      <WorkoutInfoComponent />
     </div>
   );
 }

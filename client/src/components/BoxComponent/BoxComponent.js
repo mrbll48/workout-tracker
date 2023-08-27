@@ -34,24 +34,6 @@ function BoxComponent({ image, workoutType, muscleInput }) {
     <div className="container">
       <div className="img-container">
         <img id="img-card" src={image} alt="" />
-        <div className="dropdown-container">
-          {/* <Dropdown>
-            <Dropdown.Toggle
-              style={{
-                backgroundColor: "black",
-                // borderColor: "#c1a362"
-              }}
-              id="dropdown-basic"
-            >
-              {workoutType}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={searchApi}>Action</Dropdown.Item>
-              <Dropdown.Item>Another action</Dropdown.Item>
-              <Dropdown.Item>Something else</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown> */}
-        </div>
       </div>
     </div>
   );
