@@ -10,7 +10,9 @@ import { FaUserCircle } from "react-icons/fa";
 import strength from "../../images/upper-picture.jpg";
 import stretching from "../../images/lower-picture.jpg";
 import cardio from "../../images/cardio.jpg";
+import cat from "../../images/black-cat.jpg";
 import WorkoutInfoComponent from "../WorkoutInfoComponent/WorkoutInfoComponent";
+import PostCard from "../PostCard/PostCard";
 
 export default function MainPage() {
   return (
@@ -61,6 +63,7 @@ export default function MainPage() {
         />
       </div>
       <WorkoutInfoComponent />
+      <PostCard photo={cat} />
     </div>
   );
 }
