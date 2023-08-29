@@ -1,5 +1,6 @@
 import MainPage from "./components/pages/MainPage";
 import LandingPage from "./components/pages/LandingPage";
+import UploadWidget from "./components/UploadWidget.js/UploadWidget";
 
 import {
   ApolloClient,
@@ -8,6 +9,14 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+
+// * Cloudinary
+import { Cloudinary } from "@cloudinary/url-gen";
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: "di3nk6hyq",
+  },
+});
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -36,7 +45,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <MainPage />
+      <UploadWidget />
     </ApolloProvider>
   );
 }

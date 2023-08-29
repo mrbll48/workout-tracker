@@ -64,6 +64,7 @@ export default function MainPage() {
       </div>
       <WorkoutInfoComponent />
       <PostCard photo={cat} />
+      <div></div>
     </div>
   );
 }
