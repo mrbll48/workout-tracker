@@ -11,6 +11,15 @@ import cat from "../../images/black-cat.jpg";
 import WorkoutInfoComponent from "../WorkoutInfoComponent/WorkoutInfoComponent";
 import PostCard from "../PostCard/PostCard";
 
+const muscles = [
+  "abdominals",
+  "abductors",
+  "adductors",
+  "biceps",
+  "calves",
+  "chest",
+];
+
 export default function MainPage() {
   return (
     <div className="main-container">
@@ -29,9 +38,7 @@ export default function MainPage() {
         />
         <Dropdown
           title={"Strength"}
-          opt1={"Muscle 1"}
-          opt2={"Muscle 2"}
-          opt3={"Muscle 3"}
+          muscle
           // * Call API and display WorkoutInfoComponent
           onClick={() => console.log("Ok!")}
         />
@@ -42,18 +49,12 @@ export default function MainPage() {
         />
         <Dropdown
           title={"Stretching"}
-          opt1={"Muscle 1"}
-          opt2={"Muscle 2"}
-          opt3={"Muscle 3"}
           // * Call API and display WorkoutInfoComponent
           onClick={() => console.log("Ok!")}
         />
         <ImgComponent image={cardio} workoutType={"Cardio"} />
         <Dropdown
           title={"Cardio"}
-          opt1={"Muscle 1"}
-          opt2={"Muscle 2"}
-          opt3={"Muscle 3"}
           // * Call API and display WorkoutInfoComponent
           onClick={() => console.log("Ok!")}
         />
