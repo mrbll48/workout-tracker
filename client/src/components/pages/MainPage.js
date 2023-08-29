@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/mainpage.css";
 
 import ImgComponent from "../ImgComponent";
@@ -13,8 +13,11 @@ import cardio from "../../images/cardio.jpg";
 import cat from "../../images/black-cat.jpg";
 import WorkoutInfoComponent from "../WorkoutInfoComponent/WorkoutInfoComponent";
 import PostCard from "../PostCard/PostCard";
+import UserWorkout from "../UserWorkout";
 
 export default function MainPage() {
+  const [postCard, setPostCard] = useState();
+
   return (
     <div className="main-container">
       <div className="nav-icons">
@@ -62,8 +65,9 @@ export default function MainPage() {
           onClick={() => console.log("Ok!")}
         />
       </div>
+      {postCard && <PostCard photo={cat} />}
       <WorkoutInfoComponent />
-      <PostCard photo={cat} />
+      <UserWorkout />
       <div></div>
     </div>
   );

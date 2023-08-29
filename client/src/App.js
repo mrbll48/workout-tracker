@@ -12,6 +12,7 @@ import { setContext } from "@apollo/client/link/context";
 
 // * Cloudinary
 import { Cloudinary } from "@cloudinary/url-gen";
+import WorkoutInfoComponent from "./components/WorkoutInfoComponent/WorkoutInfoComponent";
 const cld = new Cloudinary({
   cloud: {
     cloudName: "di3nk6hyq",
@@ -45,7 +46,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <UploadWidget />
+      <MainPage />
     </ApolloProvider>
   );
 }
