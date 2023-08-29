@@ -47,12 +47,12 @@ const resolvers = {
 
       return { token, user };
     },
-    postWorkout: async (_, { text, title }, context) => {
+    postWorkout: async (_, { exercise, sets, reps }, context) => {
       // console.log(text, context.user._id);
 
       const user = context.user._id;
       console.log(user);
-      const workout = await Workout.create({ text, title }); //TODO: test adding title
+      const workout = await Workout.create({ exercise, sets, reps });
 
       // console.log(workout);
       await User.findOneAndUpdate(

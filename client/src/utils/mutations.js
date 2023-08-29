@@ -25,11 +25,12 @@ export const LOGIN_USER = gql`
 `;
 
 export const POST_WORKOUT = gql`
-  mutation postWorkout($text: String!, $date: String!) {
-    postWorkout(text: $text, date: $date) {
+  mutation postWorkout($exercise: String!, $sets: String!, $reps: String!) {
+    postWorkout(exercise: $exercise, sets: $sets, reps: $reps) {
       _id
-      text
-      date
+      exercise
+      sets
+      reps
     }
   }
 `;

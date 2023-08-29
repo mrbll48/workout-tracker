@@ -7,10 +7,19 @@ import strength from "../../images/upper-picture.jpg";
 import stretching from "../../images/lower-picture.jpg";
 import cardio from "../../images/cardio.jpg";
 import cat from "../../images/black-cat.jpg";
-
+import APIWorkout from "../APIWorkout";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
 import NavScroll from "../NavScroll";
+
+const muscles = [
+  "abdominals",
+  "abductors",
+  "adductors",
+  "biceps",
+  "calves",
+  "chest",
+];
 
 export default function MainPage() {
   const [postCard, setPostCard] = useState(false);
@@ -58,6 +67,7 @@ export default function MainPage() {
         />
       </div>
       {postCard && <PostCard photo={cat} />}
+      <APIWorkout />
       {postWorkoutTable && <UserWorkout />}
       <div></div>
     </div>
