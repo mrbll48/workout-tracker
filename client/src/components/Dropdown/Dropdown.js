@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import "../css/workout-info-card.css";
-
+let name;
+let instructions;
 const apiKey = "4Z7299Xd9HEZMOuF2j15sg==HS0gwsLVKjmqzWlK";
 const muscles = [
   "abdominals",
@@ -28,16 +29,22 @@ export default function CustomDropdown({ title, muscle }) {
     fetch(url, options)
       .then((res) => res.json())
       .then(function (workouts) {
-        console.log(workouts, "DROPDOWN");
+        // console.log(workouts, "DROPDOWN");
+        printResults(workouts);
       })
       .catch((err) => {
         console.log(`error ${err}`);
       });
   };
+  let workout;
+  const printResults = async (workouts) => {
+    workout = workouts[0];
+    name = workout.name;
+    instructions = workout.instructions;
+    console.log(name, instructions);
+  };
 
-  let name;
-  let instructions;
-
+  console.log(name);
   return (
     <div>
       <Dropdown>
