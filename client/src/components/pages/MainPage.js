@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import "../css/mainpage.css";
-
 import ImgComponent from "../ImgComponent";
 import Dropdown from "../Dropdown";
-
 import { IconContext } from "react-icons";
 import { FaUserCircle } from "react-icons/fa";
-
 import strength from "../../images/upper-picture.jpg";
 import stretching from "../../images/lower-picture.jpg";
 import cardio from "../../images/cardio.jpg";
@@ -15,6 +12,15 @@ import WorkoutInfoComponent from "../WorkoutInfoComponent/WorkoutInfoComponent";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
 import NavScroll from "../NavScroll";
+
+const muscles = [
+  "abdominals",
+  "abductors",
+  "adductors",
+  "biceps",
+  "calves",
+  "chest",
+];
 
 export default function MainPage() {
   const [postCard, setPostCard] = useState(false);
@@ -28,6 +34,7 @@ export default function MainPage() {
   };
 
   return (
+
     <div className="main-container" bg="dark">
       <div>
         <NavScroll opt1={handleClosePostCard} opt2={handleWorkoutTable} />
@@ -40,9 +47,7 @@ export default function MainPage() {
         />
         <Dropdown
           title={"Strength"}
-          opt1={"Muscle 1"}
-          opt2={"Muscle 2"}
-          opt3={"Muscle 3"}
+          muscle
           // * Call API and display WorkoutInfoComponent
           onClick={() => console.log("Ok!")}
         />
@@ -53,18 +58,12 @@ export default function MainPage() {
         />
         <Dropdown
           title={"Stretching"}
-          opt1={"Muscle 1"}
-          opt2={"Muscle 2"}
-          opt3={"Muscle 3"}
           // * Call API and display WorkoutInfoComponent
           onClick={() => console.log("Ok!")}
         />
         <ImgComponent image={cardio} workoutType={"Cardio"} />
         <Dropdown
           title={"Cardio"}
-          opt1={"Muscle 1"}
-          opt2={"Muscle 2"}
-          opt3={"Muscle 3"}
           // * Call API and display WorkoutInfoComponent
           onClick={() => console.log("Ok!")}
         />

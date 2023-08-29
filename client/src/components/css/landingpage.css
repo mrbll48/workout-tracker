@@ -183,6 +183,13 @@
   animation: input-focus 0.3s ease;
 }
 
+.submit {
+  margin-top: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgb(193, 163, 98)
+}
+
 @keyframes input-focus {
   from {
     background: #42ff1c;
@@ -193,8 +200,3 @@
   }
 }
 
-.submit {
-  margin-top: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
