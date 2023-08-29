@@ -11,6 +11,7 @@ import cat from "../../images/black-cat.jpg";
 import WorkoutInfoComponent from "../WorkoutInfoComponent/WorkoutInfoComponent";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
+import NavScroll from "../NavScroll";
 
 const muscles = [
   "abdominals",
@@ -22,16 +23,21 @@ const muscles = [
 ];
 
 export default function MainPage() {
-  const [postCard, setPostCard] = useState();
+  const [postCard, setPostCard] = useState(false);
+  const [postWorkoutTable, setWorkoutTable] = useState(false);
+
+  const handleClosePostCard = () => {
+    setPostCard(true);
+  };
+  const handleWorkoutTable = () => {
+    setWorkoutTable(true);
+  };
 
   return (
-    <div className="main-container">
-      <div className="nav-icons">
-        <IconContext.Provider value={{ color: "white", size: "2.5em" }}>
-          <div>
-            <FaUserCircle />
-          </div>
-        </IconContext.Provider>
+
+    <div className="main-container" bg="dark">
+      <div>
+        <NavScroll opt1={handleClosePostCard} opt2={handleWorkoutTable} />
       </div>
       <div className="box-component">
         <ImgComponent
@@ -64,7 +70,7 @@ export default function MainPage() {
       </div>
       {postCard && <PostCard photo={cat} />}
       <WorkoutInfoComponent />
-      <UserWorkout />
+      {postWorkoutTable && <UserWorkout />}
       <div></div>
     </div>
   );
