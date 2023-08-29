@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import "../css/workout-info-card.css";
+
 const apiKey = "4Z7299Xd9HEZMOuF2j15sg==HS0gwsLVKjmqzWlK";
 const muscles = [
   "abdominals",
@@ -9,40 +11,32 @@ const muscles = [
   "calves",
   "chest",
 ];
-const m = document.getElementsByClassName("dropdown-item").value;
 
-function CustomDropdown({ title, muscle, key, opt3, onClick }) {
-  // console.log(title, opt1, opt2, opt3);
-  // console.log(muscles);
+export function APIWorkout({ name, muscle, instructions }) {
+  const [workout, setWorkout] = useState();
+  console.log(workout, "API");
+}
 
-  // const muscleOptions = muscles.map((muscle) => muscle.split(" "));
-  // console.log(muscleOptions);
-
+export default function CustomDropdown({ title, muscle }) {
   const searchAPI = async (muscle) => {
     let options = {
       method: "GET",
       headers: { "x-api-key": apiKey },
     };
 
-    // if (title === "Strength") {
-    //   console.log(title);
-    // } else if (title === "Stretching") {
-    //   console.log(title);
-    // } else if (title === "Cardio") {
-    //   console.log(title);
-    // }
-    console.log(title, muscle);
     let url = `https://api.api-ninjas.com/v1/exercises?type=${title}&muscle=${muscle}&difficulty=beginner`;
     fetch(url, options)
       .then((res) => res.json())
       .then(function (workouts) {
-        console.log(url, options);
-        console.log(workouts);
+        console.log(workouts, "DROPDOWN");
       })
       .catch((err) => {
         console.log(`error ${err}`);
       });
   };
+
+  let name;
+  let instructions;
 
   return (
     <div>
@@ -67,8 +61,19 @@ function CustomDropdown({ title, muscle, key, opt3, onClick }) {
           </>
         </Dropdown.Menu>
       </Dropdown>
+      <div className="container">
+        <div className="box">
+          <span className="title">Workout: {name}</span>
+          <div>
+            <p>Instructions: {instructions}</p>
+            <span>Muscle:{muscle}</span>
+            <br></br>
+            <button id="close-btn" onClick={() => console.log("ONCLICK")}>
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-export default CustomDropdown;
