@@ -4,14 +4,11 @@ import "../css/mainpage.css";
 import ImgComponent from "../ImgComponent";
 import Dropdown from "../Dropdown";
 
-import { IconContext } from "react-icons";
-import { FaUserCircle } from "react-icons/fa";
-
 import strength from "../../images/upper-picture.jpg";
 import stretching from "../../images/lower-picture.jpg";
 import cardio from "../../images/cardio.jpg";
 import cat from "../../images/black-cat.jpg";
-import WorkoutInfoComponent from "../WorkoutInfoComponent/WorkoutInfoComponent";
+import APIWorkout from "../APIWorkout";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
 import NavScroll from "../NavScroll";
@@ -70,7 +67,7 @@ export default function MainPage() {
         />
       </div>
       {postCard && <PostCard photo={cat} />}
-      <WorkoutInfoComponent />
+      <APIWorkout />
       {postWorkoutTable && <UserWorkout />}
       <div></div>
     </div>

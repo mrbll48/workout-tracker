@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/workout-info-card.css";
 
-function WorkoutInfoComponent({ name, muscle, instructions }) {
+function APIWorkout({ name, muscle, instructions }) {
   return (
     // ? I believe we will need to .map this whole container to display all 10.
     // * Should we display each of them on a single component?
@@ -24,4 +24,4 @@ function WorkoutInfoComponent({ name, muscle, instructions }) {
   );
 }
 
-export default WorkoutInfoComponent;
+export default APIWorkout;
