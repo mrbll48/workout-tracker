@@ -12,9 +12,9 @@ const typeDefs = gql`
 
   type Workout {
     _id: ID
-    title: String!
-    text: String!
-    date: String
+    exercise: String!
+    sets: String!
+    reps: String
     likes: Int #TODO: figure out how to add likes to workouts
     comments: [Comment]
   }
@@ -32,7 +32,9 @@ const typeDefs = gql`
   }
 
   input WorkoutInput {
-    text: String!
+    exercise: String!
+    sets: String!
+    reps: String!
     date: String
   }
 
@@ -47,7 +49,7 @@ const typeDefs = gql`
     # tested functional mutations
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    postWorkout(title: String!, text: String!, date: String): Workout
+    postWorkout(exercise: String!, sets: String!, reps: String!): Workout
     updateUser(username: String, email: String, password: String): User
     deleteUser: User
     updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout

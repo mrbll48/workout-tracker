@@ -7,7 +7,15 @@ const workoutPostSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  text: {
+  exercise: {
+    type: String,
+    required: true,
+  },
+  sets: {
+    type: String,
+    required: true,
+  },
+  reps: {
     type: String,
     required: true,
   },
