@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import Table from "react-bootstrap/Table";
+
 import { useMutation } from "@apollo/client";
 import { POST_WORKOUT } from "../../utils/mutations";
-const exercise = document.getElementById("exercise");
-const sets = document.getElementById("sets");
-const reps = document.getElementById("reps");
 
 function UserWorkout(e) {
   const [workoutInput, setWorkout] = useState();
@@ -35,13 +32,6 @@ function UserWorkout(e) {
       console.log(e);
     }
   };
-
-  // const [state, setState] = useState("");
-
-  // const handler = (e) => {
-  //   setState(e.key);
-  //   console.log(exercise, sets, reps);
-  // };
 
   return (
     <div>

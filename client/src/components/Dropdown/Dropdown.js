@@ -118,7 +118,8 @@ export default function CustomDropdown({ title, muscle }) {
           <div className="box">
             <span className="title">Workout: {workout}</span>
             <div>
-              <p>Instructions: {instructions}</p>/<span>Muscle:{muscle}</span>
+              <p>Instructions: {instructions}</p>
+              <span>Muscle:{muscle}</span>
               <br></br>
               <button id="close-btn" onClick={() => console.log("ONCLICK")}>
                 /Close

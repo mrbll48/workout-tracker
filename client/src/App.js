@@ -51,3 +51,31 @@ function App() {
   );
 }
 export default App;
+
+// // functions to convert photo to base64 for storing in database
+
+// const [postImage, setPostImage] = useState({ myFile: "" });
+
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+// };
+
+// const handleFileUpload = async (e) => {
+//   const file = e.target.files[0];
+//   console.log(file);
+//   const base64 = await convertToBase64(file);
+//   console.log(base64);
+// };
+
+// function convertToBase64(file) {
+//   return new Promise((resolve, reject) => {
+//     const fileReader = new FileReader();
+//     fileReader.readAsDataURL(file);
+//     fileReader.onload = () => {
+//       resolve(fileReader.result);
+//     };
+//     fileReader.onerror = (error) => {
+//       reject(error);
+//     };
+//   });
+// }

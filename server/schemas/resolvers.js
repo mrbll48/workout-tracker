@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Workout } = require("../models");
+const { User, Workout, Photos } = require("../models");
 const { signToken } = require("../utils/auth");
 const { GraphQLError } = require("graphql");
 
@@ -113,6 +113,11 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     // addLike: async () => {},
+    addPhoto: async (_, { picture }, context) => {
+      const pic = Photos.create({ picture });
+      console.log(pic);
+      return pic;
+    },
   },
 };
 
