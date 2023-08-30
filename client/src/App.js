@@ -1,6 +1,7 @@
 import MainPage from "./components/pages/MainPage";
 import LandingPage from "./components/pages/LandingPage";
 import UploadWidget from "./components/UploadWidget.js/UploadWidget";
+import ImageUpload from "./components/ImageUpload";
 
 import {
   ApolloClient,
