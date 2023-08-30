@@ -31,6 +31,10 @@ const typeDefs = gql`
     user: User!
   }
 
+  type Photo {
+    picture: String
+  }
+
   input WorkoutInput {
     exercise: String!
     sets: String!
@@ -62,6 +66,7 @@ const typeDefs = gql`
 
     # untested mutations
     # addLike(): Workout
+    addPhoto(picture: String): Photo
   }
 `;
 

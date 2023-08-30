@@ -11,7 +11,11 @@ import APIWorkout from "../APIWorkout";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
 import NavScroll from "../NavScroll";
+
+import { Workouts } from "../UserWorkout/Workouts";
+
 import ImageUpload from "../ImageUpload";
+
 
 const muscles = [
   "abdominals",
@@ -67,9 +71,14 @@ export default function MainPage() {
           onClick={() => console.log("Ok!")}
         />
       </div>
+
+      {postCard && <PostCard photo={cat} />}
+
       {postCard && <ImageUpload />}
+
       {/* <APIWorkout /> */}
       {postWorkoutTable && <UserWorkout />}
+      <Workouts />
       <div></div>
     </div>
   );

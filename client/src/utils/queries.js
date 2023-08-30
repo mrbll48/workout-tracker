@@ -46,12 +46,12 @@ export const GET_WORKOUT = gql`
 
 // query to get all workouts that are related to the username
 export const GET_WORKOUTS = gql`
-  query workouts($username: String) {
-    workouts(username: $username) {
+  query workouts($userId: String) {
+    workouts(userId: $userId) {
       _id
-      commentText
-      commentAuthor
-      createdAt
+      exercise
+      sets
+      reps
     }
   }
 `;
