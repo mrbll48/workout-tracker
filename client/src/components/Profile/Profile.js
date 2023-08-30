@@ -11,12 +11,13 @@ export default function Profile() {
   });
 
   console.log(data);
-
-  const { user } = data?.user;
+  const user = data?.user || {};
+  console.log(user);
 
   return (
     <div className="bg-dark">
-      <h3>{username}</h3>
+      <h3>{user.username}</h3>
+      <p>{user._id}</p>
     </div>
   );
 }
