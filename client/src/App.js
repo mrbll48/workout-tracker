@@ -2,6 +2,7 @@ import MainPage from "./components/pages/MainPage";
 import LandingPage from "./components/pages/LandingPage";
 import UploadWidget from "./components/UploadWidget.js/UploadWidget";
 import ImageUpload from "./components/ImageUpload";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import {
   ApolloClient,
@@ -13,6 +14,12 @@ import { setContext } from "@apollo/client/link/context";
 
 // * Cloudinary
 import { Cloudinary } from "@cloudinary/url-gen";
+import NavScroll from "./components/NavScroll/NavScroll";
+import UserWorkout from "./components/UserWorkout/UserWorkout";
+import LoginForm from "./components/LoginForm";
+import SignupForm from "./components/SignupForm";
+import { Workouts } from "./components/UserWorkout/Workouts";
+import Profile from "./components/Profile/Profile";
 
 const cld = new Cloudinary({
   cloud: {
@@ -47,36 +54,18 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <MainPage />
+      <Router>
+        <NavScroll />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/create-workout" element={<UserWorkout />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<SignupForm />} />
+          <Route path="/workouts" element={<Workouts />} />
+          <Route path="/profile/:username" element={<Profile />} />
+        </Routes>
+      </Router>
     </ApolloProvider>
   );
 }
 export default App;
-
-// // functions to convert photo to base64 for storing in database
-
-// const [postImage, setPostImage] = useState({ myFile: "" });
-
-// const handleSubmit = (e) => {
-//   e.preventDefault();
-// };
-
-// const handleFileUpload = async (e) => {
-//   const file = e.target.files[0];
-//   console.log(file);
-//   const base64 = await convertToBase64(file);
-//   console.log(base64);
-// };
-
-// function convertToBase64(file) {
-//   return new Promise((resolve, reject) => {
-//     const fileReader = new FileReader();
-//     fileReader.readAsDataURL(file);
-//     fileReader.onload = () => {
-//       resolve(fileReader.result);
-//     };
-//     fileReader.onerror = (error) => {
-//       reject(error);
-//     };
-//   });
-// }

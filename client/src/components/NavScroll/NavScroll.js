@@ -5,16 +5,22 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Auth from "../../utils/auth";
+import Profile from "../Profile/Profile";
 
-function NavScroll({ opt1, opt2, opt3, opt4, opt5 }) {
+function NavScroll({ opt1, opt2, opt3, opt4 }) {
   const handleLogout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
+
+  const singleUserSearch = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="#">Welcome!</Navbar.Brand>
+        <Navbar.Brand href="/">Welcome!</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -27,33 +33,23 @@ function NavScroll({ opt1, opt2, opt3, opt4, opt5 }) {
                 <Nav.Link href="#action1" onClick={opt1}>
                   Create Post
                 </Nav.Link>
-                <Nav.Link href="#action1" onClick={opt2}>
+                <Nav.Link href="/create-workout" onClick={opt2}>
                   Create Workout
                 </Nav.Link>
-                <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                <Nav.Link href="/" onClick={handleLogout}>
+                  Logout
+                </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="#action1" onClick={opt3}>
+                <Nav.Link href="/login" onClick={opt3}>
                   Login
                 </Nav.Link>
-                <Nav.Link href="#action1" onClick={opt4}>
+                <Nav.Link href="/signup" onClick={opt4}>
                   Signup
                 </Nav.Link>
               </>
             )}
-            {/* <Nav.Link href="#action1" onClick={opt3}>
-              Login
-            </Nav.Link>
-            <Nav.Link href="#action1" onClick={opt4}>
-              Signup
-            </Nav.Link>
-            <Nav.Link href="#action1" onClick={opt1}>
-              Create Post
-            </Nav.Link>
-            <Nav.Link href="#action1" onClick={opt2}>
-              Create Workout
-            </Nav.Link> */}
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -62,7 +58,14 @@ function NavScroll({ opt1, opt2, opt3, opt4, opt5 }) {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button
+              variant="outline-success"
+              type="submit"
+              path="users/:username"
+              onClick={singleUserSearch}
+            >
+              Search
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

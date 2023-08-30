@@ -13,6 +13,12 @@ const resolvers = {
       }
       throw new GraphQLError("You are not signed in");
     },
+    user: async (_, { username }, context) => {
+      const user = await User.findOne({ username: username }).populate(
+        "workouts"
+      );
+      return user;
+    },
     workout: async (parent, { workoutId }) => {
       const params = workoutId ? { workoutId } : {};
       console.log(params);

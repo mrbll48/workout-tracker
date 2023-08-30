@@ -16,15 +16,6 @@ import { Workouts } from "../UserWorkout/Workouts";
 import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
 
-const muscles = [
-  "abdominals",
-  "abductors",
-  "adductors",
-  "biceps",
-  "calves",
-  "chest",
-];
-
 export default function MainPage() {
   const [postCard, setPostCard] = useState(false);
   const [postWorkoutTable, setWorkoutTable] = useState(false);
@@ -46,14 +37,14 @@ export default function MainPage() {
 
   return (
     <div className="main-container" bg="dark">
-      <div>
+      {/* <div>
         <NavScroll
           opt1={handleClosePostCard}
           opt2={handleWorkoutTable}
           opt3={handleLogin}
           opt4={handleSignup}
         />
-      </div>
+      </div> */}
       <div className="box-component">
         <ImgComponent
           image={strength}
