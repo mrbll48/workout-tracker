@@ -25,16 +25,11 @@ export const Workouts = () => {
               <td>{w.exercise}</td>
             </tr>
           ))}
-        </tbody>
-
-        <tbody>
           {workouts.map((w) => (
             <tr>
               <td>{w.sets}</td>
             </tr>
           ))}
-        </tbody>
-        <tbody>
           {workouts.map((w) => (
             <tr>
               <td>{w.reps}</td>
