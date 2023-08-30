@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -13,8 +13,12 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
     Auth.logout();
   };
 
-  const singleUserSearch = (e) => {
+  const [value, setValue] = useState();
+  const onInput = ({ target: { value } }) => setValue(value);
+  const onFormSubmit = (e) => {
     e.preventDefault();
+    console.log(value);
+    setValue();
   };
 
   return (
@@ -51,18 +55,19 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
               </>
             )}
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex" onSUbmit={onFormSubmit}>
             <Form.Control
-              type="search"
+              type="text"
               placeholder="Find a friend"
               className="me-2"
               aria-label="Search"
+              onChange={onInput}
+              value={value}
             />
             <Button
               variant="outline-success"
               type="submit"
-              path="users/:username"
-              onClick={singleUserSearch}
+              href={`/profile/${value}`}
             >
               Search
             </Button>
