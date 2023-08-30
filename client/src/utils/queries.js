@@ -25,6 +25,23 @@ export const GET_ME = gql`
     }
   }
 `;
+export const QUERY_SINGLE_USER = gql`
+  query user($username: String) {
+    user(username: $username) {
+      _id
+      username
+      #   friends {
+      #     _id
+      #     username
+      #   }
+      #   workouts {
+      #     _id
+      #     text
+      #     date
+      #   }
+    }
+  }
+`;
 
 // query to get a specific qorkout with an id
 export const GET_WORKOUT = gql`

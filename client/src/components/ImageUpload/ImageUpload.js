@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/workout-info-card.css";
+import { useMutation } from "@apollo/client";
 
 import {
   AiOutlineRise,
@@ -10,50 +11,73 @@ import {
 import { IconContext } from "react-icons";
 
 function ImageUpload({ photo }) {
-  const [file, setFile] = useState();
-  function handleChange(e) {
-    console.log(e.target.files);
-    setFile(URL.createObjectURL(e.target.files[0]));
-  }
+  const [postImage, setPostImage] = useState({ myFile: "" });
 
-  // const [userUploadPicture, setUserUploadPicture] = useState(false);
-  const [showIcons, setShowIcons] = useState();
+  const createPost = async (newImage) => {
+    try {
+      // await axios.post(url, newImage)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createPost(postImage);
+    console.log("Uploaded");
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    console.log(base64);
+    setPostImage({ ...postImage, myFile: base64 });
+  };
 
   return (
-    <div>
-      <div className="parent">
-        <div>
-          <div>
-            <img src={file} id="photo-container" />
-          </div>
-          {showIcons && (
-            <div className="buttons">
-              <IconContext.Provider value={{ color: "white", size: "2.1em" }}>
-                <div>
-                  <AiOutlineRise id="spacing" />
-                  <AiOutlineMenu id="spacing" />
-                  <AiOutlineShareAlt id="spacing" />
-                </div>
-              </IconContext.Provider>
-            </div>
-          )}
-        </div>
-        {/* Inputs */}
-        <div className="group">
-          <input required="" type="text" className="input" />
-          <span className="highlight"></span>
-          <span className="bar"></span>
-          <label>Name</label>
-        </div>
-        <div className="group">
-          <textarea className="input" />
-          <span className="bar"></span>
-          <label>Description</label>
-          <div className="highlight"></div>
-        </div>
-      </div>
+    <div className="App">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="file-upload" className="custom-file-upload">
+          <img
+            src={
+              postImage.myFile ||
+              {
+                /*avatar*/
+              }
+            }
+            alt=""
+          />
+        </label>
+
+        <input
+          type="file"
+          lable="Image"
+          name="myFile"
+          id="file-upload"
+          accept=".jpeg, .png, .jpg"
+          onChange={(e) => handleFileUpload(e)}
+        />
+
+        <h3>Doris Wilder</h3>
+        <span>Designer</span>
+
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
 
 export default ImageUpload;
+
+function convertToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+    fileReader.onerror = (error) => {
+      reject(error);
+    };
+  });
+}
