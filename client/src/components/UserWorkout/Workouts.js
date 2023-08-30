@@ -10,33 +10,25 @@ export const Workouts = () => {
   console.log(workouts);
 
   return (
-    <div>
-      <Table responsive variant="dark">
-        <thead>
-          <tr>
-            <th>Exercises</th>
-            <th>Sets</th>
-            <th>Reps</th>
-          </tr>
-        </thead>
-        <tbody>
-          {workouts.map((w) => (
-            <tr>
-              <td>{w.exercise}</td>
-            </tr>
-          ))}
-          {workouts.map((w) => (
-            <tr>
-              <td>{w.sets}</td>
-            </tr>
-          ))}
-          {workouts.map((w) => (
-            <tr>
-              <td>{w.reps}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </div>
+    <section className="d-flex flex-direction-column">
+      <div className="d-flex flex-column">
+        <p className="px-5">Exercises</p>
+        {workouts?.map((w) => (
+          <p className="px-5">{w.exercise}</p>
+        ))}
+      </div>
+      <div className="d-flex justify-content-center flex-column">
+        <p className="px-5">Sets</p>
+        {workouts?.map((w) => (
+          <p className="px-5">{w.sets}</p>
+        ))}
+      </div>
+      <div>
+        <p className="px-5">Reps</p>
+        {workouts?.map((w) => (
+          <p className="px-5">{w.reps}</p>
+        ))}
+      </div>
+    </section>
   );
 };

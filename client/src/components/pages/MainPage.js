@@ -11,12 +11,10 @@ import APIWorkout from "../APIWorkout";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
 import NavScroll from "../NavScroll";
-
 import ImageUpload from "../ImageUpload";
 import { Workouts } from "../UserWorkout/Workouts";
-=========
-import ImageUpload from "../ImageUpload";
->>>>>>>>> Temporary merge branch 2
+import LoginForm from "../LoginForm";
+import SignupForm from "../SignupForm";
 
 const muscles = [
   "abdominals",
@@ -30,6 +28,8 @@ const muscles = [
 export default function MainPage() {
   const [postCard, setPostCard] = useState(false);
   const [postWorkoutTable, setWorkoutTable] = useState(false);
+  const [login, setLogin] = useState(false);
+  const [signup, setSignup] = useState(false);
 
   const handleClosePostCard = () => {
     setPostCard(true);
@@ -37,11 +37,22 @@ export default function MainPage() {
   const handleWorkoutTable = () => {
     setWorkoutTable(true);
   };
+  const handleLogin = () => {
+    setLogin(true);
+  };
+  const handleSignup = () => {
+    setSignup(true);
+  };
 
   return (
     <div className="main-container" bg="dark">
       <div>
-        <NavScroll opt1={handleClosePostCard} opt2={handleWorkoutTable} />
+        <NavScroll
+          opt1={handleClosePostCard}
+          opt2={handleWorkoutTable}
+          opt3={handleLogin}
+          opt4={handleSignup}
+        />
       </div>
       <div className="box-component">
         <ImgComponent
@@ -72,11 +83,11 @@ export default function MainPage() {
           onClick={() => console.log("Ok!")}
         />
       </div>
-<<<<<<<<< Temporary merge branch 1
-      {postCard && <PostCard photo={cat} />}
-=========
+      {login && <LoginForm />}
+      {signup && <SignupForm />}
       {postCard && <ImageUpload />}
->>>>>>>>> Temporary merge branch 2
+      {/* <APIWorkout /> */}
+      {postCard && <PostCard photo={cat} />}
       {/* <APIWorkout /> */}
       {postWorkoutTable && <UserWorkout />}
       <Workouts />
