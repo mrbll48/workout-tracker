@@ -1,13 +1,12 @@
 .parent {
-  width: 470px;
-  height: 800px;
+  width: 400px;
+  height: 700px;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.074);
 }
 #photo-container {
-  width: 470px;
-  height: 650px;
-  background-color: aqua;
+  border: none;
+  height: 500px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   overflow: auto;
@@ -15,12 +14,10 @@
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 #spacing {
   margin-top: 12px;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 4.5em;
 }
 #spacing:hover {
   scale: 1.1;
