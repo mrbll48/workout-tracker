@@ -11,8 +11,12 @@ import APIWorkout from "../APIWorkout";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
 import NavScroll from "../NavScroll";
+
 import ImageUpload from "../ImageUpload";
 import { Workouts } from "../UserWorkout/Workouts";
+=========
+import ImageUpload from "../ImageUpload";
+>>>>>>>>> Temporary merge branch 2
 
 const muscles = [
   "abdominals",
@@ -68,9 +72,11 @@ export default function MainPage() {
           onClick={() => console.log("Ok!")}
         />
       </div>
-      {postCard && <ImageUpload />}
-      {/* <APIWorkout /> */}
+<<<<<<<<< Temporary merge branch 1
       {postCard && <PostCard photo={cat} />}
+=========
+      {postCard && <ImageUpload />}
+>>>>>>>>> Temporary merge branch 2
       {/* <APIWorkout /> */}
       {postWorkoutTable && <UserWorkout />}
       <Workouts />
