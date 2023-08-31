@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_WORKOUTS } from "../../utils/queries";
+import { QUERY_ALL_USERS } from "../../utils/queries";
 import { Table } from "react-bootstrap";
 
 export const Workouts = () => {
@@ -14,7 +15,11 @@ export const Workouts = () => {
       <div className="d-flex flex-column">
         <p className="px-5">Exercises</p>
         {workouts?.map((w) => (
-          <p className="px-5">{w.exercise}</p>
+          <>
+            <p className="px-5">
+              {w.exercise} posted by: {w.postedBy}
+            </p>
+          </>
         ))}
       </div>
       <div className="d-flex justify-content-center flex-column">
@@ -29,6 +34,13 @@ export const Workouts = () => {
           <p className="px-5">{w.reps}</p>
         ))}
       </div>
+      {/* <div>
+        <p className="px-5">Posted By</p>
+
+        {workouts?.map((w) => (
+          <p className="px-5">{w.username}</p>
+        ))}
+      </div> */}
     </section>
   );
 };

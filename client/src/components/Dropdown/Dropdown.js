@@ -14,11 +14,12 @@ const muscles = [
 ];
 
 export function APIWorkout({ name, muscle, instructions }) {
-  const [workout, setWorkout] = useState();
-  console.log(workout, "API");
+  // console.log(workouts, "API");
 }
 
 export default function CustomDropdown({ title, muscle }) {
+  const [workouts, setWorkouts] = useState();
+
   const searchAPI = async (muscle) => {
     let options = {
       method: "GET",
@@ -28,9 +29,10 @@ export default function CustomDropdown({ title, muscle }) {
     let url = `https://api.api-ninjas.com/v1/exercises?type=${title}&muscle=${muscle}&difficulty=beginner`;
     fetch(url, options)
       .then((res) => res.json())
-      .then(function (workouts) {
-        // console.log(workouts, "DROPDOWN");
-        printResults(workouts);
+      .then(function (data) {
+        // console.log(data, "DROPDOWN");
+        printResults(data);
+        setWorkouts(data);
       })
       .catch((err) => {
         console.log(`error ${err}`);
@@ -38,13 +40,14 @@ export default function CustomDropdown({ title, muscle }) {
   };
   let workout;
   const printResults = async (workouts) => {
-    workout = workouts[0];
-    name = workout.name;
-    instructions = workout.instructions;
-    console.log(name, instructions);
+    workouts.map((workout) => console.log(workout));
+    // workout = workouts[0];
+    // name = workout.name;
+    // instructions = workout.instructions;
+    // console.log(name, instructions);
   };
 
-  console.log(name);
+  console.log(workout);
   // if (workout) {
   //   return (
   //     <div>
@@ -115,17 +118,20 @@ export default function CustomDropdown({ title, muscle }) {
       </Dropdown>
       <div>
         <div className="container">
-          <div className="box">
-            <span className="title">Workout: {workout}</span>
-            <div>
-              <p>Instructions: {instructions}</p>
-              <span>Muscle:{muscle}</span>
-              <br></br>
-              <button id="close-btn" onClick={() => console.log("ONCLICK")}>
-                /Close
-              </button>
-            </div>
-          </div>
+          {workouts &&
+            workouts?.map((workout) => (
+              <div className="box">
+                <span className="title">Workout: {workout.name}</span>
+                <div>
+                  <p>Instructions: {workout.instructions}</p>
+                  <span>Muscle:{workout.muscle}</span>
+                  <br></br>
+                  <button id="close-btn" onClick={() => console.log("ONCLICK")}>
+                    /Close
+                  </button>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>
