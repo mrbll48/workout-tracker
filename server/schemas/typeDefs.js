@@ -8,6 +8,7 @@ const typeDefs = gql`
     password: String!
     friends: [User]
     workouts: [Workout]
+    photos: [Photo]
   }
 
   type Workout {
@@ -33,7 +34,10 @@ const typeDefs = gql`
   }
 
   type Photo {
-    picture: String
+    _id: ID
+    title: String
+    description: String
+    url: String
   }
 
   input WorkoutInput {
@@ -65,10 +69,10 @@ const typeDefs = gql`
       commentText: String
       commentAuthor: String
     ): Workout
+    addPhoto(title: String, description: String, url: String): Photo
 
     # untested mutations
     # addLike(): Workout
-    addPhoto(picture: String): Photo
   }
 `;
 

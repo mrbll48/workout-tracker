@@ -1,5 +1,5 @@
 import MainPage from "./components/pages/MainPage";
-import UploadWidget from "./components/UploadWidget.js/UploadWidget";
+// import UploadWidget from "./components/UploadWidget.js/UploadWidget";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -58,10 +58,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-        </Routes>
-        <NavScroll />
-        <Routes>
+        <Route path="/" element={<LandingPage />} />
           <Route path="/main" element={<MainPage />} />
           <Route path="/create-workout" element={<UserWorkout />} />
           <Route path="/login" element={<LoginForm />} />

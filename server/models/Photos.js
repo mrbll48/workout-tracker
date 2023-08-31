@@ -1,7 +1,17 @@
 const { Schema, model } = require("mongoose");
 
 const photoSchema = new Schema({
-  picture: {
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  title: {
+    type: String,
+  },
+  description: {
+    type: String,
+  },
+  url: {
     type: String,
   },
 });

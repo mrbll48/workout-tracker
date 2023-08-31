@@ -6,28 +6,27 @@ const { GraphQLError } = require("graphql");
 const resolvers = {
   Query: {
     me: async (_, args, context) => {
-      console.log(context.user);
       if (context.user) {
-        return await User.findOne({ _id: context.user._id }).populate(
-          "workouts"
-        );
+        return await User.findOne({ _id: context.user._id })
+          .populate("workouts")
+          .populate("photos");
       }
       throw new GraphQLError("You are not signed in");
     },
     user: async (_, { username }) => {
-      const user = await User.findOne({ username: username }).populate(
-        "workouts"
-      );
+      const user = await User.findOne({ username: username })
+        .populate("workouts")
+        .populate("photos");
       return user;
     },
     users: async (_, args) => {
       const users = await User.find().populate("workouts");
-      console.log(users);
+
       return users;
     },
     workout: async (parent, { workoutId }) => {
       const params = workoutId ? { workoutId } : {};
-      console.log(params);
+
       return Workout.find(params);
     },
     workouts: async (parent, { userId }) => {
@@ -38,7 +37,7 @@ const resolvers = {
     addUser: async (_, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
-      console.log(user);
+
       return { token, user };
     },
     login: async (_, { username, password }) => {
@@ -59,10 +58,8 @@ const resolvers = {
       return { token, user };
     },
     postWorkout: async (_, { exercise, sets, reps }, context) => {
-      console.log(exercise, context.user.username);
-
       const user = context.user._id;
-      console.log(user);
+
       const workout = await Workout.create({
         exercise,
         sets,
@@ -96,7 +93,6 @@ const resolvers = {
       return await User.findByIdAndDelete(context.user._id);
     },
     updateWorkout: async (_, { workoutId, workoutDetails }, context) => {
-      console.log(workoutDetails);
       if (!context.user) {
         throw new AuthenticationError("You need to be logged in!");
       }
@@ -128,9 +124,14 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     // addLike: async () => {},
-    addPhoto: async (_, { picture }, context) => {
-      const pic = Photos.create({ picture });
-      console.log(pic);
+    addPhoto: async (_, { title, description, url }, context) => {
+      const pic = await Photos.create({ title, description, url });
+      const user = context.user._id;
+      await User.findOneAndUpdate(
+        { _id: user },
+        { $addToSet: { photos: pic._id } }
+      );
+
       return pic;
     },
   },

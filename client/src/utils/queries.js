@@ -22,6 +22,11 @@ export const GET_ME = gql`
           createdAt
         }
       }
+      photos {
+        title
+        description
+        url
+      }
     }
   }
 `;
@@ -41,6 +46,11 @@ export const QUERY_SINGLE_USER = gql`
         reps
         sets
       }
+      photos {
+        title
+        description
+        url
+      }
     }
   }
 `;
@@ -59,6 +69,11 @@ export const QUERY_ALL_USERS = gql`
         exercise
         reps
         sets
+      }
+      photos {
+        title
+        description
+        url
       }
     }
   }
