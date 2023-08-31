@@ -33,7 +33,9 @@ const typeDefs = gql`
   }
 
   type Photo {
-    picture: String
+    title: String
+    description: String
+    url: String
   }
 
   input WorkoutInput {
@@ -65,10 +67,10 @@ const typeDefs = gql`
       commentText: String
       commentAuthor: String
     ): Workout
+    addPhoto(title: String, description: String, url: String): Photo
 
     # untested mutations
     # addLike(): Workout
-    addPhoto(picture: String): Photo
   }
 `;
 

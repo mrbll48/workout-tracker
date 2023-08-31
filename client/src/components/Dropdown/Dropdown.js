@@ -20,10 +20,6 @@ const muscles = [
   "neck",
 ];
 
-export function APIWorkout({ name, muscle, instructions }) {
-  const [workout, setWorkout] = useState();
-}
-
 export default function CustomDropdown({ title, muscle }) {
   const [workouts, setWorkouts] = useState();
 
@@ -37,7 +33,6 @@ export default function CustomDropdown({ title, muscle }) {
     fetch(url, options)
       .then((res) => res.json())
       .then(function (data) {
-        // console.log(data, "DROPDOWN");
         printResults(data);
         setWorkouts(data);
       })
@@ -48,10 +43,6 @@ export default function CustomDropdown({ title, muscle }) {
   let workout;
   const printResults = async (workouts) => {
     workouts.map((workout) => console.log(workout));
-    // workout = workouts[0];
-    // name = workout.name;
-    // instructions = workout.instructions;
-    // console.log(name, instructions);
   };
 
   console.log(name);
