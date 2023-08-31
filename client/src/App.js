@@ -19,8 +19,6 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import { Workouts } from "./components/UserWorkout/Workouts";
 import Profile from "./components/Profile/Profile";
-import ImageUpload from "./components/ImageUpload";
-import PostCard from "./components/PostCard/PostCard";
 
 import PostCard from "./components/PostCard/PostCard";
 
@@ -66,6 +64,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/workouts" element={<Workouts />} />
           <Route path="/profile/:username" element={<Profile />} />
+          <Route path="/post" element={<PostCard />} />
         </Routes>
       </Router>
     </ApolloProvider>
