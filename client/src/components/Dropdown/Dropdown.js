@@ -47,7 +47,7 @@ export default function CustomDropdown({ title, muscle }) {
 
   return (
     <div>
-      <Dropdown>
+      <Dropdown className="d-flex justify-content-center">
         <Dropdown.Toggle
           style={{
             backgroundColor: "black",

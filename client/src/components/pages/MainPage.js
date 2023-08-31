@@ -37,6 +37,7 @@ export default function MainPage() {
 
   return (
     <div className="main-container" bg="dark">
+        <NavScroll />
       {/* <div>
         <NavScroll
           opt1={handleClosePostCard}
@@ -45,45 +46,54 @@ export default function MainPage() {
           opt4={handleSignup}
         />
       </div> */}
-      <div className="box-component">
-        <section className="">
-          <ImgComponent
-            image={strength}
-            workoutType={"Strength"}
-            workoutMuscle={"Chest"}
-          />
-          <Dropdown
-            title={"Strength"}
-            muscle
-            // * Call API and display WorkoutInfoComponent
-            onClick={() => console.log("Ok!")}
-          />
-          <ImgComponent
-            image={stretching}
-            workoutType={"Stretching"}
-            workoutMuscle={"Calves"}
-          />
-          <Dropdown
-            title={"Stretching"}
-            // * Call API and display WorkoutInfoComponent
-            onClick={() => console.log("Ok!")}
-          />
-          <ImgComponent image={cardio} workoutType={"Cardio"} />
-          <Dropdown
-            title={"Cardio"}
-            // * Call API and display WorkoutInfoComponent
-            onClick={() => console.log("Ok!")}
-          />
-        </section>
+      <Workouts />
+
+      <div className="d-flex justify-content-center">
+        <ImgComponent
+          image={strength}
+          workoutType={"Strength"}
+          workoutMuscle={"Chest"}
+        />
       </div>
-      <div></div>
+      <div className="d-flex justify-content-center">
+        <Dropdown
+          title={"Strength"}
+          muscle
+          // * Call API and display WorkoutInfoComponent
+          onClick={() => console.log("Ok!")}
+        />
+      </div>
+      <div className="d-flex justify-content-center">
+      <ImgComponent
+        image={stretching}
+        workoutType={"Stretching"}
+        workoutMuscle={"Calves"}
+      />
+      </div>
+      <div className="d-flex justify-content-center">
+        <Dropdown
+          title={"Stretching"}
+          // * Call API and display WorkoutInfoComponent
+          onClick={() => console.log("Ok!")}
+        />
+      </div>
+      <div className="d-flex justify-content-center">
+      <ImgComponent image={cardio} workoutType={"Cardio"} />
+      </div>
+      <div className="d-flex justify-content-center">
+        <Dropdown
+          title={"Cardio"}
+          // * Call API and display WorkoutInfoComponent
+          onClick={() => console.log("Ok!")}
+        />
+      </div>
+
       {login && <LoginForm />}
       {signup && <SignupForm />}
 
       {postCard && <PostCard photo={cat} />}
 
       {postWorkoutTable && <UserWorkout />}
-      <Workouts />
     </div>
   );
 }
