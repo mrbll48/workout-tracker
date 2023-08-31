@@ -45,7 +45,6 @@ export default function CustomDropdown({ title, muscle }) {
     workouts.map((workout) => console.log(workout));
   };
 
-  console.log(name);
   return (
     <div>
       <Dropdown>

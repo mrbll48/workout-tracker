@@ -6,8 +6,6 @@ export const Workouts = () => {
 
   const workouts = data?.workouts;
 
-  console.log(workouts);
-
   return (
     <section className="d-flex flex-direction-column">
       <div className="d-flex flex-column">

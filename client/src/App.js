@@ -1,5 +1,5 @@
 import MainPage from "./components/pages/MainPage";
-import UploadWidget from "./components/UploadWidget.js/UploadWidget";
+// import UploadWidget from "./components/UploadWidget.js/UploadWidget";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 

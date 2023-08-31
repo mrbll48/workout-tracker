@@ -5,17 +5,14 @@ import { Card, Button } from "react-bootstrap";
 
 export default function Profile() {
   const { username } = useParams();
-  console.log(username);
 
   const { loading, data } = useQuery(QUERY_SINGLE_USER, {
     variables: { username: username },
   });
 
-  console.log(data);
   const user = data?.user || {};
-  console.log(user);
+
   const workouts = user.workouts;
-  console.log(workouts);
 
   return (
     <div className="bg-dark ">

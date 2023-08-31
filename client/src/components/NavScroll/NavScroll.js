@@ -17,7 +17,7 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
   const onInput = ({ target: { value } }) => setValue(value);
   const onFormSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
+
     setValue();
   };
 
@@ -55,7 +55,7 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
               </>
             )}
           </Nav>
-          <Form className="d-flex" onSUbmit={onFormSubmit}>
+          <Form className="d-flex" onSubmit={onFormSubmit}>
             <Form.Control
               type="text"
               placeholder="Find a friend"
