@@ -1,7 +1,6 @@
 import MainPage from "./components/pages/MainPage";
-import LandingPage from "./components/pages/LandingPage";
 import UploadWidget from "./components/UploadWidget.js/UploadWidget";
-import ImageUpload from "./components/ImageUpload";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import {
@@ -20,6 +19,8 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import { Workouts } from "./components/UserWorkout/Workouts";
 import Profile from "./components/Profile/Profile";
+import ImageUpload from "./components/ImageUpload";
+import PostCard from "./components/PostCard/PostCard";
 
 const cld = new Cloudinary({
   cloud: {
@@ -63,7 +64,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/workouts" element={<Workouts />} />
           <Route path="/profile/:username" element={<Profile />} />
-          <Route path="/img" element={<ImageUpload />} />
+          <Route path="/img" element={<UploadWidget />} />
         </Routes>
       </Router>
     </ApolloProvider>

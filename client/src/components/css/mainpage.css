@@ -1,19 +1,12 @@
 .main-container {
-  /* background-color: #1c1c24; */
   background-color: #2c2c36;
   background-position: center;
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  position: absolute;
   object-fit: cover;
 }
-.nav-icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 1.2em 1.5em 1em 1em;
-}
+
 .box-component {
   display: flex;
   flex-direction: row;
