@@ -1,8 +1,8 @@
 .main-container {
   background-color: #2c2c36;
   background-position: center;
-  width: 100vw;
-  height: 100vh;
+  width: auto;
+  height: auto;
   z-index: -1;
   object-fit: cover;
 }
