@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-  background: #2c2c36;
 }
 
 #img-card {
