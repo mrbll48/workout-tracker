@@ -129,11 +129,19 @@ const resolvers = {
     },
     // addLike: async () => {},
     addPhoto: async (_, { title, description, url }, context) => {
-      const pic = await Photos.create({ title, description, url });
+      const username = context.user.username;
+      const pic = await Photos.create({
+        title,
+        description,
+        url,
+        by: username,
+      });
+      console.log(username);
       const user = context.user._id;
       await User.findOneAndUpdate(
         { _id: user },
-        { $addToSet: { photos: pic._id } }
+        { $addToSet: { photos: pic._id } },
+        { new: true }
       );
 
       return pic;

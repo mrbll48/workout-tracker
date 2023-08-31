@@ -29,12 +29,6 @@ export const Workouts = () => {
           <p className="px-5 border border-danger">{w.reps}</p>
         ))}
       </div>
-      <div className="d-flex flex-column border border-primary">
-        <p className="px-5">Posted By</p>
-        {workouts?.map((w) => (
-          <p className="px-5 border border-danger">{w.username}</p>
-        ))}
-      </div>
     </div>
   );
 };

@@ -14,6 +14,9 @@ const photoSchema = new Schema({
   url: {
     type: String,
   },
+  by: {
+    type: String,
+  },
 });
 
 const Photo = model("Photos", photoSchema);

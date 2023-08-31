@@ -37,23 +37,25 @@ export default function MainPage() {
   return (
     <div className="main-container" bg="dark">
       <NavScroll />
-      <div className="d-flex justify-content-center">
-        <ImgComponent />
-      </div>
-      <div className="d-flex justify-content-center">
-        <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
-      </div>
+      <div>
+        <div className="d-flex justify-content-center">
+          <ImgComponent />
+        </div>
+        <div className="d-flex justify-content-center">
+          <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
+        </div>
 
-      <div className="d-flex justify-content-center">
-        <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
-      </div>
+        <div className="d-flex justify-content-center">
+          <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
+        </div>
 
-      <div className="d-flex justify-content-center">
-        <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
+        <div className="d-flex justify-content-center">
+          <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
+        </div>
+        {postCard && <PostCard />}
+        {postWorkoutTable && <UserWorkout />}
+        <Workouts />
       </div>
-      {postCard && <PostCard />}
-      {postWorkoutTable && <UserWorkout />}
-      <Workouts />
     </div>
   );
 }
