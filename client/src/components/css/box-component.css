@@ -1,16 +1,8 @@
-.container {
-  /* outline: red dashed 1px; */
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.box-component { 
+.component {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-  background:#2c2c36;
+  background: #2c2c36;
 }
 
 #img-card {
@@ -24,16 +16,4 @@
 }
 #img-card:hover {
   transform: scale(1.1);
-}
-.img-container {
-  text-align: center;
-}
-h1 {
-  margin: 0;
-  padding: 0;
-  letter-spacing: 2px;
-  font-size: 26px;
-}
-.dropdown-container {
-  padding-top: 5px;
 }
