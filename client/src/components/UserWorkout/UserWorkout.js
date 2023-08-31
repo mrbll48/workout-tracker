@@ -28,7 +28,7 @@ function UserWorkout(e) {
         variables: { ...workoutData },
       });
       console.log(data, "DATA");
-      window.location.assign("/");
+      window.location.assign("/main");
     } catch (e) {
       console.log(e);
     }
