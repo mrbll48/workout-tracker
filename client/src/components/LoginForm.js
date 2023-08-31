@@ -4,8 +4,6 @@ import { LOGIN_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 
-// export default function LandingPage() {
-
 const LoginForm = () => {
   const [loginForm, setLoginForm] = useState(false);
   const [createFrom, setCreateForm] = useState(false);
@@ -44,9 +42,7 @@ const LoginForm = () => {
     }
   };
   return (
-
     <div className="bg-dark vh-100 pt-5">
-
       <div id="form-container">
         <form className="form" onSubmit={handleFormSubmit}>
           <p>Login</p>

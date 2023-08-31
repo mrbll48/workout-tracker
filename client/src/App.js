@@ -19,6 +19,7 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import { Workouts } from "./components/UserWorkout/Workouts";
 import Profile from "./components/Profile/Profile";
+
 import PostCard from "./components/PostCard/PostCard";
 
 const cld = new Cloudinary({
@@ -63,6 +64,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/workouts" element={<Workouts />} />
           <Route path="/profile/:username" element={<Profile />} />
+          <Route path="/post" element={<PostCard />} />
         </Routes>
       </Router>
     </ApolloProvider>
