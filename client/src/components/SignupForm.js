@@ -52,43 +52,7 @@ const SignupForm = () => {
     });
   };
   return (
-    <div>
-      {/* <img className="fullscreen-image" src={landing} alt="nice" />
-        <div className="btn-div">
-          <button className="button" onClick={() => setLoginForm(true)}>
-            Login
-          </button>
-          <button className="button" onClick={() => setCreateForm(true)}>
-            Create Account
-          </button>
-        </div>
-        <div>
-          <h1 className="slogan">
-            Get Fit, Share Inspire: <br></br>Uniting Workouts, One Post at a
-            Time
-          </h1>
-        </div>
-        {loginForm && (
-          <div id="form-container">
-            <form className="form">
-              <p>Login</p>
-              <div className="group">
-                <input required className="main-input" type="text" />
-                <span className="highlight-span"></span>
-                <label className="lebal-email">Username</label>
-              </div>
-              <div className="container-1">
-                <div className="group">
-                  <input required className="main-input" type="password" />
-                  <span className="highlight-span"></span>
-                  <label className="lebal-email">Password</label>
-                </div>
-              </div>
-              <button className="submit">Submit</button>
-            </form>
-          </div>
-        )} */}
-
+    <div className="bg-dark vh-100 pt-5">
       <div id="form-container">
         <form className="form" onSubmit={handleFormSubmit}>
           <p>Create Account</p>
