@@ -17,18 +17,16 @@ function UserWorkout(e) {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setWorkoutData({ ...workoutData, [name]: value });
-    console.log(workoutData);
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      console.log(workoutData);
       const { data } = await postWorkout({
         variables: { ...workoutData },
       });
-      console.log(data, "DATA");
+
       window.location.assign("/main");
     } catch (e) {
       console.log(e);

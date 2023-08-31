@@ -12,6 +12,7 @@ import {
   AiOutlineMenu,
   AiOutlineShareAlt,
 } from "react-icons/ai";
+import { renderMatches } from "react-router-dom";
 
 function PostCard() {
   const [picture, setPicture] = useState("");
@@ -32,20 +33,6 @@ function PostCard() {
     console.log(photoData);
   };
 
-  const handleFormSubmit = async (e) => {
-    // e.preventDefault();
-
-    try {
-      console.log(photoData);
-      const { data } = await addPhoto({
-        variables: { ...photoData },
-      });
-      console.log(data, "DATA");
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   useEffect(() => {
     cloudinaryRef.current = window.cloudinary;
     widgetRef.current = cloudinaryRef.current.createUploadWidget(
@@ -53,17 +40,31 @@ function PostCard() {
         cloudName: "di3nk6hyq",
         uploadPreset: "l3a5wnco",
       },
-      function (error, result) {
-        if (!error && result && result.info && result.info.secure_url) {
-          setPhotoData(result.info.secure_url);
-          handleFormSubmit();
-          console.log(result.info.secure_url, "url");
-          console.log(result.info, "info");
+      function (error, result, event) {
+        // console.log(result);
+        if (!error && result.event === "success") {
+          console.log(result.info.secure_url);
           setPicture(result.info.secure_url);
+          handleInputChange({
+            target: { name: "url", value: result.info.secure_url },
+          });
+          console.log(photoData);
+          setInterval(() => console.log(photoData), 1000);
+          // handleFormSubmit();
         }
       }
     );
-  }, []);
+  });
+
+  const handleFormSubmit = async () => {
+    try {
+      const { data } = await addPhoto({
+        variables: { ...photoData },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>

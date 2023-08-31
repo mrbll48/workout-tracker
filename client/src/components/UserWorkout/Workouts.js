@@ -6,8 +6,6 @@ export const Workouts = () => {
 
   const workouts = data?.workouts;
 
-  console.log(workouts);
-
   return (
     <section className="d-flex justify-content-end">
       <div className="d-flex flex-column">

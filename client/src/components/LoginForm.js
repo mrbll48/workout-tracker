@@ -22,18 +22,14 @@ const LoginForm = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
-    console.log(userFormData);
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(userFormData);
       const { data } = await login({
         variables: { ...userFormData },
       });
-
-      console.log(data);
 
       Auth.login(data.login.token);
     } catch (error) {
