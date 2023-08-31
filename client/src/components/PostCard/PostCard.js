@@ -14,6 +14,8 @@ import {
 } from "react-icons/ai";
 import { renderMatches } from "react-router-dom";
 
+let photoUrl;
+
 function PostCard() {
   const [picture, setPicture] = useState("");
   const cloudinaryRef = useRef();
@@ -30,7 +32,6 @@ function PostCard() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setPhotoData({ ...photoData, [name]: value });
-    console.log(photoData);
   };
 
   useEffect(() => {
@@ -43,14 +44,9 @@ function PostCard() {
       function (error, result, event) {
         // console.log(result);
         if (!error && result.event === "success") {
-          console.log(result.info.secure_url);
           setPicture(result.info.secure_url);
-          handleInputChange({
-            target: { name: "url", value: result.info.secure_url },
-          });
-          console.log(photoData);
-          setInterval(() => console.log(photoData), 1000);
-          // handleFormSubmit();
+          photoUrl = result.info.secure_url;
+          handleFormSubmit();
         }
       }
     );
@@ -59,7 +55,7 @@ function PostCard() {
   const handleFormSubmit = async () => {
     try {
       const { data } = await addPhoto({
-        variables: { ...photoData },
+        variables: { ...photoData, url: photoUrl },
       });
     } catch (e) {
       console.log(e);
@@ -68,40 +64,42 @@ function PostCard() {
 
   return (
     <>
-     <NavScroll />
-    <section className="bg-dark vh-100 d-flex justify-content-around pt-5">
-      <div className="parent">
-        <div>
-          {picture && <img src={picture} alt="Uploaded" id="photo-container" />}
+      <NavScroll />
+      <section className="bg-dark vh-100 d-flex justify-content-around pt-5">
+        <div className="parent">
+          <div>
+            {picture && (
+              <img src={picture} alt="Uploaded" id="photo-container" />
+            )}
+          </div>
+          <div className="buttons">
+            <IconContext.Provider value={{ color: "white", size: "2.1em" }}>
+              <div>
+                <AiOutlineRise id="spacing" />
+                <AiOutlineMenu id="spacing" />
+                <AiOutlineShareAlt id="spacing" />
+              </div>
+            </IconContext.Provider>
+          </div>
+          <input
+            type="text"
+            name="title"
+            placeholder="Image title"
+            className="text-dark"
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            name="description"
+            placeholder="Image description"
+            className="text-dark"
+            onChange={handleInputChange}
+          />
+          <div className="user">
+            <button onClick={() => widgetRef.current.open()}>Upload</button>
+          </div>
         </div>
-        <div className="buttons">
-          <IconContext.Provider value={{ color: "white", size: "2.1em" }}>
-            <div>
-              <AiOutlineRise id="spacing" />
-              <AiOutlineMenu id="spacing" />
-              <AiOutlineShareAlt id="spacing" />
-            </div>
-          </IconContext.Provider>
-        </div>
-        <input
-          type="text"
-          name="title"
-          placeholder="Image title"
-          className="text-dark"
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="description"
-          placeholder="Image description"
-          className="text-dark"
-          onChange={handleInputChange}
-        />
-        <div className="user">
-          <button onClick={() => widgetRef.current.open()}>Upload</button>
-        </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }

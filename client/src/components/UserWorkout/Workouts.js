@@ -5,6 +5,7 @@ export const Workouts = () => {
   const { loading, data } = useQuery(GET_WORKOUTS);
 
   const workouts = data?.workouts;
+  console.log(data, workouts);
 
   return (
     <section className="d-flex justify-content-end">

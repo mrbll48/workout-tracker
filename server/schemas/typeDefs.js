@@ -8,6 +8,7 @@ const typeDefs = gql`
     password: String!
     friends: [User]
     workouts: [Workout]
+    photos: [Photo]
   }
 
   type Workout {
