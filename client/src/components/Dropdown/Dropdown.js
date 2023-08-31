@@ -72,21 +72,25 @@ export default function CustomDropdown({ title, muscle }) {
         </Dropdown.Menu>
       </Dropdown>
       <div>
-        {workout && (
-          <div className="container">
+
+        {workouts &&
+          workouts?.map((workout) => (
             <div className="box">
-              <span className="title">Workout: {workout}</span>
+              <span className="title">Workout: {workout.name}</span>
               <div>
-                <p>Instructions: {instructions}</p>
-                <span>Muscle:{muscle}</span>
+                <p>Instructions: {workout.instructions}</p>
+                <span>Muscle:{workout.muscle}</span>
+
+
                 <br></br>
                 <button id="close-btn" onClick={() => console.log("ONCLICK")}>
                   /Close
                 </button>
               </div>
             </div>
-          </div>
-        )}
+
+          ))}
+
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ import APIWorkout from "../APIWorkout";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
 import NavScroll from "../NavScroll";
-import ImageUpload from "../ImageUpload";
+
 import { Workouts } from "../UserWorkout/Workouts";
 import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
@@ -79,7 +79,7 @@ export default function MainPage() {
       <div></div>
       {login && <LoginForm />}
       {signup && <SignupForm />}
-      {postCard && <ImageUpload />}
+
 
       {postCard && <PostCard photo={cat} />}
 

@@ -22,6 +22,8 @@ import Profile from "./components/Profile/Profile";
 import ImageUpload from "./components/ImageUpload";
 import PostCard from "./components/PostCard/PostCard";
 
+import PostCard from "./components/PostCard/PostCard";
+
 const cld = new Cloudinary({
   cloud: {
     cloudName: "di3nk6hyq",
@@ -64,7 +66,6 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/workouts" element={<Workouts />} />
           <Route path="/profile/:username" element={<Profile />} />
-          <Route path="/img" element={<UploadWidget />} />
         </Routes>
       </Router>
     </ApolloProvider>
