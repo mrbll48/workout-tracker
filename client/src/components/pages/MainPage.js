@@ -11,7 +11,7 @@ import APIWorkout from "../APIWorkout";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
 import NavScroll from "../NavScroll";
-import ImageUpload from "../ImageUpload";
+
 import { Workouts } from "../UserWorkout/Workouts";
 import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
@@ -46,43 +46,44 @@ export default function MainPage() {
         />
       </div> */}
       <div className="box-component">
-        <ImgComponent
-          image={strength}
-          workoutType={"Strength"}
-          workoutMuscle={"Chest"}
-        />
-        <Dropdown
-          title={"Strength"}
-          muscle
-          // * Call API and display WorkoutInfoComponent
-          onClick={() => console.log("Ok!")}
-        />
-        <ImgComponent
-          image={stretching}
-          workoutType={"Stretching"}
-          workoutMuscle={"Calves"}
-        />
-        <Dropdown
-          title={"Stretching"}
-          // * Call API and display WorkoutInfoComponent
-          onClick={() => console.log("Ok!")}
-        />
-        <ImgComponent image={cardio} workoutType={"Cardio"} />
-        <Dropdown
-          title={"Cardio"}
-          // * Call API and display WorkoutInfoComponent
-          onClick={() => console.log("Ok!")}
-        />
+        <section className="">
+          <ImgComponent
+            image={strength}
+            workoutType={"Strength"}
+            workoutMuscle={"Chest"}
+          />
+          <Dropdown
+            title={"Strength"}
+            muscle
+            // * Call API and display WorkoutInfoComponent
+            onClick={() => console.log("Ok!")}
+          />
+          <ImgComponent
+            image={stretching}
+            workoutType={"Stretching"}
+            workoutMuscle={"Calves"}
+          />
+          <Dropdown
+            title={"Stretching"}
+            // * Call API and display WorkoutInfoComponent
+            onClick={() => console.log("Ok!")}
+          />
+          <ImgComponent image={cardio} workoutType={"Cardio"} />
+          <Dropdown
+            title={"Cardio"}
+            // * Call API and display WorkoutInfoComponent
+            onClick={() => console.log("Ok!")}
+          />
+        </section>
       </div>
+      <div></div>
       {login && <LoginForm />}
       {signup && <SignupForm />}
-      {postCard && <ImageUpload />}
-      {/* <APIWorkout /> */}
+
       {postCard && <PostCard photo={cat} />}
-      {/* <APIWorkout /> */}
+
       {postWorkoutTable && <UserWorkout />}
       <Workouts />
-      <div></div>
     </div>
   );
 }

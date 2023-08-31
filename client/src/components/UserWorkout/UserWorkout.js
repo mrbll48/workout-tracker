@@ -34,46 +34,36 @@ function UserWorkout(e) {
   };
 
   return (
-    <div>
-      <div id="">
+    <div className="bg-dark vh-100 pt-5">
+      <div className="d-flex justify-content-around ">
         <form className="" onSubmit={handleFormSubmit}>
-          <p>Record your workout here</p>
+          <h1>Record your workout here</h1>
           <div className="">
             <input
               required
-              className=""
               type="text"
               name="exercise"
               onChange={handleInputChange}
+              placeholder="Exercise"
             />
-            <span className=""></span>
-            <label className="">Exercise</label>
           </div>
           <div className="">
-            <div className="">
-              <input
-                required
-                className=""
-                type="text"
-                name="sets"
-                onChange={handleInputChange}
-              />
-              <span className=""></span>
-              <label className="">Sets</label>
-            </div>
+            <input
+              required
+              type="text"
+              name="sets"
+              onChange={handleInputChange}
+              placeholder="Sets"
+            />
           </div>
           <div className="">
-            <div className="">
-              <input
-                required
-                className=""
-                type="text"
-                name="reps"
-                onChange={handleInputChange}
-              />
-              <span className=""></span>
-              <label className="">Reps</label>
-            </div>
+            <input
+              required
+              type="text"
+              name="reps"
+              onChange={handleInputChange}
+              placeholder="Reps"
+            />
           </div>
           <button className="submit" type="submit">
             Save
