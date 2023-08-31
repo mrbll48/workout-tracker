@@ -74,3 +74,12 @@ export const DELETE_WORKOUT = gql`
     }
   }
 `;
+
+export const ADD_PHOTO = gql`
+  mutation addPhoto($picture: String) {
+    addPhoto(picture: $picture) {
+      _id
+      picture
+    }
+  }
+`;

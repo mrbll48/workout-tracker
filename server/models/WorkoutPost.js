@@ -11,6 +11,10 @@ const workoutPostSchema = new Schema({
     type: String,
     required: true,
   },
+  postedBy: {
+    type: String,
+    required: true,
+  },
   sets: {
     type: String,
     required: true,

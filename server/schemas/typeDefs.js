@@ -12,6 +12,7 @@ const typeDefs = gql`
 
   type Workout {
     _id: ID
+    postedBy: String!
     exercise: String!
     sets: String!
     reps: String

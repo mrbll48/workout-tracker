@@ -63,9 +63,11 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/workouts" element={<Workouts />} />
           <Route path="/profile/:username" element={<Profile />} />
+          <Route path="/img" element={<ImageUpload />} />
         </Routes>
       </Router>
     </ApolloProvider>
   );
 }
+
 export default App;
