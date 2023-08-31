@@ -42,11 +42,7 @@ export default function MainPage() {
       <Workouts />
 
       <div className="d-flex justify-content-center">
-        <ImgComponent
-          image={strength}
-          workoutType={"Strength"}
-          workoutMuscle={"Chest"}
-        />
+        <ImgComponent />
       </div>
       <div className="d-flex justify-content-center">
         <Dropdown
@@ -56,13 +52,7 @@ export default function MainPage() {
           onClick={() => console.log("Ok!")}
         />
       </div>
-      <div className="d-flex justify-content-center">
-        <ImgComponent
-          image={stretching}
-          workoutType={"Stretching"}
-          workoutMuscle={"Calves"}
-        />
-      </div>
+
       <div className="d-flex justify-content-center">
         <Dropdown
           title={"Stretching"}
@@ -70,9 +60,7 @@ export default function MainPage() {
           onClick={() => console.log("Ok!")}
         />
       </div>
-      <div className="d-flex justify-content-center">
-        <ImgComponent image={cardio} workoutType={"Cardio"} />
-      </div>
+
       <div className="d-flex justify-content-center">
         <Dropdown
           title={"Cardio"}
