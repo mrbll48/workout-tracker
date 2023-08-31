@@ -19,6 +19,7 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import { Workouts } from "./components/UserWorkout/Workouts";
 import Profile from "./components/Profile/Profile";
+import LandingPage from "./components/pages/LandingPage";
 
 import PostCard from "./components/PostCard/PostCard";
 
@@ -56,9 +57,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <NavScroll />
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/main" element={<MainPage />} />
           <Route path="/create-workout" element={<UserWorkout />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
