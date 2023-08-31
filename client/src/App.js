@@ -59,6 +59,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+        </Routes>
+        <NavScroll />
+        <Routes>
           <Route path="/main" element={<MainPage />} />
           <Route path="/create-workout" element={<UserWorkout />} />
           <Route path="/login" element={<LoginForm />} />
