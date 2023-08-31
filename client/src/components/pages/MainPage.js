@@ -37,6 +37,7 @@ export default function MainPage() {
 
   return (
     <div className="main-container" bg="dark">
+        <NavScroll />
       {/* <div>
         <NavScroll
           opt1={handleClosePostCard}

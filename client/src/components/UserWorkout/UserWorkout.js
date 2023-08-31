@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { POST_WORKOUT } from "../../utils/mutations";
 import "../css/create-workout.css";
-
+import NavScroll from "../NavScroll";
 function UserWorkout(e) {
   const [workoutInput, setWorkout] = useState();
   const [workoutData, setWorkoutData] = useState({
@@ -36,6 +36,8 @@ function UserWorkout(e) {
   };
 
   return (
+    <>
+     <NavScroll />
     <div className="bg-dark vh-100 pt-5">
       <div className="d-flex justify-content-around ">
         <form className="" onSubmit={handleFormSubmit}>
@@ -58,7 +60,7 @@ function UserWorkout(e) {
               name="sets"
               onChange={handleInputChange}
               placeholder="Sets"
-            />
+              />
           </div>
           <div className="">
             <input
@@ -68,7 +70,7 @@ function UserWorkout(e) {
               name="reps"
               onChange={handleInputChange}
               placeholder="Reps"
-            />
+              />
           </div>
           <button className="submit" type="submit">
             Save
@@ -76,6 +78,7 @@ function UserWorkout(e) {
         </form>
       </div>
     </div>
+              </>
   );
 }
 
