@@ -5,7 +5,8 @@ const { GraphQLError } = require("graphql");
 
 const resolvers = {
   Query: {
-    me: async (parent, args, context) => {
+    me: async (_, args, context) => {
+      console.log(context.user);
       if (context.user) {
         return await User.findOne({ _id: context.user._id }).populate(
           "workouts"
@@ -13,11 +14,15 @@ const resolvers = {
       }
       throw new GraphQLError("You are not signed in");
     },
-    user: async (_, { username }, context) => {
+    user: async (_, { username }) => {
       const user = await User.findOne({ username: username }).populate(
         "workouts"
       );
       return user;
+    },
+    users: async (_, args) => {
+      const users = await User.find().populate("workouts");
+      return users;
     },
     workout: async (parent, { workoutId }) => {
       const params = workoutId ? { workoutId } : {};
