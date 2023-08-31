@@ -4,7 +4,7 @@ import "../css/box-component.css";
 
 function ImgComponent({ image }) {
   return (
-    <div className="container">
+    <div id="img-container">
       <img id="img-card" src={image} alt="Images examples" />
     </div>
   );

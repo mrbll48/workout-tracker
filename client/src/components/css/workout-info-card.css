@@ -1,10 +1,6 @@
 * {
   color: white;
 }
-.container {
-  position: relative;
-  font-family: sans-serif;
-}
 
 .container::before {
   border-radius: 50%;

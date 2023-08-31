@@ -37,30 +37,30 @@ export default function MainPage() {
   return (
     <div className="main-container" bg="dark">
       <NavScroll />
-      <div className="d-flex justify-content-center">
+      <div className="">
         <ImgComponent
           image={strength}
           workoutType={"Strength"}
           workoutMuscle={"Chest"}
         />
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="">
         <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="">
         <ImgComponent
           image={stretching}
           workoutType={"Stretching"}
           workoutMuscle={"Calves"}
         />
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="">
         <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="">
         <ImgComponent image={cardio} workoutType={"Cardio"} />
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="">
         <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
       </div>
       {postCard && <PostCard />}
