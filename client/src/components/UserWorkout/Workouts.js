@@ -12,27 +12,25 @@ export const Workouts = () => {
       <div className="d-flex flex-column border border-primary">
         <p className="px-5">Exercises</p>
         {workouts?.map((w) => (
-          <p className="px-5 border border-danger">
-            {w.exercise} posted by: {w.postedBy}
+          <p className="px-5 border">
+            By: {w.postedBy}
+            <br></br>
+            {w.exercise}
           </p>
         ))}
       </div>
       <div className="d-flex flex-column border border-primary">
         <p className="px-5">Sets</p>
+        <br></br>
         {workouts?.map((w) => (
-          <p className="px-5 border border-danger">{w.sets}</p>
+          <p className="px-5 border ">{w.sets}</p>
         ))}
       </div>
       <div className="d-flex flex-column border border-primary">
-        <p>Reps</p>
+        <p className="px-5">Reps</p>
+        <br></br>
         {workouts?.map((w) => (
-          <p className="px-5 border border-danger">{w.reps}</p>
-        ))}
-      </div>
-      <div className="d-flex flex-column border border-primary">
-        <p className="px-5">Posted By</p>
-        {workouts?.map((w) => (
-          <p className="px-5 border border-danger">{w.username}</p>
+          <p className="px-5 border">{w.reps}</p>
         ))}
       </div>
     </div>

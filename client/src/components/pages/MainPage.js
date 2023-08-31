@@ -37,6 +37,9 @@ export default function MainPage() {
   return (
     <div className="main-container" bg="dark">
       <NavScroll />
+      <div id="workout-table">
+        <Workouts />
+      </div>
       <div className="">
         <ImgComponent
           image={strength}
@@ -46,26 +49,25 @@ export default function MainPage() {
         <div className="d-flex justify-content-start ps-5">
           <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
         </div>
-      </div>
-      <div className="">
-        <ImgComponent
-          image={stretching}
-          workoutType={"Stretching"}
-          workoutMuscle={"Calves"}
-        />
-        <div className="d-flex justify-content-start ps-5">
-          <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
+        <div className="">
+          <ImgComponent
+            image={stretching}
+            workoutType={"Stretching"}
+            workoutMuscle={"Calves"}
+          />
+          <div className="d-flex justify-content-start ps-5">
+            <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
+          </div>
         </div>
-      </div>
-      <div className="">
-        <ImgComponent image={cardio} workoutType={"Cardio"} />
-        <div className="d-flex justify-content-start ps-5">
-          <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
+        <div className="">
+          <ImgComponent image={cardio} workoutType={"Cardio"} />
+          <div className="d-flex justify-content-start ps-5">
+            <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
+          </div>
         </div>
+        {postCard && <PostCard />}
+        {postWorkoutTable && <UserWorkout />}
       </div>
-      {postCard && <PostCard />}
-      {postWorkoutTable && <UserWorkout />}
-      <Workouts />
     </div>
   );
 }

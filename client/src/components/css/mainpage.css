@@ -1,3 +1,16 @@
+@media screen and (min-width: 900px) {
+  #workout-table {
+    position: absolute;
+    top: 65px;
+    left: 68%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #workout-table {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 .main-container {
   background-color: #2c2c36;
   background-position: center;
