@@ -1,5 +1,4 @@
 import MainPage from "./components/pages/MainPage";
-import LandingPage from "./components/pages/LandingPage";
 import UploadWidget from "./components/UploadWidget.js/UploadWidget";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -71,4 +70,5 @@ function App() {
     </ApolloProvider>
   );
 }
+
 export default App;

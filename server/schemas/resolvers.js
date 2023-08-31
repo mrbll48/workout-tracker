@@ -22,6 +22,7 @@ const resolvers = {
     },
     users: async (_, args) => {
       const users = await User.find().populate("workouts");
+      console.log(users);
       return users;
     },
     workout: async (parent, { workoutId }) => {
@@ -30,7 +31,6 @@ const resolvers = {
       return Workout.find(params);
     },
     workouts: async (parent, { userId }) => {
-      console.log(userId);
       return Workout.find();
     },
   },
@@ -59,13 +59,17 @@ const resolvers = {
       return { token, user };
     },
     postWorkout: async (_, { exercise, sets, reps }, context) => {
-      // console.log(text, context.user._id);
+      console.log(exercise, context.user.username);
 
       const user = context.user._id;
       console.log(user);
-      const workout = await Workout.create({ exercise, sets, reps });
+      const workout = await Workout.create({
+        exercise,
+        sets,
+        reps,
+        postedBy: context.user.username,
+      });
 
-      // console.log(workout);
       await User.findOneAndUpdate(
         {
           _id: user,

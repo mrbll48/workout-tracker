@@ -25,20 +25,41 @@ export const GET_ME = gql`
     }
   }
 `;
+
 export const QUERY_SINGLE_USER = gql`
   query user($username: String) {
     user(username: $username) {
       _id
       username
-      #   friends {
-      #     _id
-      #     username
-      #   }
-      #   workouts {
-      #     _id
-      #     text
-      #     date
-      #   }
+      friends {
+        _id
+        username
+      }
+      workouts {
+        _id
+        exercise
+        reps
+        sets
+      }
+    }
+  }
+`;
+
+export const QUERY_ALL_USERS = gql`
+  query getUsers {
+    users {
+      _id
+      username
+      friends {
+        _id
+        username
+      }
+      workouts {
+        _id
+        exercise
+        reps
+        sets
+      }
     }
   }
 `;
@@ -69,17 +90,7 @@ export const GET_WORKOUTS = gql`
       exercise
       sets
       reps
-    }
-  }
-`;
-
-// query to get all users (could be out? might not be needed)
-export const GET_USERS = gql`
-  query users {
-    users {
-      _id
-      username
-      email
+      postedBy
     }
   }
 `;
