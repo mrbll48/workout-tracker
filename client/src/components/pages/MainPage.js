@@ -43,9 +43,9 @@ export default function MainPage() {
           workoutType={"Strength"}
           workoutMuscle={"Chest"}
         />
-      </div>
-      <div className="">
-        <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
+        <div className="d-flex justify-content-start ps-5">
+          <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
+        </div>
       </div>
       <div className="">
         <ImgComponent
@@ -53,15 +53,15 @@ export default function MainPage() {
           workoutType={"Stretching"}
           workoutMuscle={"Calves"}
         />
-      </div>
-      <div className="">
-        <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
+        <div className="d-flex justify-content-start ps-5">
+          <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
+        </div>
       </div>
       <div className="">
         <ImgComponent image={cardio} workoutType={"Cardio"} />
-      </div>
-      <div className="">
-        <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
+        <div className="d-flex justify-content-start ps-5">
+          <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
+        </div>
       </div>
       {postCard && <PostCard />}
       {postWorkoutTable && <UserWorkout />}
