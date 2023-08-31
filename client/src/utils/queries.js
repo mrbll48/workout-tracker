@@ -109,3 +109,14 @@ export const GET_WORKOUTS = gql`
     }
   }
 `;
+
+export const GET_ALL_PHOTOS = gql`
+  query photos {
+    photos {
+      _id
+      url
+      title
+      description
+    }
+  }
+`;

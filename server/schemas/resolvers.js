@@ -2,6 +2,7 @@ const { AuthenticationError } = require("apollo-server-express");
 const { User, Workout, Photos } = require("../models");
 const { signToken } = require("../utils/auth");
 const { GraphQLError } = require("graphql");
+const Photo = require("../models/Photos");
 
 const resolvers = {
   Query: {
@@ -31,6 +32,9 @@ const resolvers = {
     },
     workouts: async (parent, { userId }) => {
       return Workout.find();
+    },
+    photos: async (_, args) => {
+      return Photo.find();
     },
   },
   Mutation: {
