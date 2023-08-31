@@ -50,7 +50,7 @@ const SignupForm = () => {
     });
   };
   return (
-    <div>
+    <div className="pt-5">
       <div id="form-container">
         <form className="form" onSubmit={handleFormSubmit}>
           <p>Create Account</p>

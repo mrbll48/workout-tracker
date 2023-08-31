@@ -6,8 +6,3 @@
   z-index: -1;
   object-fit: cover;
 }
-
-.box-component {
-  display: flex;
-  flex-direction: row;
-}

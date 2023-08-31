@@ -1,20 +1,19 @@
 import React, { useState } from "react";
+
 import "../css/mainpage.css";
+
 import ImgComponent from "../ImgComponent";
 import Dropdown from "../Dropdown";
-
 import strength from "../../images/upper-picture.jpg";
 import stretching from "../../images/lower-picture.jpg";
 import cardio from "../../images/cardio.jpg";
-import cat from "../../images/black-cat.jpg";
-import APIWorkout from "../APIWorkout";
 import PostCard from "../PostCard/PostCard";
 import UserWorkout from "../UserWorkout";
+import LoginForm from "../LoginForm";
+import SignupForm from "../SignupForm";
 import NavScroll from "../NavScroll";
 
 import { Workouts } from "../UserWorkout/Workouts";
-import LoginForm from "../LoginForm";
-import SignupForm from "../SignupForm";
 
 export default function MainPage() {
   const [postCard, setPostCard] = useState(false);
@@ -38,43 +37,23 @@ export default function MainPage() {
   return (
     <div className="main-container" bg="dark">
       <NavScroll />
-
-      <Workouts />
-
       <div className="d-flex justify-content-center">
         <ImgComponent />
       </div>
       <div className="d-flex justify-content-center">
-        <Dropdown
-          title={"Strength"}
-          muscle
-          // * Call API and display WorkoutInfoComponent
-          onClick={() => console.log("Ok!")}
-        />
+        <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
       </div>
 
       <div className="d-flex justify-content-center">
-        <Dropdown
-          title={"Stretching"}
-          // * Call API and display WorkoutInfoComponent
-          onClick={() => console.log("Ok!")}
-        />
+        <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
       </div>
 
       <div className="d-flex justify-content-center">
-        <Dropdown
-          title={"Cardio"}
-          // * Call API and display WorkoutInfoComponent
-          onClick={() => console.log("Ok!")}
-        />
+        <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
       </div>
-
-      {login && <LoginForm />}
-      {signup && <SignupForm />}
-
-      {postCard && <PostCard photo={cat} />}
-
+      {postCard && <PostCard />}
       {postWorkoutTable && <UserWorkout />}
+      <Workouts />
     </div>
   );
 }

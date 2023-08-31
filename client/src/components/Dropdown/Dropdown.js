@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+
 import "../css/workout-info-card.css";
-let name;
-let instructions;
+
 const apiKey = "4Z7299Xd9HEZMOuF2j15sg==HS0gwsLVKjmqzWlK";
 const muscles = [
   "abdominals",
@@ -52,7 +52,6 @@ export default function CustomDropdown({ title, muscle }) {
           style={{
             backgroundColor: "black",
             paddingTop: "5px",
-            // borderColor: "#c1a362"
           }}
           id="dropdown-basic"
         >
@@ -77,7 +76,6 @@ export default function CustomDropdown({ title, muscle }) {
                 <div>
                   <p>Instructions: {workout.instructions}</p>
                   <span>Muscle:{workout.muscle}</span>
-
                   <br></br>
                   <button id="close-btn" onClick={() => console.log("ONCLICK")}>
                     Close
