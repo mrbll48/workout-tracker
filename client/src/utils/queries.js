@@ -117,6 +117,7 @@ export const GET_ALL_PHOTOS = gql`
       url
       title
       description
+      by
     }
   }
 `;

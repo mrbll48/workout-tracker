@@ -26,7 +26,7 @@ export const Workouts = () => {
           <p className="px-5 border ">{w.sets}</p>
         ))}
       </div>
-      <div className="d-flex flex-column border border-primary">
+    <div className="d-flex flex-column border border-primary">
         <p className="px-5">Reps</p>
         <br></br>
         {workouts?.map((w) => (
