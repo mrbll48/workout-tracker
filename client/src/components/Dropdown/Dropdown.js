@@ -11,6 +11,13 @@ const muscles = [
   "biceps",
   "calves",
   "chest",
+  "forearms",
+  "glutes",
+  "hamstrings",
+  "lats",
+  "lower_back",
+  "middle_back",
+  "neck",
 ];
 
 export function APIWorkout({ name, muscle, instructions }) {
@@ -83,7 +90,7 @@ export default function CustomDropdown({ title, muscle }) {
 
                   <br></br>
                   <button id="close-btn" onClick={() => console.log("ONCLICK")}>
-                    /Close
+                    Close
                   </button>
                 </div>
               </div>
