@@ -7,7 +7,7 @@ import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignupForm from "../SignupForm";
 import LoginForm from "../LoginForm";
-
+import {Link} from "react-router-dom";
 export default function LandingPage() {
   // function to import logout from auth and assign it to logout variable
   const logout = (event) => {
@@ -36,6 +36,11 @@ export default function LandingPage() {
         {Auth.loggedIn() ? (
           <>
             <span>Hey there, {Auth.getProfile().data.username}!</span>
+           <Link to="/main">
+            <button className="button" >
+              Home
+            </button>
+           </Link>
             <button className="button" onClick={logout}>
               Logout
             </button>

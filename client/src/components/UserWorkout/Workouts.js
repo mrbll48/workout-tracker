@@ -9,7 +9,7 @@ export const Workouts = () => {
   console.log(workouts);
 
   return (
-    <section className="d-flex flex-direction-column">
+    <section className="d-flex justify-content-end">
       <div className="d-flex flex-column">
         <p className="px-5">Exercises</p>
         {workouts?.map((w) => (

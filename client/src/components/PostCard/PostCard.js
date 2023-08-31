@@ -6,7 +6,7 @@ import { useMutation } from "@apollo/client";
 import "../css/post-card.css";
 
 import { IconContext } from "react-icons";
-
+import NavScroll from "../NavScroll";
 import {
   AiOutlineRise,
   AiOutlineMenu,
@@ -66,6 +66,8 @@ function PostCard() {
   }, []);
 
   return (
+    <>
+     <NavScroll />
     <section className="bg-dark vh-100 d-flex justify-content-around pt-5">
       <div className="parent">
         <div>
@@ -99,6 +101,7 @@ function PostCard() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
