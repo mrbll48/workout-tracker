@@ -128,8 +128,8 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     // addLike: async () => {},
-    addPhoto: async (_, { picture }, context) => {
-      const pic = Photos.create({ picture });
+    addPhoto: async (_, { title, description, url }, context) => {
+      const pic = Photos.create({ title, description, url });
       console.log(pic);
       return pic;
     },

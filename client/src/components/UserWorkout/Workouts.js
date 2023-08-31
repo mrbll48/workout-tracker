@@ -1,7 +1,5 @@
 import { useQuery } from "@apollo/client";
 import { GET_WORKOUTS } from "../../utils/queries";
-import { QUERY_ALL_USERS } from "../../utils/queries";
-import { Table } from "react-bootstrap";
 
 export const Workouts = () => {
   const { loading, data } = useQuery(GET_WORKOUTS);
