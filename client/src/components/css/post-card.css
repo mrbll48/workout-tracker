@@ -1,0 +1,27 @@
+.parent {
+  width: 400px;
+  height: 700px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.074);
+}
+#photo-container {
+  border: none;
+  height: 500px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: auto;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+#spacing {
+  margin-top: 12px;
+  margin-left: 4.5em;
+}
+#spacing:hover {
+  scale: 1.1;
+  /* box-shadow: 0 0px 30px #ffbb763f; */
+  background-color: transparent;
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+}

@@ -1,0 +1,46 @@
+import { useQuery } from "@apollo/client";
+import { GET_WORKOUTS } from "../../utils/queries";
+import { QUERY_ALL_USERS } from "../../utils/queries";
+import { Table } from "react-bootstrap";
+
+export const Workouts = () => {
+  const { loading, data } = useQuery(GET_WORKOUTS);
+
+  const workouts = data?.workouts;
+
+  console.log(workouts);
+
+  return (
+    <section className="d-flex flex-direction-column">
+      <div className="d-flex flex-column">
+        <p className="px-5">Exercises</p>
+        {workouts?.map((w) => (
+          <>
+            <p className="px-5">
+              {w.exercise} posted by: {w.postedBy}
+            </p>
+          </>
+        ))}
+      </div>
+      <div className="d-flex justify-content-center flex-column">
+        <p className="px-5">Sets</p>
+        {workouts?.map((w) => (
+          <p className="px-5">{w.sets}</p>
+        ))}
+      </div>
+      <div>
+        <p className="px-5">Reps</p>
+        {workouts?.map((w) => (
+          <p className="px-5">{w.reps}</p>
+        ))}
+      </div>
+      {/* <div>
+        <p className="px-5">Posted By</p>
+
+        {workouts?.map((w) => (
+          <p className="px-5">{w.username}</p>
+        ))}
+      </div> */}
+    </section>
+  );
+};

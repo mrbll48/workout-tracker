@@ -1,11 +1,12 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Workout } = require("../models");
+const { User, Workout, Photos } = require("../models");
 const { signToken } = require("../utils/auth");
 const { GraphQLError } = require("graphql");
 
 const resolvers = {
   Query: {
-    me: async (parent, args, context) => {
+    me: async (_, args, context) => {
+      console.log(context.user);
       if (context.user) {
         return await User.findOne({ _id: context.user._id }).populate(
           "workouts"
@@ -13,14 +14,24 @@ const resolvers = {
       }
       throw new GraphQLError("You are not signed in");
     },
-    workout: async (parent, { workoutId }) => {
-      console.log(workoutId);
-      return Workout.findOne({ _id: workoutId });
+    user: async (_, { username }) => {
+      const user = await User.findOne({ username: username }).populate(
+        "workouts"
+      );
+      return user;
     },
-    workouts: async (parent, { username }) => {
-      console.log(username);
-      const params = username ? { username } : {};
-      return Workout.find({ params });
+    users: async (_, args) => {
+      const users = await User.find().populate("workouts");
+      console.log(users);
+      return users;
+    },
+    workout: async (parent, { workoutId }) => {
+      const params = workoutId ? { workoutId } : {};
+      console.log(params);
+      return Workout.find(params);
+    },
+    workouts: async (parent, { userId }) => {
+      return Workout.find();
     },
   },
   Mutation: {
@@ -47,14 +58,18 @@ const resolvers = {
 
       return { token, user };
     },
-    postWorkout: async (_, { text }, context) => {
-      // console.log(text, context.user._id);
+    postWorkout: async (_, { exercise, sets, reps }, context) => {
+      console.log(exercise, context.user.username);
 
       const user = context.user._id;
       console.log(user);
-      const workout = await Workout.create({ text });
+      const workout = await Workout.create({
+        exercise,
+        sets,
+        reps,
+        postedBy: context.user.username,
+      });
 
-      // console.log(workout);
       await User.findOneAndUpdate(
         {
           _id: user,
@@ -81,6 +96,7 @@ const resolvers = {
       return await User.findByIdAndDelete(context.user._id);
     },
     updateWorkout: async (_, { workoutId, workoutDetails }, context) => {
+      console.log(workoutDetails);
       if (!context.user) {
         throw new AuthenticationError("You need to be logged in!");
       }
@@ -95,6 +111,27 @@ const resolvers = {
         throw new AuthenticationError("You need to be logged in!");
       }
       return await Workout.findByIdAndDelete(workoutId);
+    },
+    addComment: async (
+      _,
+      { workoutId, commentText, commentAuthor },
+      context
+    ) => {
+      if (context.user) {
+        return await Workout.findOneAndUpdate(
+          { _id: workoutId },
+          { $addToSet: { comments: { commentText, commentAuthor } } },
+          { new: true }
+        ).populate("comments");
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // addLike: async () => {},
+    addPhoto: async (_, { picture }, context) => {
+      const pic = Photos.create({ picture });
+      console.log(pic);
+      return pic;
     },
   },
 };
