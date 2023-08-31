@@ -1,14 +1,5 @@
 import React, { useState } from "react";
 import "../css/workout-info-card.css";
-import { useMutation } from "@apollo/client";
-
-import {
-  AiOutlineRise,
-  AiOutlineMenu,
-  AiOutlineShareAlt,
-} from "react-icons/ai";
-
-import { IconContext } from "react-icons";
 
 function ImageUpload({ photo }) {
   const [postImage, setPostImage] = useState({ myFile: "" });

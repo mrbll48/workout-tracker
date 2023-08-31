@@ -12,7 +12,7 @@ function UploadWidget() {
         uploadPreset: "l3a5wnco",
       },
       function (error, result) {
-        console.log(result);
+        console.log(result.info.secure_url);
       }
     );
   }, []);

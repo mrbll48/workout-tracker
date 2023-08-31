@@ -15,7 +15,6 @@ const muscles = [
 
 export function APIWorkout({ name, muscle, instructions }) {
   const [workout, setWorkout] = useState();
-  console.log(workout, "API");
 }
 
 export default function CustomDropdown({ title, muscle }) {
@@ -45,51 +44,6 @@ export default function CustomDropdown({ title, muscle }) {
   };
 
   console.log(name);
-  // if (workout) {
-  //   return (
-  //     <div>
-  //       <div className="container">
-  //         <div className="box">
-  //           <span className="title">Workout: {workout}</span>
-  //           <div>
-  //             <p>Instructions: {instructions}</p>
-  //             <span>Muscle:{muscle}</span>
-  //             <br></br>
-  //             <button id="close-btn" onClick={() => console.log("ONCLICK")}>
-  //               Close
-  //             </button>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // } else {
-  //   return (
-  //     <div>
-  //       <Dropdown>
-  //         <Dropdown.Toggle
-  //           style={{
-  //             backgroundColor: "black",
-  //             paddingTop: "5px",
-  //             // borderColor: "#c1a362"
-  //           }}
-  //           id="dropdown-basic"
-  //         >
-  //           {title}
-  //         </Dropdown.Toggle>
-  //         <Dropdown.Menu>
-  //           <>
-  //             {muscles.map((muscle) => (
-  //               <Dropdown.Item onClick={() => searchAPI(muscle)} key={muscle}>
-  //                 {muscle}
-  //               </Dropdown.Item>
-  //             ))}
-  //           </>
-  //         </Dropdown.Menu>
-  //       </Dropdown>
-  //     </div>
-  //   );
-  // }
   return (
     <div>
       <Dropdown>
@@ -114,20 +68,68 @@ export default function CustomDropdown({ title, muscle }) {
         </Dropdown.Menu>
       </Dropdown>
       <div>
-        <div className="container">
-          <div className="box">
-            <span className="title">Workout: {workout}</span>
-            <div>
-              <p>Instructions: {instructions}</p>
-              <span>Muscle:{muscle}</span>
-              <br></br>
-              <button id="close-btn" onClick={() => console.log("ONCLICK")}>
-                /Close
-              </button>
+        {workout && (
+          <div className="container">
+            <div className="box">
+              <span className="title">Workout: {workout}</span>
+              <div>
+                <p>Instructions: {instructions}</p>
+                <span>Muscle:{muscle}</span>
+                <br></br>
+                <button id="close-btn" onClick={() => console.log("ONCLICK")}>
+                  /Close
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
 }
+
+// if (workout) {
+//   return (
+//     <div>
+//       <div className="container">
+//         <div className="box">
+//           <span className="title">Workout: {workout}</span>
+//           <div>
+//             <p>Instructions: {instructions}</p>
+//             <span>Muscle:{muscle}</span>
+//             <br></br>
+//             <button id="close-btn" onClick={() => console.log("ONCLICK")}>
+//               Close
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// } else {
+//   return (
+//     <div>
+//       <Dropdown>
+//         <Dropdown.Toggle
+//           style={{
+//             backgroundColor: "black",
+//             paddingTop: "5px",
+//             // borderColor: "#c1a362"
+//           }}
+//           id="dropdown-basic"
+//         >
+//           {title}
+//         </Dropdown.Toggle>
+//         <Dropdown.Menu>
+//           <>
+//             {muscles.map((muscle) => (
+//               <Dropdown.Item onClick={() => searchAPI(muscle)} key={muscle}>
+//                 {muscle}
+//               </Dropdown.Item>
+//             ))}
+//           </>
+//         </Dropdown.Menu>
+//       </Dropdown>
+//     </div>
+//   );
+// }
