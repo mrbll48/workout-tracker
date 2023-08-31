@@ -19,9 +19,6 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import { Workouts } from "./components/UserWorkout/Workouts";
 import Profile from "./components/Profile/Profile";
-import ImageUpload from "./components/ImageUpload";
-import PostCard from "./components/PostCard/PostCard";
-
 import PostCard from "./components/PostCard/PostCard";
 
 const cld = new Cloudinary({
