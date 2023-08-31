@@ -83,7 +83,8 @@ export default function CustomDropdown({ title, muscle }) {
 
                   <br></br>
                   <button id="close-btn" onClick={() => console.log("ONCLICK")}>
-                    /Close
+                    Close
+
                   </button>
                 </div>
               </div>
