@@ -72,6 +72,7 @@ export default function CustomDropdown({ title, muscle }) {
         </Dropdown.Menu>
       </Dropdown>
       <div>
+
         {workouts &&
           workouts?.map((workout) => (
             <div className="box">
@@ -79,13 +80,17 @@ export default function CustomDropdown({ title, muscle }) {
               <div>
                 <p>Instructions: {workout.instructions}</p>
                 <span>Muscle:{workout.muscle}</span>
+
+
                 <br></br>
                 <button id="close-btn" onClick={() => console.log("ONCLICK")}>
                   /Close
                 </button>
               </div>
             </div>
+
           ))}
+
       </div>
     </div>
   );

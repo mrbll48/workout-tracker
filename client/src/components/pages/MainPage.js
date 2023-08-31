@@ -80,6 +80,7 @@ export default function MainPage() {
       {login && <LoginForm />}
       {signup && <SignupForm />}
 
+
       {postCard && <PostCard photo={cat} />}
 
       {postWorkoutTable && <UserWorkout />}
