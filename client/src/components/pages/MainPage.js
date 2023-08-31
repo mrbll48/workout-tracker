@@ -37,6 +37,7 @@ export default function MainPage() {
 
   return (
     <div className="main-container" bg="dark">
+      <NavScroll />
       {/* <div>
         <NavScroll
           opt1={handleClosePostCard}
@@ -79,7 +80,6 @@ export default function MainPage() {
       <div></div>
       {login && <LoginForm />}
       {signup && <SignupForm />}
-
 
       {postCard && <PostCard photo={cat} />}
 

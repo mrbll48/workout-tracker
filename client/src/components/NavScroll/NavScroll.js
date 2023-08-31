@@ -24,7 +24,7 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="/">Welcome!</Navbar.Brand>
+        <Navbar.Brand href="/main">Welcome!</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
