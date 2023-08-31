@@ -20,7 +20,6 @@ function UploadWidget() {
       }
     );
   }, []);
-
   return (
     <div>
       <button onClick={() => widgetRef.current.open()}>Upload</button>
