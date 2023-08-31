@@ -24,23 +24,15 @@ export default function Profile() {
         <div className="container">
           <div className="row w-100">
             <div className="d-flex justify-content-around flex-wrap">
-              {workouts?.map((workout) =>
-                photos?.map((photo) => (
-                  <div className="card m-3" style={{ width: "18rem" }}>
-                    <div className="card-body">
-                      <img
-                        className="card-img-top h-50"
-                        variant="top"
-                        src={photo.url}
-                      />
-
-                      <h5 className="card-title">{workout.exercise}</h5>
-                      <p className="text-dark">Reps: {workout.reps}</p>
-                      <p className="text-dark">Sets: {workout.sets}</p>
-                    </div>
+              {workouts?.map((workout) => (
+                <div className="card m-3" style={{ width: "18rem" }}>
+                  <div className="card-body">
+                    <h5 className="card-title">{workout.exercise}</h5>
+                    <p className="text-dark">Reps: {workout.reps}</p>
+                    <p className="text-dark">Sets: {workout.sets}</p>
                   </div>
-                ))
-              )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

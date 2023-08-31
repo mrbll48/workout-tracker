@@ -37,15 +37,8 @@ export default function MainPage() {
 
   return (
     <div className="main-container" bg="dark">
-        <NavScroll />
-      {/* <div>
-        <NavScroll
-          opt1={handleClosePostCard}
-          opt2={handleWorkoutTable}
-          opt3={handleLogin}
-          opt4={handleSignup}
-        />
-      </div> */}
+      <NavScroll />
+
       <Workouts />
 
       <div className="d-flex justify-content-center">
@@ -64,11 +57,11 @@ export default function MainPage() {
         />
       </div>
       <div className="d-flex justify-content-center">
-      <ImgComponent
-        image={stretching}
-        workoutType={"Stretching"}
-        workoutMuscle={"Calves"}
-      />
+        <ImgComponent
+          image={stretching}
+          workoutType={"Stretching"}
+          workoutMuscle={"Calves"}
+        />
       </div>
       <div className="d-flex justify-content-center">
         <Dropdown
@@ -78,7 +71,7 @@ export default function MainPage() {
         />
       </div>
       <div className="d-flex justify-content-center">
-      <ImgComponent image={cardio} workoutType={"Cardio"} />
+        <ImgComponent image={cardio} workoutType={"Cardio"} />
       </div>
       <div className="d-flex justify-content-center">
         <Dropdown
