@@ -8,7 +8,7 @@ export const Workouts = () => {
   console.log(data, workouts);
 
   return (
-    <div className="d-flex bg-dark flex-direction-column ">
+    <div className="d-flex flex-direction-column ">
       <div className="d-flex flex-column border border-primary">
         <p className="px-5">Exercises</p>
         {workouts?.map((w) => (
