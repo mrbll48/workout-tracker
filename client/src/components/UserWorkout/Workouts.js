@@ -5,7 +5,7 @@ export const Workouts = () => {
   const { loading, data } = useQuery(GET_WORKOUTS);
 
   const workouts = data?.workouts;
-  console.log(data, workouts);
+  // console.log(data, workouts);
 
   return (
     <div className="d-flex flex-direction-column ">
