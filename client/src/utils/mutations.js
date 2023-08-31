@@ -76,12 +76,18 @@ export const DELETE_WORKOUT = gql`
 `;
 
 export const ADD_PHOTO = gql`
-  mutation addPhoto($title: String, $description: String, $url: String) {
-    addPhoto(title: $title, description: $description, url: $url) {
+  mutation addPhoto(
+    $title: String
+    $description: String
+    $url: String
+    $by: String
+  ) {
+    addPhoto(title: $title, description: $description, url: $url, by: $by) {
       _id
       title
       description
       url
+      by
     }
   }
 `;

@@ -38,6 +38,7 @@ const typeDefs = gql`
     title: String
     description: String
     url: String
+    by: String
   }
 
   input WorkoutInput {
@@ -70,7 +71,7 @@ const typeDefs = gql`
       commentText: String
       commentAuthor: String
     ): Workout
-    addPhoto(title: String, description: String, url: String): Photo
+    addPhoto(title: String, description: String, url: String, by: String): Photo
 
     # untested mutations
     # addLike(): Workout
