@@ -9,33 +9,35 @@ export const Workouts = () => {
   console.log(workouts);
 
   return (
-    <section className="d-flex bg-dark vh-100 flex-direction-column ">
-      <div className="d-flex flex-column">
+    <div className="d-flex bg-dark flex-direction-column ">
+      <div className="d-flex flex-column border border-primary">
         <p className="px-5">Exercises</p>
         {workouts?.map((w) => (
-          <p className="px-5 text-danger">
+          <p className="px-5 border border-danger">
             {w.exercise} posted by: {w.postedBy}
           </p>
         ))}
       </div>
-      <div className="d-flex justify-content-center flex-column">
+      <div className="d-flex flex-column border border-primary">
         <p className="px-5">Sets</p>
         {workouts?.map((w) => (
-          <p className="px-5">{w.sets}</p>
+          <p className="px-5 border border-danger">{w.sets}</p>
         ))}
       </div>
-      <div>
-        <p className="px-5">Reps</p>
+      <div className="d-flex flex-column border border-primary">
+        <p>Reps</p>
         {workouts?.map((w) => (
-          <p className="px-5">{w.reps}</p>
+          <p className="px-5 border border-danger">{w.reps}</p>
         ))}
       </div>
-      <div>
+      <div className="d-flex flex-column border border-primary">
         <p className="px-5">Posted By</p>
         {workouts?.map((w) => (
-          <p className="px-5">{w.username}</p>
+          <p className="px-5 border border-danger">{w.username}</p>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
+
+export default Workouts;

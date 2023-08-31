@@ -66,7 +66,6 @@ function App() {
           <Route path="/create-workout" element={<UserWorkout />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
-          <Route path="/workouts" element={<Workouts />} />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/post" element={<PostCard />} />
         </Routes>
