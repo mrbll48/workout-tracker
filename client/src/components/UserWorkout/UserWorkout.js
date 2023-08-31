@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { useMutation } from "@apollo/client";
 import { POST_WORKOUT } from "../../utils/mutations";
+import "../css/create-workout.css";
 
 function UserWorkout(e) {
   const [workoutInput, setWorkout] = useState();
@@ -41,6 +42,7 @@ function UserWorkout(e) {
           <h1>Record your workout here</h1>
           <div className="">
             <input
+              className="text-black"
               required
               type="text"
               name="exercise"
@@ -50,6 +52,7 @@ function UserWorkout(e) {
           </div>
           <div className="">
             <input
+              className="text-black"
               required
               type="text"
               name="sets"
@@ -59,6 +62,7 @@ function UserWorkout(e) {
           </div>
           <div className="">
             <input
+              className="text-black"
               required
               type="text"
               name="reps"

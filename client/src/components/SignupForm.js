@@ -52,7 +52,7 @@ const SignupForm = () => {
     });
   };
   return (
-    <div className="bg-dark vh-100 pt-5">
+    <div>
       <div id="form-container">
         <form className="form" onSubmit={handleFormSubmit}>
           <p>Create Account</p>

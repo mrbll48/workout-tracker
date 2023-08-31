@@ -36,6 +36,7 @@ export default function MainPage() {
   };
 
   return (
+    
     <div className="main-container" bg="dark">
       {/* <div>
         <NavScroll
@@ -45,35 +46,38 @@ export default function MainPage() {
           opt4={handleSignup}
         />
       </div> */}
-      <div className="box-component">
+      <div className="">
         <section className="">
           <ImgComponent
             image={strength}
             workoutType={"Strength"}
             workoutMuscle={"Chest"}
           />
+          <div className="d-flex justify-content-center">
           <Dropdown
             title={"Strength"}
             muscle
             // * Call API and display WorkoutInfoComponent
             onClick={() => console.log("Ok!")}
-          />
+          /></div>
           <ImgComponent
             image={stretching}
             workoutType={"Stretching"}
             workoutMuscle={"Calves"}
           />
+          <div className="d-flex justify-content-center">
           <Dropdown
             title={"Stretching"}
             // * Call API and display WorkoutInfoComponent
             onClick={() => console.log("Ok!")}
-          />
+          /></div>
           <ImgComponent image={cardio} workoutType={"Cardio"} />
+          <div className="d-flex justify-content-center">
           <Dropdown
             title={"Cardio"}
             // * Call API and display WorkoutInfoComponent
             onClick={() => console.log("Ok!")}
-          />
+          /></div>
         </section>
       </div>
       <div></div>
@@ -83,7 +87,7 @@ export default function MainPage() {
       {postCard && <PostCard photo={cat} />}
 
       {postWorkoutTable && <UserWorkout />}
-      <Workouts />
+    
     </div>
   );
 }
