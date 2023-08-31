@@ -22,6 +22,11 @@ export const GET_ME = gql`
           createdAt
         }
       }
+      photos {
+        title
+        description
+        url
+      }
     }
   }
 `;
@@ -40,6 +45,11 @@ export const QUERY_SINGLE_USER = gql`
         exercise
         reps
         sets
+      }
+      photos {
+        title
+        description
+        url
       }
     }
   }

@@ -7,16 +7,16 @@ const resolvers = {
   Query: {
     me: async (_, args, context) => {
       if (context.user) {
-        return await User.findOne({ _id: context.user._id }).populate(
-          "workouts"
-        );
+        return await User.findOne({ _id: context.user._id })
+          .populate("workouts")
+          .populate("photos");
       }
       throw new GraphQLError("You are not signed in");
     },
     user: async (_, { username }) => {
-      const user = await User.findOne({ username: username }).populate(
-        "workouts"
-      );
+      const user = await User.findOne({ username: username })
+        .populate("workouts")
+        .populate("photos");
       return user;
     },
     users: async (_, args) => {
@@ -125,7 +125,12 @@ const resolvers = {
     },
     // addLike: async () => {},
     addPhoto: async (_, { title, description, url }, context) => {
-      const pic = Photos.create({ title, description, url });
+      const pic = await Photos.create({ title, description, url });
+      const user = context.user._id;
+      await User.findOneAndUpdate(
+        { _id: user },
+        { $addToSet: { photos: pic._id } }
+      );
 
       return pic;
     },

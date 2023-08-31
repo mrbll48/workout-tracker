@@ -34,6 +34,12 @@ const userSchema = new Schema({
       ref: "WorkoutPost",
     },
   ],
+  photos: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Photos",
+    },
+  ],
 });
 
 // hash password
