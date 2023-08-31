@@ -34,6 +34,7 @@ const typeDefs = gql`
   }
 
   type Photo {
+    _id: ID
     title: String
     description: String
     url: String
