@@ -65,7 +65,6 @@ function App() {
           <Route path="/workouts" element={<Workouts />} />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/post" element={<PostCard />} />
-          {/* <Route path="/img" element={<UploadWidget />} /> */}
         </Routes>
       </Router>
     </ApolloProvider>
