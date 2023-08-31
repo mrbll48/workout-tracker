@@ -1,10 +1,20 @@
 .container {
+  /* outline: red dashed 1px; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
 }
+
+.box-component { 
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  background:#2c2c36;
+}
+
 #img-card {
+  display: flow-root;
   width: 310px;
   height: 300px;
   border-radius: 20px;
