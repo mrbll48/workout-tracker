@@ -15,6 +15,7 @@ import NavScroll from "../NavScroll";
 import StockImg from "../ImgComponent/StockImg";
 
 import { Workouts } from "../UserWorkout/Workouts";
+import ContactUs from "../Footer/Footer";
 
 export default function MainPage() {
   const [postCard, setPostCard] = useState(false);
@@ -75,6 +76,7 @@ export default function MainPage() {
           <Workouts />
         </div>
       </div>
+      <ContactUs />
     </div>
   );
 }
