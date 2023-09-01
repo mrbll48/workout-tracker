@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# FitSocials
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Overview](#overview)
+- [Technology Stack](#technology-stack)
+- [Description](#description)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+  - [Client-side](#client-side)
+  - [Server-side](#server-side)
+- [Features](#features)
+- [Scripts](#scripts)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+FitSocial is a MERN stack application that allows users to create, read, and manage their workout routines. The app also provides user authentication and the ability to interact with other users' workouts.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Technologies](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Technologies](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Technologies](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Technologies](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Technologies](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Technologies](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Technologies](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+![Technologies](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Technologies](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
-### `npm run build`
+---
+## Description
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+FitSocials is a comprehensive fitness platform designed to help users manage and optimize their exercise routines. With an intuitive interface and robust features, it offers the ability to track various workouts, monitor progress, and connect with other fitness enthusiasts. The application is built with a MERN stack, integrating MongoDB, Express.js, React, and Node.js, and utilizes Apollo Server for GraphQL API implementation. Secure authentication is in place for a personalized experience, and users can easily add, update, and view workouts. Whether you're a fitness newbie or an avid gym-goer, Workout FitSocials aims to make your fitness journey more efficient, streamlined, and interactive.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- User Authentication: Securely sign up and log in to personalize your workout experience.
+- Workout Management: Easily add and track various types of workouts.
+- Social Interaction: Connect with other users, share your progress, and even challenge friends.
+- Personalized Dashboard: Get an overview of your workout statistics and upcoming schedules.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js >= v14
+- npm >= v6
+- MongoDB >= v4
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+git clone https://github.com/mrbll48/workout-tracker.git
+cd workout-tracker
+```
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Install the dependencies
 
-### Analyzing the Bundle Size
+ - Install dependencies for server 
+```
+cd server
+npm install
+```
+- Install dependecies for client
+```
+cd ../client
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Start the application
 
-### Making a Progressive Web App
+From the root directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+npm run develop
+```
 
-### Advanced Configuration
+This will start both the server and client concurrently.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Client-side
 
-### `npm run build` fails to minify
+Navigate to `http://localhost:3000` to access the frontend of the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Server-side
+
+Server runs on `http://localhost:3001`.
+
+---
+
+## Features
+
+- User Authentication
+- CRUD operations for workouts
+- User interactions (likes, comments)
+
+---
+
+## Scripts
+
+- `npm start`: Starts the server (from `server` directory)
+- `npm run watch`: Starts the server with nodemon for development (from `server` directory)
+- `npm run start`: Starts the client-side development server (from `client` directory)
+- `npm run build`: Builds the client for production (from `client` directory)
+- `npm run develop`: Runs both client and server concurrently (from root directory)
+
+---
+
+## Credits
+
+Special thanks to all contributors who worked on this project.
+
+- [William Marks](https://github.com/mrbll48)
+- [Jair Gomez](https://github.com/JairGH)
+- [Steven Tovar-Contreras](https://github.com/s-tovar)
+- [Chris Vinthaya](https://github.com/Chrisvithaya)
+- [Lilia Hernandez](https://github.com/hdezlilia)
+
+
+---
+
+## License
+
+This project is licensed under the ISC License - see the [LICENSE.md](LICENSE.md) file for details.
