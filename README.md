@@ -1,4 +1,4 @@
-# FitSocials
+# FitTrack
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@
 
 ## Overview
 
-FitSocial is a MERN stack application that allows users to create, read, and manage their workout routines. The app also provides user authentication and the ability to interact with other users' workouts.
+FitTrack is a MERN stack application that allows users to create, read, and manage their workout routines. The app also provides user authentication and the ability to interact with other users' workouts.
 
 ---
 
@@ -40,7 +40,7 @@ FitSocial is a MERN stack application that allows users to create, read, and man
 ---
 ## Description
 
-FitSocials is a comprehensive fitness platform designed to help users manage and optimize their exercise routines. With an intuitive interface and robust features, it offers the ability to track various workouts, monitor progress, and connect with other fitness enthusiasts. The application is built with a MERN stack, integrating MongoDB, Express.js, React, and Node.js, and utilizes Apollo Server for GraphQL API implementation. Secure authentication is in place for a personalized experience, and users can easily add, update, and view workouts. Whether you're a fitness newbie or an avid gym-goer, Workout FitSocials aims to make your fitness journey more efficient, streamlined, and interactive.
+FitTrack is a comprehensive fitness platform designed to help users manage and optimize their exercise routines. With an intuitive interface and robust features, it offers the ability to track various workouts, monitor progress, and connect with other fitness enthusiasts. The application is built with a MERN stack, integrating MongoDB, Express.js, React, and Node.js, and utilizes Apollo Server for GraphQL API implementation. Secure authentication is in place for a personalized experience, and users can easily add, update, and view workouts. Whether you're a fitness newbie or an avid gym-goer, Workout FitTrack aims to make your fitness journey more efficient, streamlined, and interactive.
 
 ## Features
 
