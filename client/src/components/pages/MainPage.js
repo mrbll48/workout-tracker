@@ -12,6 +12,7 @@ import UserWorkout from "../UserWorkout";
 import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
 import NavScroll from "../NavScroll";
+import StockImg from "../ImgComponent/StockImg";
 
 import { Workouts } from "../UserWorkout/Workouts";
 
@@ -37,36 +38,42 @@ export default function MainPage() {
   return (
     <div className="main-container" bg="dark">
       <NavScroll />
-      <div id="workout-table">
-        <Workouts />
-      </div>
-      <div className="">
-        <ImgComponent
-          image={strength}
-          workoutType={"Strength"}
-          workoutMuscle={"Chest"}
-        />
-        <div className="d-flex justify-content-start ps-5">
-          <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
-        </div>
+      <div className="d-flex justify-content-evenly">
         <div className="">
-          <ImgComponent
-            image={stretching}
-            workoutType={"Stretching"}
-            workoutMuscle={"Calves"}
+          <StockImg
+            image={strength}
+            workoutType={"Strength"}
+            workoutMuscle={"Chest"}
           />
           <div className="d-flex justify-content-start ps-5">
-            <Dropdown title={"Stretching"} onClick={() => console.log("Ok!")} />
+            <Dropdown title={"Strength"} onClick={() => console.log("Ok!")} />
           </div>
-        </div>
-        <div className="">
-          <ImgComponent image={cardio} workoutType={"Cardio"} />
-          <div className="d-flex justify-content-start ps-5">
-            <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
+          <div className="">
+            <StockImg
+              image={stretching}
+              workoutType={"Stretching"}
+              workoutMuscle={"Calves"}
+            />
+            <div className="d-flex justify-content-start ps-5">
+              <Dropdown
+                title={"Stretching"}
+                onClick={() => console.log("Ok!")}
+              />
+            </div>
           </div>
+          <div className="">
+            <StockImg image={cardio} workoutType={"Cardio"} />
+            <div className="d-flex justify-content-start ps-5">
+              <Dropdown title={"Cardio"} onClick={() => console.log("Ok!")} />
+            </div>
+          </div>
+          {postCard && <PostCard />}
+          {postWorkoutTable && <UserWorkout />}
         </div>
-        {postCard && <PostCard />}
-        {postWorkoutTable && <UserWorkout />}
+        <ImgComponent />
+        <div id="workout-table">
+          <Workouts />
+        </div>
       </div>
     </div>
   );

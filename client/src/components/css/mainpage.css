@@ -1,6 +1,6 @@
 @media screen and (min-width: 900px) {
   #workout-table {
-    position: absolute;
+    /* position: absolute; */
     top: 65px;
     left: 68%;
   }
@@ -19,3 +19,6 @@
   z-index: -1;
   object-fit: cover;
 }
+
+
+
