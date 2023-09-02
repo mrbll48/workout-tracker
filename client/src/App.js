@@ -58,9 +58,9 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Routes>
-          <Route path="/landing-page" element={<LandingPage />} />
-          <Route path="main" element={<MainPage />} />
-          <Route path="/" element={<UserWorkout />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/main" element={<MainPage />} />
+          <Route path="/create-workout" element={<UserWorkout />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/profile/:username" element={<Profile />} />
