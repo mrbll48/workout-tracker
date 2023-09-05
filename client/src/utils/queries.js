@@ -10,6 +10,9 @@ export const GET_ME = gql`
       friends {
         _id
         username
+        workouts {
+          _id
+        }
       }
       workouts {
         _id

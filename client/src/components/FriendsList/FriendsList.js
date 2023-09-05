@@ -6,6 +6,7 @@ import { Card, Button } from "react-bootstrap";
 
 export default function FriendsList() {
   const { loading, data } = useQuery(GET_ME);
+  console.log(data);
 
   const friends = data?.me.friends;
   console.log(friends);

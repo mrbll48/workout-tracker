@@ -17,7 +17,7 @@ const typeDefs = gql`
     exercise: String!
     weight: String!
     sets: String!
-    reps: String
+    reps: String!
     likes: Int #TODO: figure out how to add likes to workouts
     comments: [Comment]
   }
@@ -79,6 +79,7 @@ const typeDefs = gql`
       commentAuthor: String
     ): Workout
     addPhoto(title: String, description: String, url: String, by: String): Photo
+    deleteFriend(_id: ID): User
 
     # untested mutations
     # addLike(): Workout
