@@ -50,8 +50,8 @@ export default function CustomDropdown({ title, muscle }) {
       <Dropdown className="d-flex justify-content-center">
         <Dropdown.Toggle
           style={{
-            backgroundColor: "black",
-            paddingTop: "5px",
+            backgroundColor: "rgba(0, 0, 0, 0.25)",
+            borderColor: "rgba(0, 0, 0, 0.25)",
           }}
           id="dropdown-basic"
         >
@@ -70,16 +70,25 @@ export default function CustomDropdown({ title, muscle }) {
       <div>
         {workouts &&
           workouts?.map((workout) => (
-            <div className="container">
+            <div
+              className="container"
+              style={{
+                paddingBottom: "15px",
+                paddingTop: "15px",
+                overflow: "hidden",
+              }}
+            >
               <div className="box">
                 <span className="title">Workout: {workout.name}</span>
                 <div>
-                  <p>Instructions: {workout.instructions}</p>
-                  <span>Muscle:{workout.muscle}</span>
-                  <br></br>
+                  <p style={{ maxHeight: "150px" }}>
+                    Instructions: {workout.instructions}
+                  </p>
+                  {/* <span>Muscle:{workout.muscle}</span> */}
+                  {/* <br></br>
                   <button id="close-btn" onClick={() => console.log("ONCLICK")}>
                     Close
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
