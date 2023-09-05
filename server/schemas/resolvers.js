@@ -36,8 +36,21 @@ const resolvers = {
     photos: async (_, args) => {
       return Photo.find();
     },
+    // friends: async (_, args, context) => {
+    //   return User.
+    // }
   },
   Mutation: {
+    addFriend: async (_, { _id }, context) => {
+      const user = context.user._id;
+
+      const friend = await User.findByIdAndUpdate(
+        { _id: user },
+        { $addToSet: { friends: _id } },
+        { new: true }
+      );
+      return friend;
+    },
     addUser: async (_, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);

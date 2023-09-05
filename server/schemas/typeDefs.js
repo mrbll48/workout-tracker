@@ -55,6 +55,7 @@ const typeDefs = gql`
     workout(workoutId: String): Workout
     workouts(userId: String): [Workout]
     photos: [Photo]
+    friends: [User]
   }
 
   type Mutation {
@@ -75,6 +76,7 @@ const typeDefs = gql`
 
     # untested mutations
     # addLike(): Workout
+    addFriend(_id: ID): User
   }
 `;
 
