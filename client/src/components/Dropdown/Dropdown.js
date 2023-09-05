@@ -50,7 +50,7 @@ export default function CustomDropdown({ title, muscle }) {
 
   return (
     <div>
-      <Dropdown className="d-flex justify-content-center">
+      <Dropdown className="d-flex justify-content-center ">
         <Dropdown.Toggle
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.25)",
@@ -66,6 +66,7 @@ export default function CustomDropdown({ title, muscle }) {
             borderColor: "rgba(0, 0, 0, 0.25)",
           }}
           onClick={handleReset}
+          id="reset-btn"
         >
           Reset
         </button>

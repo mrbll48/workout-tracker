@@ -181,3 +181,8 @@ label {
     background: transparent;
   }
 }
+#reset-btn {
+  border-radius: 10px;
+  width: 60px;
+  margin-left: 15px;
+}
