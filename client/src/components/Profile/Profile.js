@@ -4,6 +4,8 @@ import { QUERY_SINGLE_USER } from "../../utils/queries";
 import { Card, Button } from "react-bootstrap";
 import NavScroll from "../NavScroll";
 
+import "../css/profile.css";
+
 export default function Profile() {
   const { username } = useParams();
 
@@ -27,7 +29,10 @@ export default function Profile() {
           <div className="row w-100">
             <div className="d-flex justify-content-around flex-wrap">
               {workouts?.map((workout) => (
-                <div className="card m-3" style={{ width: "18rem" }}>
+                <div
+                  className="card m-3 workout-card"
+                  style={{ width: "18rem" }}
+                >
                   <div className="card-body">
                     <h5 className="card-title">{workout.exercise}</h5>
                     <p className="text-dark">Reps: {workout.reps}</p>
