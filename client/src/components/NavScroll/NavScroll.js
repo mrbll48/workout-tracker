@@ -22,18 +22,25 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark">
+    <Navbar
+      expand="lg"
+      style={{
+        backgroundColor: "#01577D",
+        fontWeight: "bold",
+        fontSize: "20px",
+      }}
+    >
       <Container fluid>
-        <Navbar.Brand href="/main">Welcome!</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 px-2"
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
             {Auth.loggedIn() ? (
               <>
+                <Nav.Link href="/main">Home</Nav.Link>
                 <Nav.Link href="/post" onClick={opt1}>
                   Create Post
                 </Nav.Link>
@@ -64,11 +71,7 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
               onChange={onInput}
               value={value}
             />
-            <Button
-              variant="outline-success"
-              type="submit"
-              href={`/profile/${value}`}
-            >
+            <Button variant="dark" type="submit" href={`/profile/${value}`}>
               Search
             </Button>
           </Form>
