@@ -10,18 +10,23 @@ const resolvers = {
       if (context.user) {
         return await User.findOne({ _id: context.user._id })
           .populate("workouts")
-          .populate("photos");
+          .populate("photos")
+          .populate("friends");
       }
       throw new GraphQLError("You are not signed in");
     },
     user: async (_, { username }) => {
       const user = await User.findOne({ username: username })
         .populate("workouts")
-        .populate("photos");
+        .populate("photos")
+        .populate("friends");
       return user;
     },
     users: async (_, args) => {
-      const users = await User.find().populate("workouts");
+      const users = await User.find()
+        .populate("workouts")
+        .populate("photos")
+        .populate("friends");
 
       return users;
     },
@@ -38,6 +43,16 @@ const resolvers = {
     },
   },
   Mutation: {
+    addFriend: async (_, { _id }, context) => {
+      const user = context.user._id;
+
+      const friend = await User.findByIdAndUpdate(
+        { _id: user },
+        { $addToSet: { friends: _id } },
+        { new: true }
+      );
+      return friend;
+    },
     addUser: async (_, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);

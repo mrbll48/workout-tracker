@@ -51,6 +51,10 @@ export const QUERY_SINGLE_USER = gql`
         description
         url
       }
+      friends {
+        _id
+        username
+      }
     }
   }
 `;
