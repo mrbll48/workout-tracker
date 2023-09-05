@@ -20,7 +20,9 @@ export default function Profile() {
     <>
       <NavScroll />
       <div className="bg-dark row" style={{ height: "92vh" }}>
-        <h3 className="justify-content-center">{user.username}'s profile</h3>
+        <h3 className="d-flex justify-content-center pt-4">
+          {user.username}'s profile
+        </h3>
         <div className="container">
           <div className="row w-100">
             <div className="d-flex justify-content-around flex-wrap">
