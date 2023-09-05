@@ -97,6 +97,7 @@ export const GET_WORKOUT = gql`
         commentAuthor
         createdAt
       }
+      weight
     }
   }
 `;
@@ -110,6 +111,7 @@ export const GET_WORKOUTS = gql`
       sets
       reps
       postedBy
+      weight
     }
   }
 `;

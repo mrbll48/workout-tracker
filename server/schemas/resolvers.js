@@ -76,13 +76,14 @@ const resolvers = {
 
       return { token, user };
     },
-    postWorkout: async (_, { exercise, sets, reps }, context) => {
+    postWorkout: async (_, { exercise, sets, reps, weight }, context) => {
       const user = context.user._id;
 
       const workout = await Workout.create({
         exercise,
         sets,
         reps,
+        weight,
         postedBy: context.user.username,
       });
 
