@@ -64,7 +64,6 @@ function PostCard() {
 
   return (
     <>
-      <NavScroll />
       <section className="bg-dark vh-100 d-flex justify-content-around pt-5">
         <div className="parent">
           <div>

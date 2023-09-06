@@ -35,11 +35,15 @@ export default function MainPage() {
   };
 
   return (
-    <div className="main-container" bg="dark ">
-      <NavScroll />
-
-      <SideMenu />
-
+    <div className="main-container">
+      <div>
+        <NavScroll /> {/* Navbar */}
+        <SideMenu />
+      </div>
+      <div id="main-content">
+        <ImgComponent />
+        <Workouts />
+      </div>
     </div>
   );
 }
