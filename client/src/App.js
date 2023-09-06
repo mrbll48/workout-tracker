@@ -66,7 +66,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/post" element={<PostCard />} />
-          <Route path="/friends" element={<FriendsList />} />
+          <Route path="/friends/:username" element={<FriendsList />} />
         </Routes>
       </Router>
     </ApolloProvider>

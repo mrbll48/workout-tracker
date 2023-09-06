@@ -3,6 +3,7 @@ import Auth from "../../utils/auth";
 import { useQuery } from "@apollo/client";
 import { GET_ME } from "../../utils/queries";
 import { Card, Button } from "react-bootstrap";
+import "../css/profile.css";
 
 export default function FriendsList() {
   const { loading, data } = useQuery(GET_ME);
@@ -16,16 +17,28 @@ export default function FriendsList() {
       <div className="pt-3 d-flex justify-content-around">
         {friends?.map((friend) => (
           <Card
-            className="text-light"
-            style={{ width: "10rem", backgroundColor: "#01577D" }}
+            className="text-light workout-card"
+            style={{
+              width: "10rem",
+              backgroundColor: "#01577D",
+              textDecoration: "none",
+            }}
           >
             <Card.Body>
-              <Card.Title className="d-flex justify-content-center">
-                {friend.username}
+              <Card.Title
+                className="d-flex justify-content-center"
+                style={{ textDecoration: "none" }}
+              >
+                <a
+                  className="text-decoration-none text-light"
+                  href={`/profile/${friend.username}`}
+                >
+                  View {friend.username}'s profile
+                </a>
               </Card.Title>
-              <Card.Text className="d-flex justify-content-center">
-                {friend.username}'s workouts:
-              </Card.Text>
+              <>
+                <Card.Text className="d-flex justify-content-center"></Card.Text>
+              </>
             </Card.Body>
           </Card>
         ))}
