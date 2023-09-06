@@ -22,34 +22,51 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark">
+    <Navbar
+      expand="lg"
+      style={{
+        backgroundColor: "#01577D",
+        fontWeight: "bold",
+        fontSize: "20px",
+      }}
+    >
       <Container fluid>
-        <Navbar.Brand href="/main">Welcome!</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 px-2"
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
             {Auth.loggedIn() ? (
               <>
-                <Nav.Link href="/post" onClick={opt1}>
+                <Nav.Link className="text-light" href="/main">
+                  Home
+                </Nav.Link>
+                <Nav.Link className="text-light" href="/post" onClick={opt1}>
                   Create Post
                 </Nav.Link>
-                <Nav.Link href="/create-workout" onClick={opt2}>
+                <Nav.Link
+                  className="text-light"
+                  href="/create-workout"
+                  onClick={opt2}
+                >
                   Create Workout
                 </Nav.Link>
-                <Nav.Link href="/" onClick={handleLogout}>
+                <Nav.Link
+                  className="text-light"
+                  href="/"
+                  onClick={handleLogout}
+                >
                   Logout
                 </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="/login" onClick={opt3}>
+                <Nav.Link className="text-light" href="/login" onClick={opt3}>
                   Login
                 </Nav.Link>
-                <Nav.Link href="/signup" onClick={opt4}>
+                <Nav.Link className="text-light" href="/signup" onClick={opt4}>
                   Signup
                 </Nav.Link>
               </>
@@ -64,11 +81,7 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
               onChange={onInput}
               value={value}
             />
-            <Button
-              variant="outline-success"
-              type="submit"
-              href={`/profile/${value}`}
-            >
+            <Button variant="dark" type="submit" href={`/profile/${value}`}>
               Search
             </Button>
           </Form>

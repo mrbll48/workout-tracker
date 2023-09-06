@@ -5,7 +5,7 @@ export const Workouts = () => {
   const { loading, data } = useQuery(GET_WORKOUTS);
 
   const workouts = data?.workouts;
-  // console.log(data, workouts);
+  console.log(data, workouts);
 
   return (
     <div className="d-flex flex-direction-column ">
@@ -40,6 +40,18 @@ export const Workouts = () => {
             <p className="px-5 border" style={{ "white-space": "nowrap" }}>
               <br />
               {w.reps}
+              <br />
+            </p>
+          ))}
+        </div>
+      </div>
+      <div className="border border-primary ">
+        <p className="px-5">Weight</p>
+        <div className="d-flex flex-column justify-content-around ">
+          {workouts?.map((w) => (
+            <p className="px-5 border" style={{ "white-space": "nowrap" }}>
+              <br />
+              {w.weight} pounds
               <br />
             </p>
           ))}

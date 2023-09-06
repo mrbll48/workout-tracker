@@ -10,6 +10,7 @@ function UserWorkout(e) {
     exercise: "",
     sets: "",
     reps: "",
+    weight: "",
   });
 
   const [postWorkout, { error, data }] = useMutation(POST_WORKOUT);
@@ -23,9 +24,11 @@ function UserWorkout(e) {
     e.preventDefault();
 
     try {
+      console.log(workoutData);
       const { data } = await postWorkout({
         variables: { ...workoutData },
       });
+      console.log(data);
 
       window.location.assign("/main");
     } catch (e) {
@@ -35,48 +38,58 @@ function UserWorkout(e) {
 
   return (
     <>
-     <NavScroll />
-    <div className="bg-dark vh-100 pt-5">
-      <div className="d-flex justify-content-around ">
-        <form className="" onSubmit={handleFormSubmit}>
-          <h1>Record your workout here</h1>
-          <div className="">
-            <input
-              className="text-black"
-              required
-              type="text"
-              name="exercise"
-              onChange={handleInputChange}
-              placeholder="Exercise"
-            />
-          </div>
-          <div className="">
-            <input
-              className="text-black"
-              required
-              type="text"
-              name="sets"
-              onChange={handleInputChange}
-              placeholder="Sets"
+      <NavScroll />
+      <div className="bg-dark vh-100 pt-5">
+        <div className="d-flex justify-content-around ">
+          <form className="" onSubmit={handleFormSubmit}>
+            <h1>Record your workout here</h1>
+            <div className="">
+              <input
+                className="text-black"
+                required
+                type="text"
+                name="exercise"
+                onChange={handleInputChange}
+                placeholder="Exercise"
               />
-          </div>
-          <div className="">
-            <input
-              className="text-black"
-              required
-              type="text"
-              name="reps"
-              onChange={handleInputChange}
-              placeholder="Reps"
+            </div>
+            <div className="">
+              <input
+                className="text-black"
+                required
+                type="text"
+                name="sets"
+                onChange={handleInputChange}
+                placeholder="Sets"
               />
-          </div>
-          <button className="submit" type="submit">
-            Save
-          </button>
-        </form>
+            </div>
+            <div className="">
+              <input
+                className="text-black"
+                required
+                type="text"
+                name="reps"
+                onChange={handleInputChange}
+                placeholder="Reps"
+              />
+            </div>
+            <div className="">
+              <input
+                className="text-black"
+                required
+                type="text"
+                name="weight"
+                onChange={handleInputChange}
+                placeholder="Weight"
+              />
+            </div>
+            <button className="submit" type="submit">
+              Save
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-              </>
+    </>
   );
 }
 

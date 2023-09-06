@@ -18,6 +18,9 @@ const muscles = [
   "lower_back",
   "middle_back",
   "neck",
+  "quadriceps",
+  "traps",
+  "triceps",
 ];
 
 export default function CustomDropdown({ title, muscle }) {
@@ -94,11 +97,13 @@ export default function CustomDropdown({ title, muscle }) {
               <div className="box">
                 <span className="title">Workout: {workout.name}</span>
                 <div>
+
                   <p style={{ maxHeight: "150px" }}>
                     Instructions: {workout.instructions}
                   </p>
                   {/* <span>Muscle:{workout.muscle}</span> */}
                   {/* <br></br>
+
                   <button id="close-btn" onClick={() => console.log("ONCLICK")}>
                     Close
                   </button> */}

@@ -37,7 +37,9 @@ export default function MainPage() {
   return (
     <div className="main-container" bg="dark ">
       <NavScroll />
+
       <SideMenu />
+
     </div>
   );
 }

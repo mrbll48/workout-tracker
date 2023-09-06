@@ -22,6 +22,7 @@ import Profile from "./components/Profile/Profile";
 import LandingPage from "./components/pages/LandingPage";
 
 import PostCard from "./components/PostCard/PostCard";
+import FriendsList from "./components/FriendsList/FriendsList";
 
 const cld = new Cloudinary({
   cloud: {
@@ -65,6 +66,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/post" element={<PostCard />} />
+          <Route path="/friends" element={<FriendsList />} />
         </Routes>
       </Router>
     </ApolloProvider>
