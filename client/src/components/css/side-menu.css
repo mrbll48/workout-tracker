@@ -1,0 +1,29 @@
+@media (min-width: 997px) {
+  .side-menu-container {
+    width: 300px;
+    height: 94vh;
+    background-color: #88a795;
+    overflow: auto;
+  }
+}
+
+#title-side {
+  font-size: 28px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+#sub-title {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+#workout-type {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+#api-btn {
+  margin-bottom: 30px;
+  padding-top: 50px;
+}

@@ -25,6 +25,9 @@ const muscles = [
 
 export default function CustomDropdown({ title, muscle }) {
   const [workouts, setWorkouts] = useState();
+  const handleReset = () => {
+    setWorkouts(false);
+  };
 
   const searchAPI = async (muscle) => {
     let options = {
@@ -50,16 +53,26 @@ export default function CustomDropdown({ title, muscle }) {
 
   return (
     <div>
-      <Dropdown className="d-flex justify-content-center">
+      <Dropdown className="d-flex justify-content-center ">
         <Dropdown.Toggle
           style={{
-            backgroundColor: "black",
-            paddingTop: "5px",
+            backgroundColor: "rgba(0, 0, 0, 0.25)",
+            borderColor: "rgba(0, 0, 0, 0.25)",
           }}
           id="dropdown-basic"
         >
           {title}
         </Dropdown.Toggle>
+        <button
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.25)",
+            borderColor: "rgba(0, 0, 0, 0.25)",
+          }}
+          onClick={handleReset}
+          id="reset-btn"
+        >
+          Reset
+        </button>
         <Dropdown.Menu>
           <>
             {muscles.map((muscle) => (
@@ -73,16 +86,27 @@ export default function CustomDropdown({ title, muscle }) {
       <div>
         {workouts &&
           workouts?.map((workout) => (
-            <div className="container">
+            <div
+              className="container"
+              style={{
+                paddingBottom: "15px",
+                paddingTop: "15px",
+                overflow: "hidden",
+              }}
+            >
               <div className="box">
                 <span className="title">Workout: {workout.name}</span>
                 <div>
-                  <p>Instructions: {workout.instructions}</p>
-                  <span>Muscle: {workout.muscle}</span>
-                  <br></br>
+
+                  <p style={{ maxHeight: "150px" }}>
+                    Instructions: {workout.instructions}
+                  </p>
+                  {/* <span>Muscle:{workout.muscle}</span> */}
+                  {/* <br></br>
+
                   <button id="close-btn" onClick={() => console.log("ONCLICK")}>
                     Close
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

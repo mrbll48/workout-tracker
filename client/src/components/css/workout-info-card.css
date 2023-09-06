@@ -84,11 +84,6 @@
 .trigger-img {
   padding-top: 20px;
 }
-/* input {
-  background-color: rgba(255, 255, 255, 0.074);
-  border: 1px solid rgba(255, 255, 255, 0.222);
-  outline: none;
-} */
 
 /*? New  Input */
 .group {
@@ -185,4 +180,9 @@ label {
     width: 0;
     background: transparent;
   }
+}
+#reset-btn {
+  border-radius: 10px;
+  width: 60px;
+  margin-left: 15px;
 }
