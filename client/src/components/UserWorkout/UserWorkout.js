@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import "../css/create-workout.css";
 
 import { useMutation } from "@apollo/client";
 import { POST_WORKOUT } from "../../utils/mutations";
-import "../css/create-workout.css";
+
 import NavScroll from "../NavScroll";
+
 function UserWorkout(e) {
+  // we need this?
   const [workoutInput, setWorkout] = useState();
   const [workoutData, setWorkoutData] = useState({
     exercise: "",
