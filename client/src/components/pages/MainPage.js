@@ -72,7 +72,7 @@ export default function MainPage() {
           {postWorkoutTable && <UserWorkout />}
         </div>
         <ImgComponent />
-        <div id="workout-table">
+        <div id="workout-table" className="pt-3">
           <Workouts />
         </div>
       </div>

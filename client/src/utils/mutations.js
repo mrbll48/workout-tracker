@@ -25,12 +25,23 @@ export const LOGIN_USER = gql`
 `;
 
 export const POST_WORKOUT = gql`
-  mutation postWorkout($exercise: String!, $sets: String!, $reps: String!) {
-    postWorkout(exercise: $exercise, sets: $sets, reps: $reps) {
+  mutation postWorkout(
+    $exercise: String!
+    $sets: String!
+    $reps: String!
+    $weight: String!
+  ) {
+    postWorkout(
+      exercise: $exercise
+      sets: $sets
+      reps: $reps
+      weight: $weight
+    ) {
       _id
       exercise
       sets
       reps
+      weight
     }
   }
 `;

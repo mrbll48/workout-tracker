@@ -40,23 +40,33 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
           >
             {Auth.loggedIn() ? (
               <>
-                <Nav.Link href="/main">Home</Nav.Link>
-                <Nav.Link href="/post" onClick={opt1}>
+                <Nav.Link className="text-light" href="/main">
+                  Home
+                </Nav.Link>
+                <Nav.Link className="text-light" href="/post" onClick={opt1}>
                   Create Post
                 </Nav.Link>
-                <Nav.Link href="/create-workout" onClick={opt2}>
+                <Nav.Link
+                  className="text-light"
+                  href="/create-workout"
+                  onClick={opt2}
+                >
                   Create Workout
                 </Nav.Link>
-                <Nav.Link href="/" onClick={handleLogout}>
+                <Nav.Link
+                  className="text-light"
+                  href="/"
+                  onClick={handleLogout}
+                >
                   Logout
                 </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="/login" onClick={opt3}>
+                <Nav.Link className="text-light" href="/login" onClick={opt3}>
                   Login
                 </Nav.Link>
-                <Nav.Link href="/signup" onClick={opt4}>
+                <Nav.Link className="text-light" href="/signup" onClick={opt4}>
                   Signup
                 </Nav.Link>
               </>

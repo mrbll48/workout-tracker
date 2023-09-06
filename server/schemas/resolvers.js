@@ -6,15 +6,21 @@ const Photo = require("../models/Photos");
 
 const resolvers = {
   Query: {
+    friends: async (parent, args, context) => {
+      console.log(context.user);
+      return friends;
+    },
     me: async (_, args, context) => {
       if (context.user) {
-        return await User.findOne({ _id: context.user._id })
+        const user = await User.findOne({ _id: context.user._id })
           .populate("workouts")
           .populate("photos")
-          .populate("friends");
+          .populate({ path: "friends", populate: { path: "workouts" } });
+        return user;
       }
       throw new GraphQLError("You are not signed in");
     },
+
     user: async (_, { username }) => {
       const user = await User.findOne({ username: username })
         .populate("workouts")
@@ -42,16 +48,26 @@ const resolvers = {
       return Photo.find();
     },
   },
+
   Mutation: {
     addFriend: async (_, { _id }, context) => {
       const user = context.user._id;
+      console.log(user);
 
       const friend = await User.findByIdAndUpdate(
         { _id: user },
         { $addToSet: { friends: _id } },
         { new: true }
       );
+      console.log(friend);
       return friend;
+    },
+    deleteFriend: async (_, { _id }, context) => {
+      const user = context.user._id;
+      const friend = await User.findByIdAndUpdate(
+        { _id: user },
+        { $pull: { friends: _id } }
+      );
     },
     addUser: async (_, { username, email, password }) => {
       const user = await User.create({ username, email, password });
@@ -76,13 +92,14 @@ const resolvers = {
 
       return { token, user };
     },
-    postWorkout: async (_, { exercise, sets, reps }, context) => {
+    postWorkout: async (_, { exercise, sets, reps, weight }, context) => {
       const user = context.user._id;
 
       const workout = await Workout.create({
         exercise,
         sets,
         reps,
+        weight,
         postedBy: context.user.username,
       });
 

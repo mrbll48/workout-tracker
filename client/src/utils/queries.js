@@ -10,11 +10,16 @@ export const GET_ME = gql`
       friends {
         _id
         username
+        workouts {
+          _id
+        }
       }
       workouts {
         _id
-        text
-        date
+        exercise
+        reps
+        sets
+        weight
         comments {
           _id
           commentText
@@ -30,7 +35,14 @@ export const GET_ME = gql`
     }
   }
 `;
-
+export const GET_FRIENDS = gql`
+  query friends {
+    friends {
+      _id
+      username
+    }
+  }
+`;
 export const QUERY_SINGLE_USER = gql`
   query user($username: String) {
     user(username: $username) {
@@ -97,6 +109,7 @@ export const GET_WORKOUT = gql`
         commentAuthor
         createdAt
       }
+      weight
     }
   }
 `;
@@ -110,6 +123,7 @@ export const GET_WORKOUTS = gql`
       sets
       reps
       postedBy
+      weight
     }
   }
 `;
