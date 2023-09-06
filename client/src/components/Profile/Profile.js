@@ -25,6 +25,9 @@ export default function Profile() {
         <h3 className="d-flex justify-content-center pt-4">
           {user.username}'s profile
         </h3>
+        <aside>
+          <a href="/friends">{user.username}'s friends</a>
+        </aside>
         <div className="container">
           <div className="row w-100">
             <div className="d-flex justify-content-around flex-wrap">

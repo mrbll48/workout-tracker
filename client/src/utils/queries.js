@@ -12,6 +12,9 @@ export const GET_ME = gql`
         username
         workouts {
           _id
+          exercise
+          sets
+          reps
         }
       }
       workouts {
