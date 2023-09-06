@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 
+import NavScroll from "../NavScroll";
+
 import { ADD_PHOTO } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 
 import "../css/post-card.css";
 
 import { IconContext } from "react-icons";
-import NavScroll from "../NavScroll";
+
 import {
   AiOutlineRise,
   AiOutlineMenu,
@@ -64,6 +66,7 @@ function PostCard() {
 
   return (
     <>
+      <NavScroll />
       <section className="bg-dark vh-100 d-flex justify-content-around pt-5">
         <div className="parent">
           <div>
@@ -71,32 +74,33 @@ function PostCard() {
               <img src={picture} alt="Uploaded" id="photo-container" />
             )}
           </div>
-          <div className="buttons">
-            <IconContext.Provider value={{ color: "white", size: "2.1em" }}>
-              <div>
-                <AiOutlineRise id="spacing" />
-                <AiOutlineMenu id="spacing" />
-                <AiOutlineShareAlt id="spacing" />
-              </div>
-            </IconContext.Provider>
+          <div id="options">
+            <div className="form__group field">
+              <input
+                name="title"
+                className="form__field"
+                type="text"
+                onChange={handleInputChange}
+              />
+              <label className="form__label" for="name">
+                Title
+              </label>
+            </div>
+            <div className="form__group field">
+              <input
+                name="description"
+                className="form__field"
+                type="text"
+                onChange={handleInputChange}
+              />
+              <label className="form__label" for="name">
+                Description
+              </label>
+            </div>
           </div>
-          <input
-            type="text"
-            name="title"
-            placeholder="Image title"
-            className="text-dark"
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            name="description"
-            placeholder="Image description"
-            className="text-dark"
-            onChange={handleInputChange}
-          />
-          <div className="user">
-            <button onClick={() => widgetRef.current.open()}>Upload</button>
-          </div>
+          <button onClick={() => widgetRef.current.open()} className="click">
+            Photo
+          </button>
         </div>
       </section>
     </>
@@ -104,3 +108,15 @@ function PostCard() {
 }
 
 export default PostCard;
+
+{
+  /* <div className="buttons">
+  <IconContext.Provider value={{ color: "white", size: "2.1em" }}>
+    <div>
+      <AiOutlineRise id="spacing" />
+      <AiOutlineMenu id="spacing" />
+      <AiOutlineShareAlt id="spacing" />
+    </div>
+  </IconContext.Provider>
+</div> */
+}
