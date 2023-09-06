@@ -17,15 +17,27 @@ export default function FriendsList() {
         {friends?.map((friend) => (
           <Card
             className="text-light"
-            style={{ width: "10rem", backgroundColor: "#01577D" }}
+            style={{
+              width: "10rem",
+              backgroundColor: "#01577D",
+              textDecoration: "none",
+            }}
           >
             <Card.Body>
-              <Card.Title className="d-flex justify-content-center">
-                {friend.username}
+              <Card.Title
+                className="d-flex justify-content-center"
+                style={{ textDecoration: "none" }}
+              >
+                <a
+                  className="text-decoration-none text-light"
+                  href={`/profile/${friend.username}`}
+                >
+                  View {friend.username}'s profile
+                </a>
               </Card.Title>
-              <Card.Text className="d-flex justify-content-center">
-                {friend.username}'s workouts:
-              </Card.Text>
+              <>
+                <Card.Text className="d-flex justify-content-center"></Card.Text>
+              </>
             </Card.Body>
           </Card>
         ))}
