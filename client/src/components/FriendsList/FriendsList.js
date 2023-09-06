@@ -3,6 +3,7 @@ import Auth from "../../utils/auth";
 import { useQuery } from "@apollo/client";
 import { GET_ME } from "../../utils/queries";
 import { Card, Button } from "react-bootstrap";
+import "../css/profile.css";
 
 export default function FriendsList() {
   const { loading, data } = useQuery(GET_ME);
@@ -16,7 +17,7 @@ export default function FriendsList() {
       <div className="pt-3 d-flex justify-content-around">
         {friends?.map((friend) => (
           <Card
-            className="text-light"
+            className="text-light workout-card"
             style={{
               width: "10rem",
               backgroundColor: "#01577D",
