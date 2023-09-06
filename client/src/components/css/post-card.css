@@ -115,3 +115,9 @@ img {
   margin-left: 27%;
   justify-content: center;
 }
+#go-back-btn {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  background: #01577d;
+}
