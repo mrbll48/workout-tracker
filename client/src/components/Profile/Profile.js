@@ -25,21 +25,25 @@ export default function Profile() {
         <h3 className="d-flex justify-content-center pt-4">
           {user.username}'s profile
         </h3>
-        <aside>
-          <a href="/friends">{user.username}'s friends</a>
+        <aside className="w-25">
+          <a href="/friends">Friends</a>
         </aside>
         <div className="container">
           <div className="row w-100">
             <div className="d-flex justify-content-around flex-wrap">
               {workouts?.map((workout) => (
                 <div
-                  className="card m-3 workout-card"
-                  style={{ width: "18rem" }}
+                  className="card m-3 workout-card text-light"
+                  style={{
+                    width: "10rem",
+                    backgroundColor: "#01577D",
+                    textDecoration: "none",
+                  }}
                 >
                   <div className="card-body">
                     <h5 className="card-title">{workout.exercise}</h5>
-                    <p className="text-dark">Reps: {workout.reps}</p>
-                    <p className="text-dark">Sets: {workout.sets}</p>
+                    <p className="text-light">Reps: {workout.reps}</p>
+                    <p className="text-light">Sets: {workout.sets}</p>
                   </div>
                 </div>
               ))}
