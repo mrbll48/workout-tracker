@@ -26,7 +26,7 @@ export default function Profile() {
           {user.username}'s profile
         </h3>
         <aside className="w-25">
-          <a href="/friends">Friends</a>
+          <a href={`/friends/${user.username}`}>Friends</a>
         </aside>
         <div className="container">
           <div className="row w-100">
