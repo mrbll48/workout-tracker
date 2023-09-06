@@ -12,9 +12,9 @@ const typeDefs = gql`
   }
 
   type Workout {
-    _id: ID
+    _id: ID!
     postedBy: String!
-    exercise: String!
+    exercise: String
     weight: String!
     sets: String!
     reps: String!
@@ -43,10 +43,15 @@ const typeDefs = gql`
   }
 
   input WorkoutInput {
-    exercise: String!
+    exercise: String
     sets: String!
     reps: String!
     date: String
+  }
+
+  type Friends {
+    username: String
+    friends: [User]
   }
 
   type Query {
@@ -56,7 +61,7 @@ const typeDefs = gql`
     workout(workoutId: String): Workout
     workouts(userId: String): [Workout]
     photos: [Photo]
-    friends: [User]
+    friends: [Friends]
   }
 
   type Mutation {

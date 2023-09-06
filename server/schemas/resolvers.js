@@ -6,18 +6,21 @@ const Photo = require("../models/Photos");
 
 const resolvers = {
   Query: {
+    friends: async (parent, args, context) => {
+      console.log(context.user);
+      return friends;
+    },
     me: async (_, args, context) => {
       if (context.user) {
-        return await User.findOne({ _id: context.user._id })
+        const user = await User.findOne({ _id: context.user._id })
           .populate("workouts")
           .populate("photos")
-          .populate("friends");
+          .populate({ path: "friends", populate: { path: "workouts" } });
+        return user;
       }
       throw new GraphQLError("You are not signed in");
     },
-    friends: async (_, __, context) => {
-      return await User.findOne({ _id: context.user._id }).populate("friends");
-    },
+
     user: async (_, { username }) => {
       const user = await User.findOne({ username: username })
         .populate("workouts")
@@ -45,6 +48,7 @@ const resolvers = {
       return Photo.find();
     },
   },
+
   Mutation: {
     addFriend: async (_, { _id }, context) => {
       const user = context.user._id;
