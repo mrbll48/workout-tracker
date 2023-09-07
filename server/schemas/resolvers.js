@@ -144,15 +144,11 @@ const resolvers = {
       }
       return await Workout.findByIdAndDelete(workoutId);
     },
-    addComment: async (
-      _,
-      { workoutId, commentText, commentAuthor },
-      context
-    ) => {
+    addComment: async (_, { photoId, commentText, by }, context) => {
       if (context.user) {
-        return await Workout.findOneAndUpdate(
-          { _id: workoutId },
-          { $addToSet: { comments: { commentText, commentAuthor } } },
+        return await Photo.findOneAndUpdate(
+          { _id: photoId },
+          { $addToSet: { comments: { commentText, by } } },
           { new: true }
         ).populate("comments");
       }
