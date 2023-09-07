@@ -42,8 +42,10 @@ export default function MainPage() {
       </div>
       <div id="main-content">
         <ImgComponent />
-        {/* <Workouts /> */}
       </div>
     </div>
   );
+}
+{
+  /* <Workouts /> */
 }
