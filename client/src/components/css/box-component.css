@@ -1,15 +1,10 @@
+.img-component {
+  height: 450px;
+  width: 760px;
+  background: aqua;
+  margin: 5%;
+}
 #img-card {
-  width: 310px;
-  height: 300px;
-  border-radius: 20px;
-  padding: 15px;
-  filter: blur(0.5px);
-  transition: all 0.2s ease-in-out;
-}
-#img-card:hover {
-  transform: scale(1.01);
-}
-#img-component {
-  display: table-row;
-  justify-content: flex-start;
+  width: 450px;
+  height: 450px;
 }

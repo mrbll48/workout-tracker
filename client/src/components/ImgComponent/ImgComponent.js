@@ -11,7 +11,7 @@ function ImgComponent({ image, workoutType, muscleInput }) {
   console.log(pics);
 
   return (
-    <div id="img-component">
+    <div className="img-component">
       {pics?.map((photo) => (
         <div className="">
           <a href={`/profile/${photo.by}`}>
