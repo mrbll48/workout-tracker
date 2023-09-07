@@ -1,6 +1,9 @@
 import React from "react";
 
 import "../css/box-component.css";
+
+import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
+
 import { useQuery } from "@apollo/client";
 import { GET_ALL_PHOTOS } from "../../utils/queries";
 
@@ -24,6 +27,7 @@ function ImgComponent({ image, workoutType, muscleInput }) {
             <h5 id="post-description">
               I want an M4 CSL extra text for testing jus a lil more
             </h5>
+            {/* <CommentOutlinedIcon color="primary" /> */}
           </div>
         </>
       ))}
