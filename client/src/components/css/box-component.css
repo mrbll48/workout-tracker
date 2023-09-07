@@ -1,15 +1,22 @@
-#img-card {
-  width: 310px;
-  height: 300px;
-  border-radius: 20px;
-  padding: 15px;
-  filter: blur(0.5px);
-  transition: all 0.2s ease-in-out;
+.wrapper {
+  max-width: 720px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
-#img-card:hover {
-  transform: scale(1.01);
+#img-photo {
+  width: 400px;
+  height: 400px;
 }
-#img-component {
-  display: table-row;
-  justify-content: flex-start;
+.one {
+  grid-column: 1 / 3;
+}
+
+.info {
+  grid-column: 3 / 4;
+  width: 320px;
+  height: 400px;
+  background: #dddddd;
+  left: 420px;
 }

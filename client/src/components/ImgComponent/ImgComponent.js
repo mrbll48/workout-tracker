@@ -11,13 +11,18 @@ function ImgComponent({ image, workoutType, muscleInput }) {
   console.log(pics);
 
   return (
-    <div id="img-component">
+    <div className="wrapper">
       {pics?.map((photo) => (
-        <div className="">
-          <a href={`/profile/${photo.by}`}>
-            <img id="img-card" src={photo.url} alt="" />
-          </a>
-        </div>
+        <>
+          <div className="one">
+            <a href={`/profile/${photo.by}`}>
+              <img id="img-photo" src={photo.url} alt="" />
+            </a>
+          </div>
+          <div className="info">
+            <h4>Title</h4>
+          </div>
+        </>
       ))}
     </div>
   );

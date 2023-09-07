@@ -63,6 +63,9 @@ function PostCard() {
       console.log(e);
     }
   };
+  function mainPage(params) {
+    window.location.assign("/main");
+  }
 
   return (
     <>
@@ -103,6 +106,9 @@ function PostCard() {
           </button>
         </div>
       </section>
+      <button id="go-back-btn" className="click" onClick={mainPage}>
+        Go back
+      </button>
     </>
   );
 }

@@ -17,6 +17,7 @@
   overflow: auto;
 }
 #main-content {
-  position: absolute;
-  left: 310px;
+  position: relative;
+  left: 40vw;
+  /* 30 */
 }
