@@ -20,7 +20,10 @@ function ImgComponent({ image, workoutType, muscleInput }) {
             </a>
           </div>
           <div className="info">
-            <h4>Title</h4>
+            <h4 id="post-title">Title</h4>
+            <h5 id="post-description">
+              I want an M4 CSL extra text for testing jus a lil more
+            </h5>
           </div>
         </>
       ))}
