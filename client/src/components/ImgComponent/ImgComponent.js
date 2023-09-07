@@ -3,6 +3,7 @@ import React from "react";
 import "../css/box-component.css";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_PHOTOS } from "../../utils/queries";
+import Comment from "../Comments/Comment";
 
 function ImgComponent({ image, workoutType, muscleInput }) {
   const { loading, data } = useQuery(GET_ALL_PHOTOS);
@@ -17,6 +18,7 @@ function ImgComponent({ image, workoutType, muscleInput }) {
           <a href={`/profile/${photo.by}`}>
             <img id="img-card" src={photo.url} alt="" />
           </a>
+          <Comment />
         </div>
       ))}
     </div>

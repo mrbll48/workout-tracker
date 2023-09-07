@@ -102,3 +102,12 @@ export const ADD_PHOTO = gql`
     }
   }
 `;
+export const ADD_COMMENT = gql`
+  mutation addComment($photoId: ID, $commentText: String, $by: String) {
+    addComment(photoId: $photoId, commentText: $commentText, by: $by) {
+      _id
+      commentText
+      by
+    }
+  }
+`;
