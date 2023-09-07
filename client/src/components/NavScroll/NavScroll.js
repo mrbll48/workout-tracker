@@ -13,6 +13,8 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
     Auth.logout();
   };
 
+  const username = Auth.getProfile().data.username;
+
   const [value, setValue] = useState();
   const onInput = ({ target: { value } }) => setValue(value);
   const onFormSubmit = (e) => {
@@ -43,6 +45,7 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
                 <Nav.Link className="text-light" href="/main">
                   Home
                 </Nav.Link>
+
                 <Nav.Link className="text-light" href="/post" onClick={opt1}>
                   Create Post
                 </Nav.Link>
@@ -52,6 +55,9 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
                   onClick={opt2}
                 >
                   Create Workout
+                </Nav.Link>
+                <Nav.Link className="text-light" href={`/profile/${username}`}>
+                  View My Profile
                 </Nav.Link>
                 <Nav.Link
                   className="text-light"
