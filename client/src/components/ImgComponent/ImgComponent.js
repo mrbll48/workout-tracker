@@ -14,7 +14,6 @@ function ImgComponent({ image, workoutType, muscleInput }) {
   return (
     <div className="wrapper">
       {pics?.map((photo) => (
-
         <>
           <div className="one">
             <a href={`/profile/${photo.by}`}>
@@ -24,6 +23,7 @@ function ImgComponent({ image, workoutType, muscleInput }) {
           <div className="info">
             <h4>{photo.title}</h4>
             <p>{photo.description}</p>
+            <Comment />
           </div>
         </>
       ))}
