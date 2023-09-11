@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const commentSchema = require("./Comments");
 
 const photoSchema = new Schema({
   userId: {
@@ -17,6 +18,7 @@ const photoSchema = new Schema({
   by: {
     type: String,
   },
+  comments: [commentSchema],
 });
 
 const Photo = model("Photos", photoSchema);

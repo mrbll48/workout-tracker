@@ -23,10 +23,9 @@ const typeDefs = gql`
   }
 
   type Comment {
-    _id: ID
-    commentText: String
-    commentAuthor: String
-    createdAt: String
+    _id: ID!
+    commentText: String!
+    by: String!
   }
 
   type Auth {
@@ -40,6 +39,7 @@ const typeDefs = gql`
     description: String
     url: String
     by: String
+    comments: [Comment]
   }
 
   input WorkoutInput {
@@ -78,11 +78,7 @@ const typeDefs = gql`
     deleteUser: User
     updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout
     deleteWorkout(workoutId: ID!): Workout
-    addComment(
-      workoutId: ID
-      commentText: String
-      commentAuthor: String
-    ): Workout
+    addComment(photoId: ID, commentText: String, by: String): Photo
     addPhoto(title: String, description: String, url: String, by: String): Photo
     deleteFriend(_id: ID): User
 

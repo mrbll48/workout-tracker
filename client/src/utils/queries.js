@@ -139,6 +139,11 @@ export const GET_ALL_PHOTOS = gql`
       title
       description
       by
+      comments {
+        _id
+        commentText
+        by
+      }
     }
   }
 `;

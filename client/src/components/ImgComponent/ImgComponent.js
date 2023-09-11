@@ -6,6 +6,7 @@ import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 
 import { useQuery } from "@apollo/client";
 import { GET_ALL_PHOTOS } from "../../utils/queries";
+import Comment from "../Comments/Comment";
 
 function ImgComponent({ image, workoutType, muscleInput }) {
   const { loading, data } = useQuery(GET_ALL_PHOTOS);
@@ -23,11 +24,9 @@ function ImgComponent({ image, workoutType, muscleInput }) {
             </a>
           </div>
           <div className="info">
-            <h4 id="post-title">Title</h4>
-            <h5 id="post-description">
-              I want an M4 CSL extra text for testing jus a lil more
-            </h5>
-            {/* <CommentOutlinedIcon color="primary" /> */}
+            <h4>{photo.title}</h4>
+            <p>{photo.description}</p>
+            <Comment />
           </div>
         </>
       ))}
