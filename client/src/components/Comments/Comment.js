@@ -7,23 +7,23 @@ function Comment({ _id }) {
     commentText: "",
   });
 
-  const [addComment, { error, data }] = useMutation(ADD_COMMENT);
+  const [Comment, { error, data }] = useMutation(ADD_COMMENT);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    setCommentData({ commentData, [name]: value });
+    setCommentData({ ...commentData, [name]: value });
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await addComment({
+      const { data } = await Comment({
         variables: { ...commentData, photoId: _id },
       });
       console.log(data, commentData);
     } catch (e) {
       console.log(e);
+      console.log("Hey");
     }
 
     // setCommentData({ commentText: "" });

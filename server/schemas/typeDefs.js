@@ -78,7 +78,8 @@ const typeDefs = gql`
     deleteUser: User
     updateWorkout(workoutId: ID!, workoutDetails: WorkoutInput): Workout
     deleteWorkout(workoutId: ID!): Workout
-    addComment(photoId: ID, commentText: String, by: String): Photo
+    #
+    addComment(photoId: ID, commentText: String, by: String): Comment
     addPhoto(title: String, description: String, url: String, by: String): Photo
     deleteFriend(_id: ID): User
 

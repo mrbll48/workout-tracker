@@ -31,9 +31,16 @@ export const GET_ME = gql`
         }
       }
       photos {
+        _id
         title
         description
         url
+        by
+        comments {
+          _id
+          commentText
+          by
+        }
       }
     }
   }

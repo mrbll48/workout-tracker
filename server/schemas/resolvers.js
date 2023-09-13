@@ -145,7 +145,8 @@ const resolvers = {
       return await Workout.findByIdAndDelete(workoutId);
     },
     addComment: async (_, { photoId, commentText, by }, context) => {
-      console.log(context);
+      console.log(context, "hey");
+
       if (context.user) {
         return await Photo.findOneAndUpdate(
           { _id: photoId },

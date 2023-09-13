@@ -12,7 +12,6 @@ function ImgComponent({ image, workoutType, muscleInput }) {
   const { loading, data } = useQuery(GET_ALL_PHOTOS);
 
   const pics = data?.photos;
-  console.log(pics);
 
   return (
     <div className="wrapper">
@@ -26,7 +25,9 @@ function ImgComponent({ image, workoutType, muscleInput }) {
           <div className="info">
             <h4>{photo.title}</h4>
             <p>{photo.description}</p>
-            <Comment props={photo._id} />
+            <>
+              <Comment props={photo._id} />
+            </>
           </div>
         </>
       ))}
