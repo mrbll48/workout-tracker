@@ -27,7 +27,7 @@ function NavScroll({ opt1, opt2, opt3, opt4 }) {
     <Navbar
       expand="lg"
       style={{
-        backgroundColor: "#01577D",
+        backgroundColor: "#7C8685",
         fontWeight: "bold",
         fontSize: "20px",
       }}
