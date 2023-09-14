@@ -23,7 +23,6 @@ function ImgComponent({ image, workoutType, muscleInput }) {
           <div className="info">
             <h4>{photo.title}</h4>
             <p>{photo.description}</p>
-            <Comment props={photo._id} />
           </div>
         </>
       ))}
