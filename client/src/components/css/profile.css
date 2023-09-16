@@ -1,3 +1,38 @@
+.profile {
+  height: 93.8vh;
+  background-color: #32312d;
+  display: flex;
+  flex-direction: column;
+}
+
+#username {
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
+  font-weight: bold;
+}
+
+.friends {
+  display: inline;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.view-friends {
+  text-decoration: none;
+  color: #f0f4fc;
+}
+
+.view-friends:hover {
+  font-size: 105%;
+  transition: 0.3s;
+}
+
+.workouts {
+}
+
 .workout-card {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
