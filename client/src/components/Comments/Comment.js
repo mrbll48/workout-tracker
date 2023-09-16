@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { ADD_COMMENT } from "../../utils/mutations";
 import { useState } from "react";
+import "../css/comment-component.css";
 
 function Comment({ _id }) {
   const [commentData, setCommentData] = useState({
