@@ -36,7 +36,7 @@ export default function Profile() {
                   className="card m-3 workout-card text-light"
                   style={{
                     width: "10rem",
-                    backgroundColor: "#01577D",
+                    backgroundColor: "#7c8685",
                     textDecoration: "none",
                   }}
                 >
