@@ -21,14 +21,14 @@ export default function Profile() {
   return (
     <>
       <NavScroll />
-      <div className="bg-dark row" style={{ height: "92vh" }}>
-        <h3 className="d-flex justify-content-center pt-4">
-          {user.username}'s profile
-        </h3>
-        <aside className="w-25">
-          <a href={`/friends/${user.username}`}>Friends</a>
+      <div className="profile">
+        <h3 id="username">{user.username}'s profile</h3>
+        <aside className="friends">
+          <a href={`/friends/${user.username}`} className="view-friends">
+            View {user.username}'s Friends
+          </a>
         </aside>
-        <div className="container">
+        <div className="container workouts">
           <div className="row w-100">
             <div className="d-flex justify-content-around flex-wrap">
               {workouts?.map((workout) => (

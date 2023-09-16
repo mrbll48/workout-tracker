@@ -33,7 +33,6 @@ export default function LandingPage() {
       <div className="btn-div">
         {Auth.loggedIn() ? (
           <>
-            <span>Hey there, {Auth.getProfile().data.username}!</span>
             <Link to="/main">
               <button className="button">Home</button>
             </Link>
