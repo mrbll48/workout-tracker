@@ -12,7 +12,7 @@ export default function FriendsList() {
   const friends = data?.me.friends;
   console.log(friends);
   return (
-    <div className="bg-dark vh-100">
+    <div className="vh-100">
       <NavScroll />
       <div className="pt-3 d-flex justify-content-around">
         {friends?.map((friend) => (

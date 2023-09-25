@@ -42,6 +42,7 @@ function UserWorkout(e) {
   return (
     <>
       <NavScroll />
+
       <div className="vh-100 pt-5 create-workout">
         <div className="d-flex justify-content-around workout-div">
           <form className="color" onSubmit={handleFormSubmit}>
