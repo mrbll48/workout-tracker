@@ -23,11 +23,11 @@ export default function Profile() {
       <NavScroll />
       <div className="profile">
         <h3 id="username">{user.username}'s profile</h3>
-        <aside className="friends">
+        {/* <aside className="friends">
           <a href={`/friends/${user.username}`} className="view-friends">
             View {user.username}'s Friends
           </a>
-        </aside>
+        </aside> */}
         <div className="container workouts">
           <div className="row w-100">
             <div className="d-flex justify-content-around flex-wrap">
@@ -36,14 +36,14 @@ export default function Profile() {
                   className="card m-3 workout-card text-light"
                   style={{
                     width: "10rem",
-                    backgroundColor: "#7c8685",
+                    backgroundColor: "#BFE4FD",
                     textDecoration: "none",
                   }}
                 >
-                  <div className="card-body">
+                  <div className="card-body" style={{ color: "#011523" }}>
                     <h5 className="card-title">{workout.exercise}</h5>
-                    <p className="text-light">Reps: {workout.reps}</p>
-                    <p className="text-light">Sets: {workout.sets}</p>
+                    <p style={{ color: "#011523" }}>Reps: {workout.reps}</p>
+                    <p style={{ color: "#011523" }}>Sets: {workout.sets}</p>
                   </div>
                 </div>
               ))}

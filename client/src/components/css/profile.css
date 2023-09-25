@@ -1,6 +1,7 @@
 .profile {
   height: 93.8vh;
-  background-color: #32312d;
+  background-color: #F5FBFF;
+  color: #011523;
   display: flex;
   flex-direction: column;
 }
@@ -22,7 +23,7 @@
 
 .view-friends {
   text-decoration: none;
-  color: #f0f4fc;
+  color: #011523;
 }
 
 .view-friends:hover {
@@ -34,5 +35,5 @@
 }
 
 .workout-card {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
