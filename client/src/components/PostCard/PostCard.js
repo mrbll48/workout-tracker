@@ -70,8 +70,11 @@ function PostCard() {
   return (
     <>
       <NavScroll />
-      <section className="bg-dark vh-100 d-flex justify-content-around pt-5">
-        <div className="parent">
+      <section
+        className="vh-100 d-flex justify-content-around pt-5"
+        id="bg-color"
+      >
+        <div id="parent-card">
           <div>
             {picture && (
               <img src={picture} alt="Uploaded" id="photo-container" />
@@ -114,15 +117,3 @@ function PostCard() {
 }
 
 export default PostCard;
-
-{
-  /* <div className="buttons">
-  <IconContext.Provider value={{ color: "white", size: "2.1em" }}>
-    <div>
-      <AiOutlineRise id="spacing" />
-      <AiOutlineMenu id="spacing" />
-      <AiOutlineShareAlt id="spacing" />
-    </div>
-  </IconContext.Provider>
-</div> */
-}
