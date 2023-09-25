@@ -77,9 +77,7 @@ img {
 .form__field:focus {
   padding-bottom: 6px;
   font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #ffe699, #5d3294);
-  border-image-slice: 1;
+  border-width: 2px;
 }
 
 .form__field:focus ~ .form__label {
@@ -88,7 +86,7 @@ img {
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: #ffe699;
+  /* color: #ffe699; */
   font-weight: 700;
 }
 
