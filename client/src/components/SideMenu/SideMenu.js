@@ -10,14 +10,14 @@ function SideMenu() {
         <h1 id="title-side">Create a Workout</h1>
         <h2 id="sub-title">Choose a type:</h2>
       </div>
-      <div id="workout-type">
-        <Dropdown title={"Strength"} />
+      <div className="workout-type">
+        <Dropdown className="workout" title={"Strength"} />
       </div>
-      <div id="workout-type">
-        <Dropdown title={"Stretching"} />
+      <div className="workout-type">
+        <Dropdown className="workout" title={"Stretching"} />
       </div>
-      <div id="workout-type">
-        <Dropdown title={"Cardio"} />
+      <div className="workout-type">
+        <Dropdown className="workout" title={"Cardio"} />
       </div>
     </div>
   );

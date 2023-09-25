@@ -56,7 +56,7 @@ export default function CustomDropdown({ title, muscle }) {
       <Dropdown className="d-flex justify-content-center ">
         <Dropdown.Toggle
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.25)",
+            backgroundColor: "#078EE9",
             borderColor: "rgba(0, 0, 0, 0.25)",
           }}
           id="dropdown-basic"
@@ -65,7 +65,7 @@ export default function CustomDropdown({ title, muscle }) {
         </Dropdown.Toggle>
         <button
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.25)",
+            backgroundColor: "#078EE9",
             borderColor: "rgba(0, 0, 0, 0.25)",
           }}
           onClick={handleReset}
@@ -97,7 +97,6 @@ export default function CustomDropdown({ title, muscle }) {
               <div className="box">
                 <span className="title">Workout: {workout.name}</span>
                 <div>
-
                   <p style={{ maxHeight: "150px" }}>
                     Instructions: {workout.instructions}
                   </p>
