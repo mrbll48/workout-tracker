@@ -58,7 +58,8 @@ export default function LandingPage() {
         <SignupForm />
       ) : (
         <h1 className="slogan">
-          Get Fit, Share Inspire: <br></br>Uniting Workouts, One Post at a Time
+          Get Fit, Share Inspire: <br></br>Uniting Workouts,
+          <span id="blue">One Post at a Time</span>
         </h1>
       )}
     </div>
