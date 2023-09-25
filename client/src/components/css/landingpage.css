@@ -45,7 +45,7 @@
   border-radius: inherit;
   scale: 0;
   z-index: -1;
-  background-color: rgb(193, 163, 98);
+  background-color: #078ee9;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -108,7 +108,7 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 110px 40px;
   padding-top: 60px;
   padding-bottom: 90px;
@@ -144,7 +144,7 @@
 
 .main-input:focus {
   outline: none;
-  border-bottom-color: #42ff1c;
+  border-bottom-color: #078be4;
 }
 
 .lebal-email {
@@ -164,7 +164,7 @@
 .main-input:valid ~ .lebal-email {
   top: -20px;
   font-size: 14px;
-  color: #42ff1c;
+  color: #078be4;
 }
 
 .highlight-span {
@@ -186,12 +186,12 @@
   margin-top: 1.2rem;
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: rgb(193, 163, 98);
+  background-color: #078ee9;
 }
 
 @keyframes input-focus {
   from {
-    background: #42ff1c;
+    background: #078be4;
   }
 
   to {
