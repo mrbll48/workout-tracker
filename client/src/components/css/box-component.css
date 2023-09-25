@@ -1,20 +1,30 @@
 .wrapper {
+  margin-top: 3px;
   max-width: 720px;
   display: flex;
   flex-direction: column;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-  border: solid #362e2d;
+
 }
 #img-photo {
   width: 400px;
   height: 400px;
 }
 
+.one {
+  border: solid #362e2d 2px;
+}
+
 .info {
   margin-top: -10px;
   width: 400px;
   height: 75px;
-  background: #7a8187;
+  background-color: #BFE4FD;
+  color: #011523
+}
+
+.photo-description {
+  color: #011523
 }
