@@ -48,7 +48,7 @@ img {
   border-bottom: 2px solid #6b6b6b;
   outline: 0;
   font-size: 17px;
-  color: #fff;
+  color: black;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -76,8 +76,8 @@ img {
 
 .form__field:focus {
   padding-bottom: 6px;
-  font-weight: 700;
   border-width: 2px;
+  color: black;
 }
 
 .form__field:focus ~ .form__label {
@@ -86,7 +86,7 @@ img {
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  /* color: #ffe699; */
+
   font-weight: 700;
 }
 
