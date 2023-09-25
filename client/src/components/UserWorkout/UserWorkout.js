@@ -42,7 +42,7 @@ function UserWorkout(e) {
   return (
     <>
       <NavScroll />
-      <div className="bg-dark vh-100 pt-5">
+      <div className="vh-100 pt-5">
         <div className="d-flex justify-content-around ">
           <form className="" onSubmit={handleFormSubmit}>
             <h1>Record your workout here</h1>
