@@ -70,6 +70,7 @@ function PostCard() {
   return (
     <>
       <NavScroll />
+
       <section
         className="vh-100 d-flex justify-content-around pt-5"
         id="bg-color"

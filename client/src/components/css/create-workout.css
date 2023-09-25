@@ -1,3 +1,24 @@
 .text-black{
     color: black;
 }
+
+.create-workout{
+    background-color: #F5FBFF;
+    display: flex;
+    justify-content: center;
+
+}
+
+.color {
+    color: #011523
+}
+
+#btn {
+    background-color: #078BE4;
+
+}
+
+.workout-input {
+    display: flex;
+    justify-content: center
+}
