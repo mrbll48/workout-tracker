@@ -42,11 +42,11 @@ function UserWorkout(e) {
   return (
     <>
       <NavScroll />
-      <div className="bg-dark vh-100 pt-5">
-        <div className="d-flex justify-content-around ">
-          <form className="" onSubmit={handleFormSubmit}>
+      <div className="vh-100 pt-5 create-workout">
+        <div className="d-flex justify-content-around workout-div">
+          <form className="color" onSubmit={handleFormSubmit}>
             <h1>Record your workout here</h1>
-            <div className="">
+            <div className="workout-input">
               <input
                 className="text-black"
                 required
@@ -56,7 +56,7 @@ function UserWorkout(e) {
                 placeholder="Exercise"
               />
             </div>
-            <div className="">
+            <div className="workout-input">
               <input
                 className="text-black"
                 required
@@ -66,7 +66,7 @@ function UserWorkout(e) {
                 placeholder="Sets"
               />
             </div>
-            <div className="">
+            <div className="workout-input">
               <input
                 className="text-black"
                 required
@@ -76,7 +76,7 @@ function UserWorkout(e) {
                 placeholder="Reps"
               />
             </div>
-            <div className="">
+            <div className="workout-input">
               <input
                 className="text-black"
                 required
@@ -86,9 +86,11 @@ function UserWorkout(e) {
                 placeholder="Weight"
               />
             </div>
-            <button className="submit" type="submit">
-              Save
-            </button>
+            <div className="workout-input">
+              <button className="submit" id="btn" type="submit">
+                Save
+              </button>
+            </div>
           </form>
         </div>
       </div>

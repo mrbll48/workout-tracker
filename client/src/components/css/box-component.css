@@ -13,14 +13,12 @@
   height: 400px;
 }
 
-.one {
-  border: solid #362e2d 2px;
-}
+
 
 .info {
-  margin-top: -10px;
+
   width: 400px;
-  height: 75px;
+  height: auto;
   background-color: #BFE4FD;
   color: #011523
 }
