@@ -95,9 +95,11 @@ export default function CustomDropdown({ title, muscle }) {
               }}
             >
               <div className="box">
-                <span className="title">Workout: {workout.name}</span>
+                <span className="title" style={{ color: "#011523" }}>
+                  Workout: {workout.name}
+                </span>
                 <div>
-                  <p style={{ maxHeight: "150px" }}>
+                  <p style={{ maxHeight: "150px", color: "#011523" }}>
                     Instructions: {workout.instructions}
                   </p>
                   {/* <span>Muscle:{workout.muscle}</span> */}
